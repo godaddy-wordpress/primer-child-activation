@@ -1,0 +1,12 @@
+// Allows the use of rem-calc() or lower-bound() in your settings
+@import "../mixins/functions";
+
+// Left-to-Right language support by default
+$text-direction: ltr;
+
+/*--------------------------------------------------------------
+Variables
+--------------------------------------------------------------*/
+
+$color-red: #d24343;
+$color-white: #ffffff;

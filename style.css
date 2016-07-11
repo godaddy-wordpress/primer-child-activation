@@ -1,0 +1,38 @@
+/*
+Theme Name: Activation
+Theme URI: http://liftux.com
+Author: Lift
+Author URI: http://liftux.com
+Description: This is a child theme for Primer.
+Version: 0.0.9
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: activation
+Domain Path: /languages/
+Tags:
+Template: wp-primer-theme
+
+This theme, like WordPress, is licensed under the GPL.
+
+*/
+/*--------------------------------------------------------------
+Variables
+--------------------------------------------------------------*/
+.hero-wrapper .widget {
+  background: none; }
+
+.main-navigation-container {
+  background: #d24343; }
+
+.main-navigation {
+  background: #d24343; }
+  .main-navigation li:hover a, .main-navigation li.current-menu-item a, .main-navigation li.current-page-item a {
+    border-bottom: 1px solid #ffffff; }
+  .main-navigation li a {
+    background: #d24343;
+    border-bottom: 1px solid #d24343;
+    color: #ffffff;
+    margin: 16px;
+    padding: 8px 0; }
+    .main-navigation li a:hover {
+      background: #d24343; }

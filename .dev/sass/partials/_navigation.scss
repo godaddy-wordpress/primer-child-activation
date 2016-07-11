@@ -1,0 +1,35 @@
+.main-navigation-container {
+	background: $color-red;
+}
+
+.main-navigation {
+	background: $color-red;
+
+	li {
+
+		&:hover,
+		&.current-menu-item,
+		&.current-page-item {
+
+			a {
+				border-bottom: 1px solid $color-white;
+			}
+
+		}
+
+		a {
+			background: $color-red;
+			border-bottom: 1px solid $color-red;
+			color: $color-white;
+			margin: 16px;
+			padding: 8px 0;
+
+			&:hover {
+				background: $color-red;
+			}
+
+		}
+
+	}
+
+}

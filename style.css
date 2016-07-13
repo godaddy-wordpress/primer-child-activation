@@ -21,6 +21,22 @@ Variables
 .hero-wrapper .widget {
   background: none; }
 
+.hero-wrapper .textwidget h1 {
+  color: #ffffff;
+  font-size: 48px;
+  line-height: 58px; }
+
+.hero-wrapper .textwidget p {
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 28px; }
+
+.hero-wrapper .textwidget .button,
+.hero-wrapper .textwidget button,
+.hero-wrapper .textwidget .fl-button {
+  font-size: 18px;
+  font-weight: 400; }
+
 .main-navigation-container {
   background: #d24343; }
 
@@ -36,3 +52,44 @@ Variables
     padding: 8px 0; }
     .main-navigation li a:hover {
       background: #d24343; }
+
+body {
+  color: #202223; }
+
+h1 {
+  font-size: 50px;
+  font-weight: 100;
+  line-height: 70px; }
+
+h2 {
+  color: #c5c3c6;
+  font-size: 40px;
+  font-weight: 200;
+  line-height: 90px; }
+
+h3 {
+  font-size: 36px;
+  font-weight: 200;
+  line-height: 90px; }
+
+h4 {
+  color: #d24343;
+  font-size: 24px;
+  font-weight: 200;
+  letter-spacing: 012em;
+  line-height: 90px; }
+
+h5 {
+  font-size: 26px;
+  font-weight: 200;
+  line-height: 90px; }
+
+h6 {
+  font-size: 26px;
+  font-style: italic;
+  font-weight: 200;
+  line-height: 90px; }
+
+p {
+  font-size: 20px;
+  line-height: 30px; }

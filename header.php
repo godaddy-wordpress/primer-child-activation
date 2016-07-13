@@ -38,12 +38,12 @@
 
 		<?php if ( ! empty( primer_get_custom_header() ) ) : ?>
 
-			<header id="masthead" class="site-header" role="banner" style="background:url('<?php echo primer_get_custom_header( ); ?>') no-repeat top center; background-size: cover;">
+			<header id="masthead" class="site-header row" role="banner" style="background:url('<?php echo primer_get_custom_header( ); ?>') no-repeat top center; background-size: cover;">
 
 		<?php else : ?>
 
-			<header id="masthead" class="site-header" role="banner">
-				
+			<header id="masthead" class="site-header row" role="banner">
+
 		<?php endif; ?>
 
 			<?php do_action( 'primer_header' ) ?>

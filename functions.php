@@ -22,6 +22,23 @@ add_action( 'after_setup_theme', 'activation_theme_register_nav_menu' );
 
 /**
  *
+ * Register Hero Widget.
+ *
+ */
+register_sidebar(
+	array(
+		'name'          => esc_html__( 'Hero', 'activation' ),
+		'id'            => 'hero',
+		'description'   => esc_html__( 'The Hero widget area.', 'primer' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h6 class="widget-title">',
+		'after_title'   => '</h6>',
+	)
+);
+
+/**
+ *
  * Adding content to footer via action.
  *
  */
@@ -79,3 +96,17 @@ function activation_theme_hero_content() {
 </div>
 <?php }
 add_action( 'primer_header', 'activation_theme_hero_content' );
+
+/**
+ * Display the footer nav before the site info.
+ *
+ * @action primer_after_footer
+ *
+ * @since 1.0.0
+ */
+function activation_add_nav_footer() {
+
+	get_template_part( 'templates/parts/footer-nav' );
+
+}
+add_action( 'primer_after_footer', 'activation_add_nav_footer', 10 );

@@ -18,40 +18,33 @@ This theme, like WordPress, is licensed under the GPL.
 /*--------------------------------------------------------------
 Variables
 --------------------------------------------------------------*/
-.hero-wrapper .widget {
-  background: none; }
-
-.hero-wrapper .textwidget h1 {
-  color: #ffffff;
-  font-size: 48px;
-  line-height: 58px; }
-
-.hero-wrapper .textwidget p {
-  color: #ffffff;
-  font-size: 18px;
-  line-height: 28px; }
-
-.hero-wrapper .textwidget .button,
-.hero-wrapper .textwidget button,
-.hero-wrapper .textwidget .fl-button {
-  font-size: 18px;
-  font-weight: 400; }
-
-.main-navigation-container {
-  background: #d24343; }
-
-.main-navigation {
-  background: #d24343; }
-  .main-navigation li:hover a, .main-navigation li.current-menu-item a, .main-navigation li.current-page-item a {
-    border-bottom: 1px solid #ffffff; }
-  .main-navigation li a {
-    background: #d24343;
-    border-bottom: 1px solid #d24343;
+.hero-wrapper {
+  padding: 50px 0 100px; }
+  .hero-wrapper .widget {
+    background: none;
+    padding: 0; }
+  .hero-wrapper .textwidget h1 {
     color: #ffffff;
-    margin: 16px;
-    padding: 8px 0; }
-    .main-navigation li a:hover {
-      background: #d24343; }
+    font-size: 48px;
+    line-height: 58px; }
+  .hero-wrapper .textwidget p {
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 28px; }
+  .hero-wrapper .textwidget .button,
+  .hero-wrapper .textwidget button,
+  .hero-wrapper .textwidget .fl-button {
+    font-size: 18px;
+    font-weight: 400; }
+
+.main-navigation li:hover a, .main-navigation li.current-menu-item a, .main-navigation li.current-page-item a {
+  border-bottom: 1px solid #ffffff; }
+
+.main-navigation li a {
+  border-bottom: 1px solid transparent;
+  color: #ffffff;
+  margin: 16px;
+  padding: 8px 0; }
 
 body {
   color: #202223; }
@@ -93,3 +86,7 @@ h6 {
 p {
   font-size: 20px;
   line-height: 30px; }
+
+@media only screen and (min-width: 64.063em) {
+  .footer-widget-area .footer-widget {
+    width: 33%; } }

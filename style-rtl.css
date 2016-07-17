@@ -35,7 +35,8 @@ Variables
   .hero-wrapper .textwidget button,
   .hero-wrapper .textwidget .fl-button {
     font-size: 18px;
-    font-weight: 400; }
+    font-weight: 400;
+    padding: 1.25rem; }
 
 .menu-main-menu-container {
   float: right; }

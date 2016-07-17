@@ -20,7 +20,6 @@ function activation_theme_register_nav_menu() {
 }
 add_action( 'after_setup_theme', 'activation_theme_register_nav_menu' );
 
-
 /**
  *
  * Adding content to footer via action.
@@ -80,70 +79,3 @@ function activation_theme_hero_content() {
 </div>
 <?php }
 add_action( 'primer_header', 'activation_theme_hero_content' );
-
-/**
- * Registers color schemes for primer.
- *
- * Can be filtered with {@see 'primer_color_schemes'}.
- *
- * The order of colors in a colors array:
- * 1. Main Background Color.
- * 2. Page Background Color.
- * 3. Link Color.
- * 4. Main Text Color.
- * 5. Secondary Text Color.
- *
- * @return array An associative array of color scheme options.
- */
-function activation_get_color_schemes() {
-
-	/**
-	 * Filter the color schemes registered for use with primer.
-	 *
-	 * The default schemes include 'default', 'dark', 'gray', 'red', and 'yellow'.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @var array $schemes {
-	 *     Associative array of color schemes data.
-	 *
-	 *     @type array $slug {
-	 *         Associative array of information for setting up the color scheme.
-	 *
-	 *         @type string $label  Color scheme label.
-	 *         @type array  $colors HEX codes for default colors prepended with a hash symbol ('#').
-	 *                              Colors are defined in the following order: Main background, page
-	 *                              background, link, main text, secondary text.
-	 *     }
-	 * }
-	 */
-	return apply_filters( 'primer_color_schemes',
-		array(
-			'default' => array(
-				'label'  => __( 'Default', 'activation' ),
-				'colors' => array(
-					'#212121',
-					'#ffffff',
-					'#0060f1',
-					'#c5c3c6',
-					'#97d321',
-					'#212121',
-					'#c5c3c6',
-				),
-			),
-			'my_red' => array(
-				'label'  => __( 'Red', 'activation' ),
-				'colors' => array(
-					'#202223',
-					'#ffffff',
-					'#d24343',
-					'#c5c3c6',
-					'#3fba73',
-					'#202223',
-					'#c5c3c6',
-				),
-			),
-		)
-	);
-
-}

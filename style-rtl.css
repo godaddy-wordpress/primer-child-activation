@@ -38,7 +38,7 @@ Variables
     font-weight: 400; }
 
 .menu-main-menu-container {
-  float: left; }
+  float: right; }
 
 .main-navigation li:hover a, .main-navigation li.current-menu-item a, .main-navigation li.current-page-item a {
   border-bottom: 1px solid #ffffff; }
@@ -51,7 +51,7 @@ Variables
 
 .search-form {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  float: right;
+  float: left;
   margin: 12px 0; }
   .search-form .screen-reader-text {
     display: none; }

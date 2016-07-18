@@ -1,0 +1,27 @@
+aside {
+
+	&:after {
+		clear: both;
+		content: "";
+		display: block;
+	}
+
+}
+
+.widget_rss {
+
+	ul {
+
+		li {
+			padding: 10px 0;
+
+			.rss-date {
+				display: inline-block;
+				margin-top: 10px;
+			}
+
+		}
+
+	}
+
+}

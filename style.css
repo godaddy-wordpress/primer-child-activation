@@ -165,3 +165,21 @@ p {
   .widget_rss ul li .rss-date {
     display: inline-block;
     margin-top: 10px; }
+
+@media only screen and (min-width: 40.063em) {
+  .hentry {
+    padding: 0 15px 0 0; } }
+
+.single .article-wrapper {
+  margin-left: 150px; }
+
+.single .entry-title {
+  font-size: 3rem; }
+
+.single .author-image {
+  float: left;
+  width: 110px; }
+  .single .author-image img {
+    border: 4px solid #e3e3e3;
+    border-radius: 50%;
+    padding: 4px; }

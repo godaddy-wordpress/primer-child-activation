@@ -157,6 +157,18 @@ p {
       .menu-footer-container ul li {
         text-align: left; } }
 
+.site-info-wrapper .site-info {
+  overflow: visible; }
+  .site-info-wrapper .site-info .social-menu a {
+    background: none; }
+
+.site-info-text {
+  font-size: .875rem; }
+
+.social-menu {
+  position: relative;
+  top: -20px; }
+
 .widget {
   padding: 0; }
   .widget:after {

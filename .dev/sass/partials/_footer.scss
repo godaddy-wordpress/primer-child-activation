@@ -69,3 +69,29 @@
 	}
 
 }
+
+.site-info-wrapper {
+
+	.site-info {
+		overflow: visible;
+
+		.social-menu {
+
+			a {
+				background: none;
+			}
+
+		}
+
+	}
+
+}
+
+.site-info-text {
+	font-size: .875rem;
+}
+
+.social-menu {
+	position: relative;
+	top: -20px;
+}

@@ -9,7 +9,7 @@
 .single {
 
 	.article-wrapper {
-		margin-left: 150px;
+		margin-left: 120px;
 	}
 
 	.entry-title {
@@ -21,9 +21,19 @@
 		width: 110px;
 
 		img {
-			border: 4px solid $color-photo-border;
+			border: 3px solid $color-photo-border;
 			border-radius: 50%;
-			padding: 4px;
+			padding: 3px;
+		}
+
+	}
+
+	.entry-meta {
+		color: $color-input-text;
+		font-size: 1.125rem;
+
+		a {
+			color: $color-input-text;
 		}
 
 	}

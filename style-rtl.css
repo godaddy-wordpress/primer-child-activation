@@ -50,15 +50,22 @@ Variables
   margin: 16px;
   padding: 8px 0; }
 
+.main-navigation li:first-child a {
+  margin-right: 0; }
+
 .search-form {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   float: left;
-  margin: 12px 0; }
+  margin: 15px 0 0; }
+  .search-form label {
+    margin: 0; }
   .search-form .screen-reader-text {
     display: none; }
   .search-form input[type="search"] {
     background: none;
-    color: #ffffff; }
+    color: #ffffff;
+    margin: 0;
+    padding: .5rem; }
   .search-form input[type="submit"] {
     background: transparent url(".dev/assets/img/search-icon.png") no-repeat;
     display: inline-block;
@@ -81,34 +88,34 @@ body {
   color: #202223; }
 
 h1 {
-  font-size: 50px;
+  font-size: 3.125rem;
   font-weight: 100; }
 
 h2 {
   color: #c5c3c6;
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: 200; }
 
 h3 {
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: 200; }
 
 h4 {
   color: #d24343;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 200; }
 
 h5 {
-  font-size: 26px;
+  font-size: 1.625rem;
   font-weight: 200; }
 
 h6 {
-  font-size: 26px;
+  font-size: 1.625rem;
   font-style: italic;
   font-weight: 200; }
 
 p {
-  font-size: 20px;
+  font-size: 1rem;
   line-height: 30px; }
 
 @media only screen and (min-width: 64.063em) {
@@ -134,7 +141,7 @@ p {
   padding: 0 0 20px; }
 
 .footer-nav {
-  margin: 50px 0 0; }
+  margin: 50px auto 0; }
 
 .menu-footer-container ul {
   list-style: none;
@@ -171,7 +178,7 @@ p {
     padding: 0 0 0 15px; } }
 
 .single .article-wrapper {
-  margin-right: 150px; }
+  margin-right: 120px; }
 
 .single .entry-title {
   font-size: 3rem; }
@@ -180,9 +187,15 @@ p {
   float: right;
   width: 110px; }
   .single .author-image img {
-    border: 4px solid #e3e3e3;
+    border: 3px solid #e3e3e3;
     border-radius: 50%;
-    padding: 4px; }
+    padding: 3px; }
+
+.single .entry-meta {
+  color: #7d8183;
+  font-size: 1.125rem; }
+  .single .entry-meta a {
+    color: #7d8183; }
 
 input[type="text"],
 input[type="email"],

@@ -25,6 +25,14 @@
 			padding: 8px 0;
 		}
 
+		&:first-child {
+
+			a {
+				margin-left: 0;
+			}
+
+		}
+
 	}
 
 }

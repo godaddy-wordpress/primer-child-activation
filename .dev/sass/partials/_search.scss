@@ -1,10 +1,10 @@
 .search-form {
 	border-bottom: 1px solid transparentize($color-white, .8);
 	float: right;
-	margin: 12px 0;
+	margin: 15px 0 0;
 
 	label {
-
+		margin: 0;
 	}
 
 	.screen-reader-text {
@@ -14,6 +14,8 @@
 	input[type="search"] {
 		background: none;
 		color: $color-white;
+		margin: 0;
+		padding: .5rem;
 	}
 
 	input[type="submit"] {

@@ -88,31 +88,25 @@ body {
   color: #202223; }
 
 h1 {
-  font-size: 3.125rem;
-  font-weight: 100; }
+  font-size: 3.125rem; }
 
 h2 {
   color: #c5c3c6;
-  font-size: 2.5rem;
-  font-weight: 200; }
+  font-size: 2.5rem; }
 
 h3 {
-  font-size: 2.25rem;
-  font-weight: 200; }
+  font-size: 2.25rem; }
 
 h4 {
   color: #d24343;
-  font-size: 1.5rem;
-  font-weight: 200; }
+  font-size: 1.5rem; }
 
 h5 {
-  font-size: 1.625rem;
-  font-weight: 200; }
+  font-size: 1.625rem; }
 
 h6 {
   font-size: 1.625rem;
-  font-style: italic;
-  font-weight: 200; }
+  font-style: italic; }
 
 p {
   font-size: 1rem;

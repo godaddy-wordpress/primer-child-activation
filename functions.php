@@ -110,3 +110,35 @@ function activation_add_nav_footer() {
 
 }
 add_action( 'primer_after_footer', 'activation_add_nav_footer', 10 );
+
+/**
+ *
+ * Add selectors for font customizing.
+ *
+ * @since 1.0.0
+ */
+function update_font_types() {
+	return	array(
+		array(
+			'name'    => 'primary_font',
+			'label'   => __( 'Primary Font', 'primer' ),
+			'default' => 'Lato',
+			'css'     => array(
+				'body, p, .hero-wrapper .textwidget p, .site-description, .search-form input[type="search”], .widget li a, .site-info-text, h6, body p, .widget p, ' => array(
+					'font-family' => '"%s", sans-serif',
+				),
+			),
+		),
+		array(
+			'name'    => 'secondary_font',
+			'label'   => __( 'Secondary Font', 'primer' ),
+			'default' => 'Lato',
+			'css'     => array(
+				'h1, h2, h3, h4, h5, h6, label, legend, table th, .site-title, .entry-title, .widget-title, .main-navigation li a, button, a.button, input[type="button"], input[type="reset"], input[type="submit"], blockquote, .entry-meta, .entry-footer, .comment-list li .comment-meta .says, .comment-list li .comment-metadata, .comment-reply-link, #respond .logged-in-as, .fl-callout-text, .site-title, .hero-wrapper .textwidget h1, .hero-wrapper .textwidget .button, .main-navigation li a, .widget-title, .menu-footer li a, h1, h2, h3, h4, h5, .entry-title, .single .entry-meta, ' => array(
+					'font-family' => '"%s", sans-serif',
+				),
+			),
+		),
+	);
+}
+add_action( 'primer_font_types', 'update_font_types' );

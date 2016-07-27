@@ -1,0 +1,41 @@
+@media only screen and (min-width: 40.063em) {
+
+	.hentry {
+		padding: 0 15px 0 0;
+	}
+
+}
+
+.single {
+
+	.article-wrapper {
+		margin-left: 120px;
+	}
+
+	.entry-title {
+		font-size: 3rem;
+	}
+
+	.author-image {
+		float: left;
+		width: 110px;
+
+		img {
+			border: 3px solid $color-photo-border;
+			border-radius: 50%;
+			padding: 3px;
+		}
+
+	}
+
+	.entry-meta {
+		color: $color-input-text;
+		font-size: 1.125rem;
+
+		a {
+			color: $color-input-text;
+		}
+
+	}
+
+}

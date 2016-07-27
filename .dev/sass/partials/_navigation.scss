@@ -1,0 +1,37 @@
+.menu-main-menu-container {
+	float: left;
+}
+
+.main-navigation {
+
+	li {
+
+		&:hover,
+		&.current-menu-item,
+		&.current-page-item {
+
+			a {
+				border-bottom: 1px solid $color-white;
+			}
+
+		}
+
+		a {
+
+			border-bottom: 1px solid transparent;
+			color: $color-white;
+			margin: 16px;
+			padding: 8px 0;
+		}
+
+		&:first-child {
+
+			a {
+				margin-left: 0;
+			}
+
+		}
+
+	}
+
+}

@@ -1,0 +1,33 @@
+.hero-wrapper {
+	padding: 50px 0 100px;
+
+	.widget {
+		background: none;
+		padding: 0;
+	}
+
+	.textwidget {
+
+		h1 {
+			color: $color-white;
+			font-size: 48px;
+			line-height: 58px;
+		}
+
+		p {
+			color: $color-white;
+			font-size: 18px;
+			line-height: 28px;
+		}
+
+		.button,
+		button,
+		.fl-button {
+			font-size: 18px;
+			font-weight: 400;
+			padding: 1.25rem;
+		}
+
+	}
+
+}

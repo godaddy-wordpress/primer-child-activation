@@ -1,0 +1,241 @@
+/*
+Theme Name: Activation
+Theme URI: http://liftux.com
+Author: Lift
+Author URI: http://liftux.com
+Description: This is a child theme for Primer.
+Version: 0.0.9
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: activation
+Domain Path: /languages/
+Tags:
+Template: wp-primer-theme
+
+This theme, like WordPress, is licensed under the GPL.
+
+*/
+/*--------------------------------------------------------------
+Variables
+--------------------------------------------------------------*/
+.hero-wrapper {
+  padding: 50px 0 100px; }
+  .hero-wrapper .widget {
+    background: none;
+    padding: 0; }
+  .hero-wrapper .textwidget h1 {
+    color: #ffffff;
+    font-size: 48px;
+    line-height: 58px; }
+  .hero-wrapper .textwidget p {
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 28px; }
+  .hero-wrapper .textwidget .button,
+  .hero-wrapper .textwidget button,
+  .hero-wrapper .textwidget .fl-button {
+    font-size: 18px;
+    font-weight: 400;
+    padding: 1.25rem; }
+
+.menu-main-menu-container {
+  float: left; }
+
+.main-navigation li:hover a, .main-navigation li.current-menu-item a, .main-navigation li.current-page-item a {
+  border-bottom: 1px solid #ffffff; }
+
+.main-navigation li a {
+  border-bottom: 1px solid transparent;
+  color: #ffffff;
+  margin: 16px;
+  padding: 8px 0; }
+
+.main-navigation li:first-child a {
+  margin-left: 0; }
+
+.search-form {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  float: right;
+  margin: 15px 0 0; }
+  .search-form label {
+    margin: 0; }
+  .search-form .screen-reader-text {
+    display: none; }
+  .search-form input[type="search"] {
+    background: none;
+    color: #ffffff;
+    margin: 0;
+    padding: .5rem; }
+  .search-form input[type="submit"] {
+    background: transparent url(".dev/assets/img/search-icon.png") no-repeat;
+    display: inline-block;
+    height: 21px;
+    text-indent: -9999px;
+    vertical-align: middle;
+    width: 21px; }
+  .search-form ::-webkit-input-placeholder {
+    color: #ffffff; }
+  .search-form :-moz-placeholder {
+    /* Firefox 18- */
+    color: #ffffff; }
+  .search-form ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #ffffff; }
+  .search-form :-ms-input-placeholder {
+    color: #ffffff; }
+
+body {
+  color: #202223; }
+
+h1 {
+  font-size: 3.125rem; }
+
+h2 {
+  color: #c5c3c6;
+  font-size: 2.5rem; }
+
+h3 {
+  font-size: 2.25rem; }
+
+h4 {
+  color: #d24343;
+  font-size: 1.5rem; }
+
+h5 {
+  font-size: 1.625rem; }
+
+h6 {
+  font-size: 1.625rem;
+  font-style: italic; }
+
+p {
+  font-size: 1rem;
+  line-height: 30px; }
+
+@media only screen and (min-width: 64.063em) {
+  .footer-widget-area .footer-widget {
+    width: 33%; } }
+
+.footer-widget-area .footer-widget .widget {
+  background-color: transparent;
+  font-size: .875rem; }
+  .footer-widget-area .footer-widget .widget ul,
+  .footer-widget-area .footer-widget .widget li,
+  .footer-widget-area .footer-widget .widget a,
+  .footer-widget-area .footer-widget .widget p {
+    font-size: .875rem; }
+
+.footer-widget-area .footer-widget .widget-title {
+  border-bottom: none;
+  font-size: 1rem;
+  font-style: normal;
+  text-transform: uppercase; }
+
+.site-info-wrapper {
+  padding: 0 0 20px; }
+
+.footer-nav {
+  margin: 50px auto 0; }
+
+.menu-footer-container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  .menu-footer-container ul li {
+    display: inline-block;
+    font-size: .875rem;
+    margin: 0 15px;
+    text-align: center;
+    text-transform: uppercase; }
+    @media only screen and (min-width: 64.063em) {
+      .menu-footer-container ul li {
+        text-align: left; } }
+
+.site-info-wrapper .site-info {
+  overflow: visible; }
+  .site-info-wrapper .site-info .social-menu a {
+    background: none; }
+
+.site-info-text {
+  font-size: .875rem; }
+
+.social-menu {
+  position: relative;
+  top: -20px; }
+
+.widget {
+  padding: 0; }
+  .widget:after {
+    clear: both;
+    content: "";
+    display: block; }
+  .widget .widget-title {
+    font-size: 1.125rem;
+    font-style: normal; }
+
+.widget_rss ul li {
+  padding: 10px 0; }
+  .widget_rss ul li .rss-date {
+    display: inline-block;
+    margin-top: 10px; }
+
+@media only screen and (min-width: 40.063em) {
+  .hentry {
+    padding: 0 15px 0 0; } }
+
+.single .article-wrapper {
+  margin-left: 120px; }
+
+.single .entry-title {
+  font-size: 3rem; }
+
+.single .author-image {
+  float: left;
+  width: 110px; }
+  .single .author-image img {
+    border: 3px solid #e3e3e3;
+    border-radius: 50%;
+    padding: 3px; }
+
+.single .entry-meta {
+  color: #7d8183;
+  font-size: 1.125rem; }
+  .single .entry-meta a {
+    color: #7d8183; }
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+  background: #ececec;
+  border-radius: 5px;
+  color: #7d8183;
+  margin-bottom: 5px; }
+
+::-webkit-input-placeholder,
+:-moz-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder {
+  color: #7d8183; }
+
+label {
+  color: #606365;
+  display: inline-block;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  text-transform: uppercase; }
+
+form p {
+  margin-bottom: 5px; }

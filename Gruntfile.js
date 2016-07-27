@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 				files: {
 					'style.css'        : '.dev/sass/style.scss',
 					'editor-style.css' : '.dev/sass/editor-style.scss',
-					'ie.css'          : '.dev/sass/ie.scss'
+					'ie.css'           : '.dev/sass/ie.scss'
 				}
 			}
 		},

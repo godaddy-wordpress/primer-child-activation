@@ -142,3 +142,77 @@ function update_font_types() {
 	);
 }
 add_action( 'primer_font_types', 'update_font_types' );
+
+/**
+ * Update colors specific to Velux.
+ *
+ * @return array
+ */
+function velux_update_colors() {
+	return array(
+		array(
+			'name'    => 'header_textcolor',
+			'default' => '#ffffff',
+			'css'     => array(
+			),
+		),
+		array(
+			'name'    => 'background_color',
+			'default' => '#ffffff',
+		),
+		array(
+			'name'    => 'menu_background_color',
+			'label'   => __( 'Menu Background Color', 'primer' ),
+			'default' => '#d24343',
+			'css'     => array(
+				'.main-navigation-container, .main-navigation, .main-navigation li a, .main-navigation li.menu-item-has-children ul' => array(
+					'background-color' => '%1$s',
+				),
+				'.main-navigation li a, .main-navigation li a:hover' => array(
+					'color' => '#ffffff',
+				),
+			),
+		),
+		array(
+			'name'    => 'tagline_text_color',
+			'label'   => __( 'Tagline Text Color', 'primer' ),
+			'default' => '#ffffff',
+			'css'     => array(
+				'.site-description' => array(
+					'color' => '%1$s',
+				),
+			),
+		),
+		array(
+			'name'    => 'link_color',
+			'label'   => __( 'Link Color', 'primer' ),
+			'default' => '#3fba73',
+			'css'     => array(
+				'a, a:visited, .entry-footer a, .sticky .entry-title a:before' => array(
+					'color' => '%1$s',
+				),
+				'button, a.button, a.button:hover, a.button, a.button:visited, input[type="button"], input[type="reset"], input[type="submit"], .site-info-wrapper .site-info .social-menu a' => array(
+					'background-color' => '%1$s',
+				),
+			),
+		),
+		array(
+			'name'    => 'main_text_color',
+			'label'   => __( 'Main Text Color', 'primer' ),
+			'default' => '#202223',
+			'css'     => array(
+			),
+		),
+		array(
+			'name'    => 'secondary_text_color',
+			'label'   => __( 'Secondary Text Color', 'primer' ),
+			'default' => '#ffffff',
+			'css'     => array(
+				'.hero-inner h1' => array(
+					'color' => '%1$s',
+				),
+			),
+		),
+	);
+}
+add_action( 'primer_colors', 'velux_update_colors' );

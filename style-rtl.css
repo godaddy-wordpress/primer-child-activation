@@ -42,6 +42,10 @@ Variables
   background: url(".dev/assets/img/header.png") no-repeat center center;
   background-size: cover; }
 
+.site-title-wrapper .site-title a,
+.site-title-wrapper .site-description {
+  color: #ffffff; }
+
 .menu-main-menu-container {
   float: right; }
 
@@ -53,6 +57,8 @@ Variables
   color: #ffffff;
   margin: 16px;
   padding: 8px 0; }
+  .main-navigation li a:hover {
+    background: none; }
 
 .main-navigation li:first-child a {
   margin-right: 0; }

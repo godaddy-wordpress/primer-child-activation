@@ -200,8 +200,7 @@ function velux_update_colors() {
 			'name'    => 'main_text_color',
 			'label'   => __( 'Main Text Color', 'primer' ),
 			'default' => '#202223',
-			'css'     => array(
-			),
+			'css'     => array(),
 		),
 		array(
 			'name'    => 'secondary_text_color',
@@ -216,3 +215,29 @@ function velux_update_colors() {
 	);
 }
 add_action( 'primer_colors', 'velux_update_colors' );
+
+add_filter( 'primer_default_layout', 'one-column-wide' );
+
+/**
+ *
+ * Add custom color schemes for Activation theme.
+ *
+ */
+function activation_color_schemes() {
+	return array(
+		'blue' => array(
+			'label'  => esc_html__( 'Blue', 'activation' ),
+			'colors' => array(
+				'header_textcolor'        => '#ffffff',
+				'background_color'        => '#ffffff',
+				'header_background_color' => '#00b0f1',
+				'tagline_text_color'      => '#ffffff',
+				'menu_background_color'   => '#00b0f1',
+				'link_color'              => '#97d321',
+				'main_text_color'         => '#202223',
+				'secondary_text_color'    => '#ffffff',
+			),
+		),
+	);
+}
+add_filter( 'primer_color_schemes', 'activation_color_schemes' );

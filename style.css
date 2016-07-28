@@ -43,7 +43,8 @@ Variables
   background-size: cover; }
 
 .site-title-wrapper .site-title a,
-.site-title-wrapper .site-description {
+.site-title-wrapper .site-description,
+.site-title-wrapper .site-title a:hover {
   color: #ffffff; }
 
 .menu-main-menu-container {
@@ -180,6 +181,7 @@ p {
     content: "";
     display: block; }
   .widget .widget-title {
+    color: #202223;
     font-size: 1.125rem;
     font-style: normal; }
 

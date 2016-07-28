@@ -40,7 +40,8 @@
 .site-title-wrapper {
 
 	.site-title a,
-	.site-description {
+	.site-description,
+	.site-title a:hover {
 		color: $color-white;
 	}
 

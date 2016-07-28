@@ -265,7 +265,7 @@ function activation_colors() {
 				),
 			);
 }
-add_action( 'primer_colors', 'activation_colors', 10 );
+add_action( 'primer_colors', 'activation_colors', 30 );
 
 add_filter( 'primer_default_layout', 'one-column-wide' );
 
@@ -276,8 +276,8 @@ add_filter( 'primer_default_layout', 'one-column-wide' );
  */
 function activation_color_schemes() {
 	return array(
-		'blue' => array(
-			'label'  => esc_html__( 'Blue', 'activation' ),
+		'default' => array(
+			'label'  => esc_html__( 'Default', 'activation' ),
 			'colors' => array(
 				'header_textcolor'         => '#ffffff',
 				'header_backgroundcolor'   => '#00b0f1',
@@ -290,6 +290,23 @@ function activation_color_schemes() {
 				'w_background_color'	   => '#353535',
 				'footer_textcolor'		   => '#ffffff',
 				'footer_backgroundcolor'   => '#212121',
+
+			),
+		),
+		'blue' => array(
+			'label'  => esc_html__( 'Blue', 'activation' ),
+			'colors' => array(
+				'header_textcolor'         => '#ffffff',
+				'header_backgroundcolor'   => '#d24343',
+				'background_color'         => '#ffffff',
+				'link_color'               => '#3fba73',
+				'main_text_color'          => '#202223',
+				'secondary_text_color'     => '#ffffff',
+				'button_color'			   => '#3fba73',
+				'w_text_color'			   => '#5c6d7c',
+				'w_background_color'	   => '#303d4c',
+				'footer_textcolor'		   => '#ffffff',
+				'footer_backgroundcolor'   => '#2c3845',
 
 			),
 		),

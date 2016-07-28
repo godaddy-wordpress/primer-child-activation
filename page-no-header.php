@@ -2,7 +2,7 @@
 /**
  * The template for displaying no header pages.
  *
- * Template Name: No Header
+ * Template Name: Page Builder (No Header)
  *
  * @package Primer
  * @since 1.0.0

@@ -83,7 +83,7 @@ function activation_theme_hero_content() {
 	<div class="hero-inner">
 		<?php if ( is_front_page() && is_active_sidebar( 'hero' ) ) : ?>
 			<?php dynamic_sidebar( 'hero' ); ?>
-		<?php elseif ( is_page() && is_page_template( 'Page Builder (No Header)' ) ) : ?>
+		<?php elseif ( is_page() && is_page_template( 'page-no-header.php' ) ) : ?>
 			<?php get_template_part( 'templates/parts/loop/page-title-none' ); ?>
 		<?php elseif ( is_page() ) : ?>
 			<?php get_template_part( 'templates/parts/loop/page-title' ); ?>

@@ -1,7 +1,7 @@
 .search-form {
 	border-bottom: 1px solid transparentize($color-white, .8);
 	float: right;
-	margin: 15px 0 0;
+	margin: 20px 0 0;
 
 	label {
 		margin: 0;
@@ -13,6 +13,7 @@
 
 	input[type="search"] {
 		background: none;
+		border: none;
 		color: $color-white;
 		margin: 0;
 		padding: .5rem;

@@ -50,6 +50,11 @@ Variables
 .menu-main-menu-container {
   float: left; }
 
+.main-navigation-container,
+.menu-main-menu-container,
+.main-navigation {
+  background: #d24343; }
+
 .main-navigation li:hover a, .main-navigation li.current-menu-item a, .main-navigation li.current-page-item a {
   border-bottom: 1px solid #ffffff; }
 
@@ -63,6 +68,10 @@ Variables
 
 .main-navigation li:first-child a {
   margin-left: 0; }
+
+.main-navigation .current-menu-item > a,
+.main-navigation a:hover {
+  background: none; }
 
 .search-form {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -124,6 +133,25 @@ p {
   font-size: 1rem;
   line-height: 30px; }
 
+a, .entry-footer a {
+  color: #3fba73; }
+
+button,
+a.button,
+.button,
+.fl-button,
+input[type="submit"] {
+  background: #3fba73; }
+  button:hover,
+  a.button:hover,
+  .button:hover,
+  .fl-button:hover,
+  input[type="submit"]:hover {
+    background: #3fba73; }
+
+.hero-inner h1 {
+  color: #ffffff; }
+
 @media only screen and (min-width: 64.063em) {
   .footer-widget-area .footer-widget {
     width: 33%; } }
@@ -143,32 +171,45 @@ p {
   font-style: normal;
   text-transform: uppercase; }
 
+.footer-nav,
+.site-info-wrapper {
+  background: #2c3845; }
+
 .site-info-wrapper {
   padding: 0 0 20px; }
 
 .footer-nav {
-  margin: 50px auto 0; }
+  margin: 0 auto;
+  padding-top: 30px; }
   .footer-nav ul {
     list-style: none;
     margin: 0;
     padding: 0; }
     .footer-nav ul li {
       display: inline-block;
+      font-family: 'Roboto';
       font-size: .875rem;
-      margin: 0 15px;
+      margin: 0 10px;
       text-align: center;
       text-transform: uppercase; }
       @media only screen and (min-width: 64.063em) {
         .footer-nav ul li {
           text-align: left; } }
+      .footer-nav ul li a {
+        color: #ffffff; }
 
 .site-info-wrapper .site-info {
   overflow: visible; }
   .site-info-wrapper .site-info .social-menu a {
     background: none; }
 
-.site-info-text {
+.site-info-wrapper .site-info-text,
+.site-info-wrapper .site-info-text a {
+  color: #8192a5;
   font-size: .875rem; }
+
+.site-footer {
+  background: #303d4c; }
 
 .social-menu {
   position: relative;

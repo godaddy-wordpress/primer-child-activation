@@ -2,6 +2,12 @@
 	float: left;
 }
 
+.main-navigation-container,
+.menu-main-menu-container,
+.main-navigation {
+	background: $color-red;
+}
+
 .main-navigation {
 
 	li {
@@ -17,7 +23,6 @@
 		}
 
 		a {
-
 			border-bottom: 1px solid transparent;
 			color: $color-white;
 			margin: 16px;
@@ -39,4 +44,9 @@
 
 	}
 
+}
+
+.main-navigation .current-menu-item > a,
+.main-navigation a:hover {
+	background: none;
 }

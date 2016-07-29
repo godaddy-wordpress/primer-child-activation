@@ -34,13 +34,28 @@ p {
 	line-height: 30px;
 }
 
-a {
-
+a, .entry-footer a {
+	color: $color-button;
 }
 
 button,
-button,
-fl-button {
+a.button,
+.button,
+.fl-button,
+input[type="submit"] {
+	background: $color-button;
+
+	&:hover {
+		background: $color-button;
+	}
+
+}
+
+.hero-inner {
+
+	h1 {
+		color: $color-white;
+	}
 
 }
 

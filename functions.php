@@ -302,4 +302,7 @@ add_filter( 'primer_color_schemes', 'activation_color_schemes' );
  * Adds a default layout.
  *
  */
-add_filter( 'primer_default_layout', 'one-column-wide' );
+function activation_default_layout() {
+	return 'one-column-wide';
+}
+add_filter( 'primer_default_layout', 'activation_default_layout' );

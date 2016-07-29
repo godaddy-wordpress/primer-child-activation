@@ -170,7 +170,7 @@ function activation_colors() {
 					'label'   => __( 'Header Background Color', 'primer' ),
 					'default' => '#d24343',
 					'css'     => array(
-						'.side-masthead, header .main-navigation-container .menu li.menu-item-has-children:hover > ul' => array(
+						'.side-masthead, header .main-navigation-container .menu li.menu-item-has-children:hover > ul, .main-navigation-container, .menu-main-menu-container, .main-navigation' => array(
 							'background-color' => '%1$s',
 						),
 					),
@@ -265,9 +265,9 @@ function activation_colors() {
 				),
 			);
 }
-add_action( 'primer_colors', 'activation_colors', 30 );
+add_filter( 'primer_colors', 'activation_colors', 30 );
 
-add_filter( 'primer_default_layout', 'one-column-wide' );
+
 
 /**
  *
@@ -276,8 +276,8 @@ add_filter( 'primer_default_layout', 'one-column-wide' );
  */
 function activation_color_schemes() {
 	return array(
-		'default' => array(
-			'label'  => esc_html__( 'Default', 'activation' ),
+		'blue' => array(
+			'label'  => esc_html__( 'Blue', 'activation' ),
 			'colors' => array(
 				'header_textcolor'         => '#ffffff',
 				'header_backgroundcolor'   => '#00b0f1',
@@ -293,23 +293,13 @@ function activation_color_schemes() {
 
 			),
 		),
-		'blue' => array(
-			'label'  => esc_html__( 'Blue', 'activation' ),
-			'colors' => array(
-				'header_textcolor'         => '#ffffff',
-				'header_backgroundcolor'   => '#d24343',
-				'background_color'         => '#ffffff',
-				'link_color'               => '#3fba73',
-				'main_text_color'          => '#202223',
-				'secondary_text_color'     => '#ffffff',
-				'button_color'			   => '#3fba73',
-				'w_text_color'			   => '#5c6d7c',
-				'w_background_color'	   => '#303d4c',
-				'footer_textcolor'		   => '#ffffff',
-				'footer_backgroundcolor'   => '#2c3845',
-
-			),
-		),
 	);
 }
 add_filter( 'primer_color_schemes', 'activation_color_schemes' );
+
+/**
+ *
+ * Adds a default layout.
+ *
+ */
+add_filter( 'primer_default_layout', 'one-column-wide' );

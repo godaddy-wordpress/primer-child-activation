@@ -34,12 +34,18 @@
 
 }
 
+.footer-nav,
+.site-info-wrapper {
+	background: $color-footer-bg;
+}
+
 .site-info-wrapper {
 	padding: 0 0 20px;
 }
 
 .footer-nav {
-	margin: 50px auto 0;
+	margin: 0 auto;
+	padding-top: 30px;
 
 	ul {
 		list-style: none;
@@ -48,8 +54,9 @@
 
 		li {
 			display: inline-block;
+			font-family: 'Roboto';
 			font-size: .875rem;
-			margin: 0 15px;
+			margin: 0 10px;
 			text-align: center;
 			text-transform: uppercase;
 
@@ -58,7 +65,7 @@
 			}
 
 			a {
-
+				color: $color-white;
 			}
 
 		}
@@ -82,10 +89,16 @@
 
 	}
 
+	.site-info-text,
+	.site-info-text a {
+		color: $color-footer-text;
+		font-size: .875rem;
+	}
+
 }
 
-.site-info-text {
-	font-size: .875rem;
+.site-footer {
+	background: $color-footer-widget-bg;
 }
 
 .social-menu {

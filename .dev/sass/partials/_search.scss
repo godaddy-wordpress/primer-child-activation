@@ -3,6 +3,11 @@
 	float: right;
 	margin: 20px 0 0;
 
+	.site-footer & {
+		display: inline-block;
+		float: none;
+	}
+
 	label {
 		margin: 0;
 	}

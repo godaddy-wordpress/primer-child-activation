@@ -83,6 +83,8 @@ function activation_theme_hero_content() {
 	<div class="hero-inner">
 		<?php if ( is_front_page() && is_active_sidebar( 'hero' ) ) : ?>
 			<?php dynamic_sidebar( 'hero' ); ?>
+		<?php elseif ( is_page() && is_page_template( 'page-no-header.php' ) ) : ?>
+			<?php get_template_part( 'templates/parts/loop/page-title-none' ); ?>
 		<?php elseif ( is_page() ) : ?>
 			<?php get_template_part( 'templates/parts/loop/page-title' ); ?>
 		<?php elseif ( is_search() ) : ?>
@@ -134,7 +136,7 @@ function update_font_types() {
 			'label'   => __( 'Secondary Font', 'primer' ),
 			'default' => 'Lato',
 			'css'     => array(
-				'h1, h2, h3, h4, h5, h6, label, legend, table th, .site-title, .entry-title, .widget-title, .main-navigation li a, button, a.button, input[type="button"], input[type="reset"], input[type="submit"], blockquote, .entry-meta, .entry-footer, .comment-list li .comment-meta .says, .comment-list li .comment-metadata, .comment-reply-link, #respond .logged-in-as, .fl-callout-text, .site-title, .hero-wrapper .textwidget h1, .hero-wrapper .textwidget .button, .main-navigation li a, .widget-title, .menu-footer li a, h1, h2, h3, h4, h5, .entry-title, .single .entry-meta, ' => array(
+				'h1, h2, h3, h4, h5, h6, label, legend, table th, .site-title, .entry-title, .widget-title, .main-navigation li a, button, a.button, input[type="button"], input[type="reset"], input[type="submit"], blockquote, .entry-meta, .entry-footer, .comment-list li .comment-meta .says, .comment-list li .comment-metadata, .comment-reply-link, #respond .logged-in-as, .fl-callout-text, .site-title, .hero-wrapper .textwidget h1, .hero-wrapper .textwidget .button, .main-navigation li a, .widget-title, .footer-nav ul li a, h1, h2, h3, h4, h5, .entry-title, .single .entry-meta, ' => array(
 					'font-family' => '"%s", sans-serif',
 				),
 			),
@@ -142,3 +144,172 @@ function update_font_types() {
 	);
 }
 add_action( 'primer_font_types', 'update_font_types' );
+
+/**
+ * Update colors
+ *
+ * @action primer_colors
+ */
+function activation_colors() {
+	return array(
+				array(
+					'name'    => 'header_textcolor',
+					'default' => '#fff',
+					'css'     => array(
+						'.side-masthead .site-description, .hero-widget, header .main-navigation-container .menu li a, .main-navigation-container .menu li.current-menu-item > a, .main-navigation-container .menu li.current-menu-item > a:hover, .side-masthead .site-title a, .side-masthead .site-title a:hover, .hero-widget h2.widget-title' => array(
+							'color' => '%1$s',
+						),
+					),
+				),
+				array(
+					'name'    => 'background_color',
+					'default' => '#fff',
+				),
+				array(
+					'name'    => 'header_backgroundcolor',
+					'label'   => __( 'Header Background Color', 'primer' ),
+					'default' => '#d24343',
+					'css'     => array(
+						'.side-masthead, header .main-navigation-container .menu li.menu-item-has-children:hover > ul' => array(
+							'background-color' => '%1$s',
+						),
+					),
+				),
+				array(
+					'name'    => 'link_color',
+					'label'   => __( 'Link Color', 'primer' ),
+					'default' => '#3fba73',
+					'css'     => array(
+						'a, a:visited, .entry-footer a, .sticky .entry-title a:before' => array(
+							'color' => '%1$s',
+						),
+					),
+					'rgba_css' => array(
+						'a:hover, a:visited:hover, .entry-footer a:hover' => array(
+							'color' => 'rgba(%1$s, 0.75)',
+						),
+						'button:hover, a.button:hover, a.button:visited:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .site-info-wrapper:hover .site-info:hover .social-menu a:hover' => array(
+							'background-color' => 'rgba(%1$s, 0.75)',
+						),
+					),
+				),
+				array(
+					'name'    => 'main_text_color',
+					'label'   => __( 'Main Text Color', 'primer' ),
+					'default' => '#212121',
+					'css'     => array(
+						'.site-content, .site-content h1, .site-content h2, .site-content h3, .site-content h4, .site-content h5, .site-content h6, .site-content p, .site-content blockquote, legend' => array(
+							'color' => '%1$s',
+						),
+					),
+				),
+				array(
+					'name'    => 'secondary_text_color',
+					'label'   => __( 'Secondary Text Color', 'primer' ),
+					'default' => '#999999',
+					'css'     => array(
+						'.side-masthead .social-menu a, .entry-meta li, .side-masthead .social-menu a:hover' => array(
+							'color' => '%1$s',
+						),
+					),
+				),
+				array(
+					'name'    => 'button_color',
+					'label'   => __( 'Button Color', 'primer' ),
+					'default' => '#3fba73',
+					'css'     => array(
+						'.cta, button, a.button, a.button:visited, input[type="button"], input[type="reset"], input[type="submit"], .fl-button' => array(
+							'background-color' => '%1$s',
+						),
+					),
+				),
+				array(
+					'name'    => 'w_text_color',
+					'label'   => __( 'Widget Text Color', 'primer' ),
+					'default' => '#c5c3c6',
+					'css'     => array(
+						'.footer-widget-area, .footer-widget .widget-title, .site-footer, .footer-widget-area .footer-widget .widget, .footer-widget-area .footer-widget .widget-title' => array(
+							'color' => '%1$s',
+						),
+					),
+				),
+				array(
+					'name'    => 'w_background_color',
+					'label'   => __( 'Widget Background Color', 'primer' ),
+					'default' => '#353535',
+					'css'     => array(
+						'.site-footer' => array(
+							'background-color' => '%1$s',
+						),
+					),
+				),
+				array(
+					'name'    => 'footer_textcolor',
+					'label'   => __( 'Footer Text Color', 'primer' ),
+					'default' => '#fff',
+					'css'     => array(
+						'.site-info-wrapper a, .site-info .social-menu a' => array(
+							'color' => '%1$s',
+						),
+					),
+				),
+				array(
+					'name'    => 'footer_backgroundcolor',
+					'label'   => __( 'Footer Background Color', 'primer' ),
+					'default' => '#212121',
+					'css'     => array(
+						'.site-info-wrapper' => array(
+							'background-color' => '%1$s',
+						),
+					),
+				),
+			);
+}
+add_action( 'primer_colors', 'activation_colors', 30 );
+
+add_filter( 'primer_default_layout', 'one-column-wide' );
+
+/**
+ *
+ * Add custom color schemes for Activation theme.
+ *
+ */
+function activation_color_schemes() {
+	return array(
+		'default' => array(
+			'label'  => esc_html__( 'Default', 'activation' ),
+			'colors' => array(
+				'header_textcolor'         => '#ffffff',
+				'header_backgroundcolor'   => '#00b0f1',
+				'background_color'         => '#ffffff',
+				'link_color'               => '#97d321',
+				'main_text_color'          => '#202223',
+				'secondary_text_color'     => '#ffffff',
+				'button_color'			   => '#97d321',
+				'w_text_color'			   => '#c5c3c6',
+				'w_background_color'	   => '#353535',
+				'footer_textcolor'		   => '#ffffff',
+				'footer_backgroundcolor'   => '#212121',
+
+			),
+		),
+		'blue' => array(
+			'label'  => esc_html__( 'Blue', 'activation' ),
+			'colors' => array(
+				'header_textcolor'         => '#ffffff',
+				'header_backgroundcolor'   => '#d24343',
+				'background_color'         => '#ffffff',
+				'link_color'               => '#3fba73',
+				'main_text_color'          => '#202223',
+				'secondary_text_color'     => '#ffffff',
+				'button_color'			   => '#3fba73',
+				'w_text_color'			   => '#5c6d7c',
+				'w_background_color'	   => '#303d4c',
+				'footer_textcolor'		   => '#ffffff',
+				'footer_backgroundcolor'   => '#2c3845',
+
+			),
+		),
+	);
+}
+add_filter( 'primer_color_schemes', 'activation_color_schemes' );

@@ -31,3 +31,18 @@
 	}
 
 }
+
+.site-header {
+	background: url('.dev/assets/img/header.png') no-repeat center center;
+	background-size: cover;
+}
+
+.site-title-wrapper {
+
+	.site-title a,
+	.site-description,
+	.site-title a:hover {
+		color: $color-white;
+	}
+
+}

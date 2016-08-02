@@ -9,10 +9,14 @@
 
 }
 
-.main-navigation-container {
-	position: absolute;
-	top: 0;
-	z-index: 999;
+@media only screen and (max-width: 61.063em) {
+
+	.main-navigation-container {
+		position: absolute;
+		top: 0;
+		z-index: 999;
+	}
+
 }
 
 .main-navigation-container,

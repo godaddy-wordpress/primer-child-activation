@@ -85,10 +85,11 @@ Variables
   margin-right: 0;
   width: auto; }
 
-.main-navigation-container {
-  position: absolute;
-  top: 0;
-  z-index: 999; }
+@media only screen and (max-width: 61.063em) {
+  .main-navigation-container {
+    position: absolute;
+    top: 0;
+    z-index: 999; } }
 
 .main-navigation-container,
 .menu-main-menu-container,
@@ -267,7 +268,8 @@ input[type="submit"]:not(.search-submit) {
         color: #ffffff; }
 
 .site-info-wrapper .site-info {
-  overflow: visible; }
+  overflow: visible;
+  padding: 0 20px; }
   .site-info-wrapper .site-info .social-menu a {
     background: none; }
 

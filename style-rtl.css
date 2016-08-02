@@ -89,7 +89,9 @@ Variables
   .main-navigation-container {
     position: absolute;
     top: 0;
-    z-index: 999; } }
+    z-index: 999; }
+    .admin-bar .main-navigation-container {
+      top: 32px; } }
 
 .main-navigation-container,
 .menu-main-menu-container,

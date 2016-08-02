@@ -16,8 +16,7 @@ add_action( 'wp_enqueue_scripts', 'activation_theme_enqueue_styles' );
  * Remove primer navigation and add lyrical navigation
  */
 function lyrical_navigation() {
-	wp_dequeue_script( 'primer-navigation' );
-	wp_enqueue_script( 'lyrical-navigation', get_stylesheet_directory_uri() . '/assets/js/navigation.js', array( 'jquery' ), '20120206', true );
+
 }
 add_action( 'wp_print_scripts', 'lyrical_navigation', 100 );
 

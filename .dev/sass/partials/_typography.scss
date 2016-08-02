@@ -41,9 +41,10 @@ a, .entry-footer a {
 button,
 a.button,
 .button,
-.fl-button,
-input[type="submit"] {
+a.fl-button,
+input[type="submit"]:not(.search-submit) {
 	background: $color-button;
+	border: none;
 
 	&:hover {
 		background: $color-button;

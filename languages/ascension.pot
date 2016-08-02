@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: basis-pro 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-29 14:31-0400\n"
+"POT-Creation-Date: 2016-08-01 21:31-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,73 +18,73 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: functions.php:19
+#: functions.php:30
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:30
+#: functions.php:41
 msgid "Hero"
 msgstr ""
 
-#: functions.php:32
+#: functions.php:43
 msgid "The Hero widget area."
 msgstr ""
 
-#: functions.php:92
+#: functions.php:108
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
-#: functions.php:95
+#: functions.php:111
 msgid "Blog"
 msgstr ""
 
-#: functions.php:126
+#: functions.php:142
 msgid "Primary Font"
 msgstr ""
 
-#: functions.php:136
+#: functions.php:152
 msgid "Secondary Font"
 msgstr ""
 
-#: functions.php:170
+#: functions.php:186
 msgid "Header Background Color"
 msgstr ""
 
-#: functions.php:180
+#: functions.php:196
 msgid "Link Color"
 msgstr ""
 
-#: functions.php:198
+#: functions.php:206
 msgid "Main Text Color"
 msgstr ""
 
-#: functions.php:208
+#: functions.php:216
 msgid "Secondary Text Color"
 msgstr ""
 
-#: functions.php:218
+#: functions.php:226
 msgid "Button Color"
 msgstr ""
 
-#: functions.php:228
+#: functions.php:236
 msgid "Widget Text Color"
 msgstr ""
 
-#: functions.php:238
+#: functions.php:246
 msgid "Widget Background Color"
 msgstr ""
 
-#: functions.php:248
+#: functions.php:256
 msgid "Footer Text Color"
 msgstr ""
 
-#: functions.php:258
+#: functions.php:266
 msgid "Footer Background Color"
 msgstr ""
 
-#: functions.php:280
-msgid "Blue"
+#: functions.php:288
+msgid "Blue and Green"
 msgstr ""
 
 #. //developer.wordpress.org/themes/template-files-section/partial-and-miscellaneous-template-files/#header-php

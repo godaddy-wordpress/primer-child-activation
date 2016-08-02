@@ -1,5 +1,5 @@
 .hero-wrapper {
-	padding: 50px 0 100px;
+	padding: 0 0 100px;
 
 	.widget {
 		background: none;
@@ -11,6 +11,7 @@
 		h1 {
 			color: $color-white;
 			font-size: 48px;
+			font-weight: 100;
 			line-height: 58px;
 		}
 
@@ -25,7 +26,26 @@
 		.fl-button {
 			font-size: 18px;
 			font-weight: 400;
-			padding: 1.25rem;
+			padding: 1.25rem 2rem;
+		}
+
+		@media only screen and (max-width: 64.063em) {
+
+			h1 {
+				font-size: 2rem;
+				line-height: 2.5rem;
+			}
+
+			p {
+				font-size: 1rem
+			}
+
+			a.button,
+			button,
+			a.fl-button {
+				font-size: 1rem;
+			}
+
 		}
 
 	}
@@ -38,11 +58,37 @@
 }
 
 .site-title-wrapper {
+	margin-left: 0;
+	margin-right: 0;
+	padding: 7% 0;
+	width: auto;
+
+	@media only screen and (max-width: 64.062em) {
+		float: none;
+	}
 
 	.site-title a,
 	.site-description,
 	.site-title a:hover {
 		color: $color-white;
+	}
+
+}
+
+.row,
+.footer-widget-area {
+	padding-left: 25px;
+	padding-right: 25px;
+	width: 100%;
+}
+
+@media only screen and (min-width: 64.063em) {
+
+	.row,
+	.footer-widget-area {
+		max-width: 1100px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 }

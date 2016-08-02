@@ -19,13 +19,14 @@ This theme, like WordPress, is licensed under the GPL.
 Variables
 --------------------------------------------------------------*/
 .hero-wrapper {
-  padding: 50px 0 100px; }
+  padding: 0 0 100px; }
   .hero-wrapper .widget {
     background: none;
     padding: 0; }
   .hero-wrapper .textwidget h1 {
     color: #ffffff;
     font-size: 48px;
+    font-weight: 100;
     line-height: 58px; }
   .hero-wrapper .textwidget p {
     color: #ffffff;
@@ -36,23 +37,63 @@ Variables
   .hero-wrapper .textwidget .fl-button {
     font-size: 18px;
     font-weight: 400;
-    padding: 1.25rem; }
+    padding: 1.25rem 2rem; }
+  @media only screen and (max-width: 64.063em) {
+    .hero-wrapper .textwidget h1 {
+      font-size: 2rem;
+      line-height: 2.5rem; }
+    .hero-wrapper .textwidget p {
+      font-size: 1rem; }
+    .hero-wrapper .textwidget a.button,
+    .hero-wrapper .textwidget button,
+    .hero-wrapper .textwidget a.fl-button {
+      font-size: 1rem; } }
 
 .site-header {
   background: url(".dev/assets/img/header.png") no-repeat center center;
   background-size: cover; }
 
-.site-title-wrapper .site-title a,
-.site-title-wrapper .site-description,
-.site-title-wrapper .site-title a:hover {
-  color: #ffffff; }
+.site-title-wrapper {
+  margin-right: 0;
+  margin-left: 0;
+  padding: 7% 0;
+  width: auto; }
+  @media only screen and (max-width: 64.062em) {
+    .site-title-wrapper {
+      float: none; } }
+  .site-title-wrapper .site-title a,
+  .site-title-wrapper .site-description,
+  .site-title-wrapper .site-title a:hover {
+    color: #ffffff; }
 
-.menu-main-menu-container {
-  float: right; }
+.row,
+.footer-widget-area {
+  padding-right: 25px;
+  padding-left: 25px;
+  width: 100%; }
+
+@media only screen and (min-width: 64.063em) {
+  .row,
+  .footer-widget-area {
+    max-width: 1100px;
+    margin-right: auto;
+    margin-left: auto; } }
+
+.main-navigation .menu-main-menu-container {
+  float: right;
+  margin-right: 0;
+  margin-left: 0;
+  width: auto; }
+
+.main-navigation-container {
+  position: absolute;
+  top: 0;
+  z-index: 999; }
 
 .main-navigation-container,
 .menu-main-menu-container,
-.main-navigation {
+.main-navigation,
+.main-navigation .sub-menu {
   background: #d24343; }
 
 .main-navigation li:hover a, .main-navigation li.current-menu-item a, .main-navigation li.current-page-item a {
@@ -66,6 +107,14 @@ Variables
   .main-navigation li a:hover {
     background: none; }
 
+.main-navigation li .sub-menu li a {
+  border-bottom: 1px solid transparent;
+  margin-right: 16px; }
+
+.main-navigation li .sub-menu li:hover a, .main-navigation li .sub-menu li.current-menu-item a, .main-navigation li .sub-menu li.current-page-item a {
+  border-bottom: 1px solid transparent;
+  margin-right: 16px; }
+
 .main-navigation li:first-child a {
   margin-right: 0; }
 
@@ -73,10 +122,18 @@ Variables
 .main-navigation a:hover {
   background: none; }
 
+@media only screen and (max-width: 61.063em) {
+  .menu-toggle {
+    display: block;
+    padding: 0 0 18px 9px; }
+    .menu-toggle div {
+      margin-right: 0;
+      margin-left: 0.86rem; } }
+
 .search-form {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   float: left;
-  margin: 20px 0 0; }
+  margin: 16px 0 0; }
   .site-footer .search-form {
     display: inline-block;
     float: none; }
@@ -142,14 +199,15 @@ a, .entry-footer a {
 button,
 a.button,
 .button,
-.fl-button,
-input[type="submit"] {
-  background: #3fba73; }
+a.fl-button,
+input[type="submit"]:not(.search-submit) {
+  background: #3fba73;
+  border: none; }
   button:hover,
   a.button:hover,
   .button:hover,
-  .fl-button:hover,
-  input[type="submit"]:hover {
+  a.fl-button:hover,
+  input[type="submit"]:not(.search-submit):hover {
     background: #3fba73; }
 
 .hero-inner h1 {
@@ -167,6 +225,8 @@ input[type="submit"] {
   .footer-widget-area .footer-widget .widget a,
   .footer-widget-area .footer-widget .widget p {
     font-size: .875rem; }
+  .footer-widget-area .footer-widget .widget a {
+    color: #3fba73; }
 
 .footer-widget-area .footer-widget .widget-title {
   border-bottom: none;
@@ -187,11 +247,16 @@ input[type="submit"] {
   .footer-nav ul {
     list-style: none;
     margin: 0;
-    padding: 0; }
+    padding: 0;
+    text-align: center; }
+    @media only screen and (min-width: 64.063em) {
+      .footer-nav ul {
+        text-align: right; } }
     .footer-nav ul li {
       display: inline-block;
       font-family: 'Roboto';
       font-size: .875rem;
+      font-weight: 600;
       margin: 0 10px;
       text-align: center;
       text-transform: uppercase; }
@@ -214,9 +279,10 @@ input[type="submit"] {
 .site-footer {
   background: #303d4c; }
 
-.social-menu {
-  position: relative;
-  top: -20px; }
+@media only screen and (min-width: 64.063em) {
+  .social-menu {
+    position: relative;
+    top: -20px; } }
 
 .widget {
   padding: 0; }

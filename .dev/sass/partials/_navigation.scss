@@ -9,7 +9,7 @@
 
 }
 
-@media only screen and (max-width: 61.063em) {
+@media only screen and (max-width: 568px) {
 
 	.main-navigation-container {
 		left: 0;
@@ -35,13 +35,17 @@
 
 .main-navigation {
 
-	@media only screen and (max-width: 61.063em) {
+	@media only screen and (max-width: 568px) {
 		padding-top: 75px;
 	}
 
 	li {
+		font-size: .875rem;
+		line-height: 0;
+		padding: 10px 0 6px;
 
-		@media only screen and (max-width: 61.063em) {
+
+		@media only screen and (max-width: 568px) {
 			font-size: 1.25rem;
 		}
 
@@ -51,6 +55,7 @@
 
 			a {
 				border-bottom: 1px solid $color-white;
+				padding-bottom: 15px;
 			}
 
 		}
@@ -91,7 +96,7 @@
 
 		}
 
-		@media only screen and (min-width: 61.064em) {
+		@media only screen and (min-width: 569) {
 
 			&:first-child {
 
@@ -112,7 +117,11 @@
 	background: none;
 }
 
-@media only screen and (max-width: 61.063em) {
+.menu-toggle {
+	display: none;
+}
+
+@media only screen and (max-width: 568px) {
 
 	.menu-toggle {
 		display: block;

@@ -3,7 +3,7 @@
 	float: right;
 	margin: 16px 0 0;
 
-	@media only screen and (max-width: 61.063em) {
+	@media only screen and (max-width: 568px) {
 		left: 15px;
 		position: absolute;
 		top: 15px;
@@ -25,13 +25,17 @@
 	input[type="search"] {
 		background: none;
 		border: none;
+		bottom: -4px;
 		color: $color-white;
+		font-size: 14px;
 		margin: 0;
-		padding: .5rem;
+		padding: 0;
+		position: relative;
 	}
 
 	input[type="submit"] {
-		background: transparent url('.dev/assets/img/search-icon.png') no-repeat;
+		background: transparent url('.dev/assets/img/search-icon.png') no-repeat center bottom;
+		background-size: 13px;
 		display: inline-block;
 		height: 21px;
 		text-indent: -9999px;
@@ -39,20 +43,12 @@
 		width: 21px;
 	}
 
-	::-webkit-input-placeholder {
-	   color: $color-white;
-	}
-
-	:-moz-placeholder { /* Firefox 18- */
-	   color: $color-white;
-	}
-
-	::-moz-placeholder {  /* Firefox 19+ */
-	   color: $color-white;
-	}
-
+	::-webkit-input-placeholder,
+	:-moz-placeholder,
+	::-moz-placeholder,
 	:-ms-input-placeholder {
 	   color: $color-white;
+	   font-size: 8px;
 	}
 
 }

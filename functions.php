@@ -1,8 +1,8 @@
 <?php
 /**
- *
  * Add child and parent theme files.
  *
+ * @since 1.0.0
  */
 function activation_theme_enqueue_styles() {
 	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
@@ -12,18 +12,11 @@ function activation_theme_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'activation_theme_enqueue_styles' );
 
-/**
- * Remove primer navigation and add lyrical navigation
- */
-function lyrical_navigation() {
-
-}
-add_action( 'wp_print_scripts', 'lyrical_navigation', 100 );
 
 /**
- *
  * Register Footer Menu.
  *
+ * @since 1.0.0
  */
 function activation_theme_register_nav_menu() {
 	 register_nav_menu( 'footer', __( 'Footer Menu', 'activation' ) );
@@ -31,26 +24,29 @@ function activation_theme_register_nav_menu() {
 add_action( 'after_setup_theme', 'activation_theme_register_nav_menu' );
 
 /**
- *
  * Register Hero Widget.
  *
+ * @since 1.0.0
  */
-register_sidebar(
-	array(
-		'name'          => esc_html__( 'Hero', 'activation' ),
-		'id'            => 'hero',
-		'description'   => esc_html__( 'The Hero widget area.', 'primer' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h6 class="widget-title">',
-		'after_title'   => '</h6>',
-	)
-);
+function activation_hero_sidebar_init(){
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Hero', 'activation' ),
+			'id'            => 'hero',
+			'description'   => esc_html__( 'The Hero widget area.', 'primer' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h6 class="widget-title">',
+			'after_title'   => '</h6>',
+		)
+	);
+}
+add_action( 'widgets_init', 'activation_hero_sidebar_init' );
 
 /**
- *
  * Adding content to footer via action.
  *
+ * @since 1.0.0
  */
 function activation_theme_footer_content() {
 	return;
@@ -59,6 +55,8 @@ add_action( 'primer_footer', 'activation_theme_footer_content' );
 
 /**
  * Returns the featured image, custom header or false in this priority order.
+ *
+ * @since 1.0.0
  *
  * @return false|string
  */
@@ -83,43 +81,9 @@ function primer_get_custom_header() {
 }
 
 /**
- *
- * Adding hero content to theme header.
- *
- */
-function activation_theme_hero_content() {
-?>
-<div class="menu-toggle" id="menu-toggle">
-	<div></div>
-	<div></div>
-	<div></div>
-</div>
-<div class="hero-wrapper<?php if ( is_front_page() && is_active_sidebar( 'hero' ) ) : ?> home<?php endif; ?>">
-	<div class="hero-inner">
-		<?php if ( is_front_page() && is_active_sidebar( 'hero' ) ) : ?>
-			<?php dynamic_sidebar( 'hero' ); ?>
-		<?php elseif ( is_page() && is_page_template( 'page-no-header.php' ) ) : ?>
-			<?php get_template_part( 'templates/parts/loop/page-title-none' ); ?>
-		<?php elseif ( is_page() ) : ?>
-			<?php get_template_part( 'templates/parts/loop/page-title' ); ?>
-		<?php elseif ( is_search() ) : ?>
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'activation' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
-		<?php elseif ( get_post_type() == 'post' ) : ?>
-			<h1><?php esc_html_e( 'Blog', 'activation' ); ?></h1>
-		<?php endif; ?>
-	</div>
-</div>
-<?php }
-add_action( 'primer_header', 'activation_theme_hero_content' );
-
-/**
  * Display the footer nav before the site info.
  *
- * @action primer_after_footer
- *
- * @since 1.0.0
+ * @since  1.0.0
  */
 function activation_add_nav_footer() {
 
@@ -129,7 +93,6 @@ function activation_add_nav_footer() {
 add_action( 'primer_after_footer', 'activation_add_nav_footer', 10 );
 
 /**
- *
  * Add selectors for font customizing.
  *
  * @since 1.0.0
@@ -163,7 +126,7 @@ add_action( 'primer_font_types', 'update_font_types' );
 /**
  * Update colors
  *
- * @action primer_colors
+ * @since 1.0.0
  */
 function activation_colors() {
 	return array(
@@ -277,8 +240,8 @@ add_action( 'primer_colors', 'activation_colors', 9 );
 /**
  * Change Activation color schemes
  *
- * @action primer_color_schemes
  * @since 1.0.0
+ *
  * @return array
  */
 function activation_color_schemes() {

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: basis-pro 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-02 12:06-0400\n"
+"POT-Creation-Date: 2016-08-03 21:04-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,78 +18,69 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: functions.php:29
+#: functions.php:22
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:40
+#: functions.php:34
 msgid "Hero"
 msgstr ""
 
-#: functions.php:42
+#: functions.php:36
 msgid "The Hero widget area."
 msgstr ""
 
-#: functions.php:107
-#, php-format
-msgid "Search Results for: %s"
-msgstr ""
-
-#: functions.php:110
-msgid "Blog"
-msgstr ""
-
-#: functions.php:141
+#: functions.php:104
 msgid "Primary Font"
 msgstr ""
 
-#: functions.php:151
+#: functions.php:114
 msgid "Secondary Font"
 msgstr ""
 
-#: functions.php:185
+#: functions.php:148
 msgid "Header Background Color"
 msgstr ""
 
-#: functions.php:195
+#: functions.php:158
 msgid "Link Color"
 msgstr ""
 
-#: functions.php:205
+#: functions.php:168
 msgid "Main Text Color"
 msgstr ""
 
-#: functions.php:215
+#: functions.php:178
 msgid "Secondary Text Color"
 msgstr ""
 
-#: functions.php:225
+#: functions.php:188
 msgid "Button Color"
 msgstr ""
 
-#: functions.php:235
+#: functions.php:198
 msgid "Widget Text Color"
 msgstr ""
 
-#: functions.php:245
+#: functions.php:208
 msgid "Widget Background Color"
 msgstr ""
 
-#: functions.php:255
+#: functions.php:218
 msgid "Footer Text Color"
 msgstr ""
 
-#: functions.php:265
+#: functions.php:228
 msgid "Footer Background Color"
 msgstr ""
 
-#: functions.php:287
+#: functions.php:250
 msgid "Blue and Green"
 msgstr ""
 
 #. //developer.wordpress.org/themes/template-files-section/partial-and-miscellaneous-template-files/#header-php
 #. *
-#. * @package Primer
+#. * @package Activation
 #.
 #: header.php:35
 msgid "Skip to content"
@@ -115,12 +106,16 @@ msgstr[1] ""
 msgid "yyyy-mm-dd"
 msgstr ""
 
-#: searchform.php:3 searchform.php:4
+#. /nav area of the theme.
+#. *
+#. * @package Activation
+#.
+#: searchform.php:12 searchform.php:13
 msgctxt "activation"
 msgid "Search for:"
 msgstr ""
 
-#: searchform.php:4 searchform.php:6
+#: searchform.php:13 searchform.php:15
 msgctxt "activation"
 msgid "Search"
 msgstr ""

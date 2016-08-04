@@ -55,7 +55,6 @@ Variables
       font-size: 1rem; } }
 
 .site-header {
-  background: url(".dev/assets/img/header.png") no-repeat center center;
   background-size: cover; }
 
 .site-title-wrapper {

@@ -244,6 +244,12 @@ input[type="submit"]:not(.search-submit) {
 .hero-inner h1 {
   color: #ffffff; }
 
+.single .entry-title a,
+.archive .entry-title a,
+.archive .entry-title a:hover,
+.single .entry-title a:hover {
+  color: #202223; }
+
 @media only screen and (min-width: 568px) {
   .footer-widget-area .footer-widget {
     width: 33%; } }

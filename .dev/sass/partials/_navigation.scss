@@ -2,14 +2,14 @@
 
 	.menu-main-menu-container {
 		float: left;
-		margin-left: 0;
+		margin-left: 30px;
 		margin-right: 0;
 		width: auto;
 	}
 
 }
 
-@media only screen and (max-width: 568px) {
+@media only screen and (max-width: 63em) {
 
 	.main-navigation-container {
 		left: 0;
@@ -24,6 +24,11 @@
 
 	}
 
+	.main-navigation .menu-main-menu-container{
+		position: relative;
+		float: none;
+	}
+
 }
 
 .main-navigation-container,
@@ -35,7 +40,7 @@
 
 .main-navigation {
 
-	@media only screen and (max-width: 568px) {
+	@media only screen and (max-width: 63em) {
 		padding-top: 75px;
 	}
 
@@ -45,7 +50,7 @@
 		padding: 10px 0 6px;
 
 
-		@media only screen and (max-width: 568px) {
+		@media only screen and (max-width: 63em) {
 			font-size: 1.25rem;
 		}
 
@@ -96,7 +101,7 @@
 
 		}
 
-		@media only screen and (min-width: 569) {
+		@media only screen and (min-width: 63em) {
 
 			&:first-child {
 
@@ -119,24 +124,32 @@
 
 .menu-toggle {
 	display: none;
-}
+	top: 25px;
 
-@media only screen and (max-width: 568px) {
+	@media only screen and (max-width: 63em) {
 
-	.menu-toggle {
 		display: block;
 		right: 5px;
 		padding: 0 9px 24px 0;
 		position: absolute;
-		top: 30px;
+		top: 42px;
 		z-index: 9999;
+
+		.admin-bar &{
+			top: 48px;
+		}
 
 		div {
 			height: 0.45rem;
 			margin-left: 0;
 			margin-right: 0.86rem;
 		}
-
 	}
 
+	@media only screen and (max-width: 768px) {
+		.admin-bar &{
+			top: 68px;
+		}
+	}
 }
+

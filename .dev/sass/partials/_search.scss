@@ -1,12 +1,13 @@
 .search-form {
 	border-bottom: 1px solid transparentize($color-white, .8);
 	float: right;
-	margin: 16px 0 0;
+	margin: 13px 0 0;
 
-	@media only screen and (max-width: 568px) {
-		left: 15px;
-		position: absolute;
-		top: 15px;
+	@media only screen and (max-width: 63em) {
+		float: none;
+		margin: 1em;
+		height: 48px;
+		position: relative;
 	}
 
 	.site-footer & {
@@ -31,6 +32,16 @@
 		margin: 0;
 		padding: 0;
 		position: relative;
+
+		@media only screen and (max-width: 63em) {
+			width: 100%;
+			padding: .5em;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+		}
 	}
 
 	input[type="submit"] {
@@ -41,6 +52,13 @@
 		text-indent: -9999px;
 		vertical-align: middle;
 		width: 21px;
+
+		@media only screen and (max-width: 63em) {
+			position: absolute;
+			right: 10px;
+			top: 8px;
+		}
+
 	}
 
 	::-webkit-input-placeholder,

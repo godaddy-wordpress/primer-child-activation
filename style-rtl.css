@@ -64,10 +64,20 @@ Variables
   margin-left: 0;
   padding: 23px 0;
   width: auto; }
+  .site-title-wrapper .site-title {
+    font-size: 1.3em;
+    text-transform: uppercase;
+    letter-spacing: 1px; }
   .site-title-wrapper .site-title a,
   .site-title-wrapper .site-description,
   .site-title-wrapper .site-title a:hover {
     color: #ffffff; }
+
+.page-title-container .page-title {
+  color: white;
+  font-weight: 200;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem; }
 
 .row,
 .footer-widget-area {
@@ -84,11 +94,11 @@ Variables
 
 .main-navigation .menu-main-menu-container {
   float: right;
-  margin-right: 0;
+  margin-right: 30px;
   margin-left: 0;
   width: auto; }
 
-@media only screen and (max-width: 568px) {
+@media only screen and (max-width: 63em) {
   .main-navigation-container {
     right: 0;
     position: absolute;
@@ -96,7 +106,10 @@ Variables
     top: 0;
     z-index: 999; }
     .admin-bar .main-navigation-container {
-      top: 32px; } }
+      top: 32px; }
+  .main-navigation .menu-main-menu-container {
+    position: relative;
+    float: none; } }
 
 .main-navigation-container,
 .menu-main-menu-container,
@@ -104,7 +117,7 @@ Variables
 .main-navigation .sub-menu {
   background: #d24343; }
 
-@media only screen and (max-width: 568px) {
+@media only screen and (max-width: 63em) {
   .main-navigation {
     padding-top: 75px; } }
 
@@ -112,7 +125,7 @@ Variables
   font-size: .875rem;
   line-height: 0;
   padding: 10px 0 6px; }
-  @media only screen and (max-width: 568px) {
+  @media only screen and (max-width: 63em) {
     .main-navigation li {
       font-size: 1.25rem; } }
   .main-navigation li:hover a, .main-navigation li.current-menu-item a, .main-navigation li.current-page-item a {
@@ -131,7 +144,7 @@ Variables
   .main-navigation li .sub-menu li:hover a, .main-navigation li .sub-menu li.current-menu-item a, .main-navigation li .sub-menu li.current-page-item a {
     border-bottom: 1px solid transparent;
     margin-right: 16px; }
-  @media only screen and (min-width: 569) {
+  @media only screen and (min-width: 63em) {
     .main-navigation li:first-child a {
       margin-right: 0; } }
 
@@ -140,30 +153,36 @@ Variables
   background: none; }
 
 .menu-toggle {
-  display: none; }
-
-@media only screen and (max-width: 568px) {
-  .menu-toggle {
-    display: block;
-    left: 5px;
-    padding: 0 0 24px 9px;
-    position: absolute;
-    top: 30px;
-    z-index: 9999; }
-    .menu-toggle div {
-      height: 0.45rem;
-      margin-right: 0;
-      margin-left: 0.86rem; } }
+  display: none;
+  top: 25px; }
+  @media only screen and (max-width: 63em) {
+    .menu-toggle {
+      display: block;
+      left: 5px;
+      padding: 0 0 24px 9px;
+      position: absolute;
+      top: 42px;
+      z-index: 9999; }
+      .admin-bar .menu-toggle {
+        top: 48px; }
+      .menu-toggle div {
+        height: 0.45rem;
+        margin-right: 0;
+        margin-left: 0.86rem; } }
+  @media only screen and (max-width: 768px) {
+    .admin-bar .menu-toggle {
+      top: 68px; } }
 
 .search-form {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   float: left;
-  margin: 16px 0 0; }
-  @media only screen and (max-width: 568px) {
+  margin: 13px 0 0; }
+  @media only screen and (max-width: 63em) {
     .search-form {
-      right: 15px;
-      position: absolute;
-      top: 15px; } }
+      float: none;
+      margin: 1em;
+      height: 48px;
+      position: relative; } }
   .site-footer .search-form {
     display: inline-block;
     float: none; }
@@ -180,6 +199,15 @@ Variables
     margin: 0;
     padding: 0;
     position: relative; }
+    @media only screen and (max-width: 63em) {
+      .search-form input[type="search"] {
+        width: 100%;
+        padding: .5em;
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0; } }
   .search-form input[type="submit"] {
     background: transparent url(".dev/assets/img/search-icon.png") no-repeat center bottom;
     background-size: 13px;
@@ -188,6 +216,11 @@ Variables
     text-indent: -9999px;
     vertical-align: middle;
     width: 21px; }
+    @media only screen and (max-width: 63em) {
+      .search-form input[type="submit"] {
+        position: absolute;
+        left: 10px;
+        top: 8px; } }
   .search-form ::-webkit-input-placeholder,
   .search-form :-moz-placeholder,
   .search-form ::-moz-placeholder,

@@ -1,4 +1,23 @@
 <?php
+
+/**
+ * Move titles above menu templates.
+ *
+ * @since 1.0.0
+ */
+function ascension_remove_titles(){
+	remove_action( 'primer_after_header', 'primer_add_page_builder_template_title', 100 );
+	remove_action( 'primer_after_header', 'primer_add_blog_title', 100 );
+	remove_action( 'primer_after_header', 'primer_add_archive_title', 100 );
+
+	if( ! is_front_page() ):
+		add_action( 'primer_header', 'primer_add_page_builder_template_title' );
+		add_action( 'primer_header', 'primer_add_blog_title' );
+		add_action( 'primer_header', 'primer_add_archive_title' );
+	endif;
+}
+add_action( 'init', 'ascension_remove_titles' );
+
 /**
  * Add child and parent theme files.
  *
@@ -11,7 +30,6 @@ function activation_theme_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'activation_theme_enqueue_styles' );
 
-
 /**
  * Register Footer Menu.
  *
@@ -23,7 +41,7 @@ function activation_theme_register_nav_menu() {
 add_action( 'after_setup_theme', 'activation_theme_register_nav_menu' );
 
 /**
- * Register Hero Widget.
+ * Register Hero Widget Sidebar.
  *
  * @since 1.0.0
  */
@@ -42,15 +60,6 @@ function activation_hero_sidebar_init(){
 }
 add_action( 'widgets_init', 'activation_hero_sidebar_init' );
 
-/**
- * Adding content to footer via action.
- *
- * @since 1.0.0
- */
-function activation_theme_footer_content() {
-	return;
-}
-add_action( 'primer_footer', 'activation_theme_footer_content' );
 
 /**
  * Returns the featured image, custom header or false in this priority order.
@@ -96,7 +105,7 @@ add_action( 'primer_after_footer', 'activation_add_nav_footer', 10 );
  *
  * @since 1.0.0
  */
-function update_font_types() {
+function activation_update_font_types() {
 	return	array(
 		array(
 			'name'    => 'primary_font',
@@ -120,7 +129,7 @@ function update_font_types() {
 		),
 	);
 }
-add_action( 'primer_font_types', 'update_font_types' );
+add_action( 'primer_font_types', 'activation_update_font_types' );
 
 /**
  * Update colors
@@ -133,7 +142,7 @@ function activation_colors() {
 			'name'    => 'header_textcolor',
 			'default' => '#fff',
 			'css'     => array(
-				'.side-masthead .site-description, .hero-widget, header .main-navigation-container .menu li a, .main-navigation-container .menu li.current-menu-item > a, .main-navigation-container .menu li.current-menu-item > a:hover, .side-masthead .site-title a, .side-masthead .site-title a:hover, .hero-widget h2.widget-title' => array(
+				'.side-masthead .site-description, .hero-widget, header .main-navigation-container .menu li a, .main-navigation-container .menu li.current-menu-item > a, .main-navigation-container .menu li.current-menu-item > a:hover, .side-masthead .site-title a, .side-masthead .site-title a:hover, .hero-widget h2.widget-title,.page-title-container .page-title' => array(
 					'color' => '%1$s',
 				),
 			),

@@ -69,12 +69,25 @@
 	padding: 23px 0;
 	width: auto;
 
+	.site-title{
+		font-size: 1.3em;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
 	.site-title a,
 	.site-description,
 	.site-title a:hover {
 		color: $color-white;
 	}
 
+}
+
+.page-title-container .page-title{
+	color: white;
+	font-weight: 200;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
 }
 
 .row,

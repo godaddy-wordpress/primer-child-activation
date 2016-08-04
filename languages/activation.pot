@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: basis-pro 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-03 21:06-0500\n"
+"POT-Creation-Date: 2016-08-03 22:28-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,63 +18,63 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: functions.php:21
+#: functions.php:39
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:33
+#: functions.php:51
 msgid "Hero"
 msgstr ""
 
-#: functions.php:35
+#: functions.php:53
 msgid "The Hero widget area."
 msgstr ""
 
-#: functions.php:103
+#: functions.php:112
 msgid "Primary Font"
 msgstr ""
 
-#: functions.php:113
+#: functions.php:122
 msgid "Secondary Font"
 msgstr ""
 
-#: functions.php:147
+#: functions.php:156
 msgid "Header Background Color"
 msgstr ""
 
-#: functions.php:157
+#: functions.php:166
 msgid "Link Color"
 msgstr ""
 
-#: functions.php:167
+#: functions.php:176
 msgid "Main Text Color"
 msgstr ""
 
-#: functions.php:177
+#: functions.php:186
 msgid "Secondary Text Color"
 msgstr ""
 
-#: functions.php:187
+#: functions.php:196
 msgid "Button Color"
 msgstr ""
 
-#: functions.php:197
+#: functions.php:206
 msgid "Widget Text Color"
 msgstr ""
 
-#: functions.php:207
+#: functions.php:216
 msgid "Widget Background Color"
 msgstr ""
 
-#: functions.php:217
+#: functions.php:226
 msgid "Footer Text Color"
 msgstr ""
 
-#: functions.php:227
+#: functions.php:236
 msgid "Footer Background Color"
 msgstr ""
 
-#: functions.php:249
+#: functions.php:258
 msgid "Blue and Green"
 msgstr ""
 

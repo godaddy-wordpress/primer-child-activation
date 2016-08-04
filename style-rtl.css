@@ -73,7 +73,8 @@ Variables
   .site-title-wrapper .site-title a:hover {
     color: #ffffff; }
 
-.page-title-container .page-title {
+.page-title-container .page-title,
+.page-title-container .archive-title {
   color: white;
   font-weight: 200;
   margin-top: 1.5rem;

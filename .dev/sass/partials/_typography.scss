@@ -64,3 +64,10 @@ input[type="submit"]:not(.search-submit) {
 input {
 
 }
+
+.single .entry-title a,
+.archive .entry-title a,
+.archive .entry-title a:hover,
+.single .entry-title a:hover {
+	color: $color-text;
+}

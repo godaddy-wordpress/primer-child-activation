@@ -6,7 +6,6 @@
  */
 function activation_theme_enqueue_styles() {
 	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
-	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'parent-style' ) );
 
 	wp_enqueue_script( 'primer-navigation' );
 }
@@ -168,8 +167,8 @@ function activation_colors() {
 			'label'   => __( 'Main Text Color', 'primer' ),
 			'default' => '#212121',
 			'css'     => array(
-				'.site-content, .site-content h1, .site-content h2, .site-content h3, .site-content h4, .site-content h5, .site-content h6, .site-content p, .site-content blockquote, legend' => array(
-					'color' => '%1$s',
+				'.site-content, .site-content h1, .site-content h2, .site-content h3, .site-content h4, .site-content h5, .site-content h6, .site-content p, .site-content blockquote, legend, .entry-title a, .entry-title a:hover' => array(
+					'color' => '%1$s !important',
 				),
 			),
 		),
@@ -235,7 +234,7 @@ function activation_colors() {
 		),
 	);
 }
-add_action( 'primer_colors', 'activation_colors', 9 );
+add_action( 'primer_colors', 'activation_colors', 1 );
 
 /**
  * Change Activation color schemes

@@ -66,7 +66,8 @@ Variables
   .site-title-wrapper .site-title {
     font-size: 1.3em;
     text-transform: uppercase;
-    letter-spacing: 1px; }
+    letter-spacing: 1px;
+    margin-bottom: 0; }
   .site-title-wrapper .site-title a,
   .site-title-wrapper .site-description,
   .site-title-wrapper .site-title a:hover {
@@ -292,6 +293,9 @@ input[type="submit"]:not(.search-submit) {
   .footer-widget-area .footer-widget {
     width: 33%; } }
 
+.footer-widget-area h1, .footer-widget-area h2, .footer-widget-area h3, .footer-widget-area h4, .footer-widget-area h5, .footer-widget-area h6, .footer-widget-area {
+  color: #ffffff; }
+
 .footer-widget-area .footer-widget .widget {
   background-color: transparent;
   font-size: .875rem; }
@@ -367,9 +371,10 @@ input[type="submit"]:not(.search-submit) {
     content: "";
     display: block; }
   .widget .widget-title {
-    color: #202223;
     font-size: 1.125rem;
     font-style: normal; }
+    #content .widget .widget-title {
+      color: #202223; }
 
 .widget_rss ul li {
   padding: 10px 0; }

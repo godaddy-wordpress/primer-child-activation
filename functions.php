@@ -5,18 +5,18 @@
  *
  * @since 1.0.0
  */
-function ascension_remove_titles(){
+function activation_remove_titles() {
 	remove_action( 'primer_after_header', 'primer_add_page_builder_template_title', 100 );
 	remove_action( 'primer_after_header', 'primer_add_blog_title', 100 );
 	remove_action( 'primer_after_header', 'primer_add_archive_title', 100 );
 
-	if( ! is_front_page() ):
+	if ( ! is_front_page() ) :
 		add_action( 'primer_header', 'primer_add_page_builder_template_title' );
 		add_action( 'primer_header', 'primer_add_blog_title' );
 		add_action( 'primer_header', 'primer_add_archive_title' );
 	endif;
 }
-add_action( 'init', 'ascension_remove_titles' );
+add_action( 'init', 'activation_remove_titles', 5 );
 
 /**
  * Add child and parent theme files.
@@ -45,7 +45,7 @@ add_action( 'after_setup_theme', 'activation_theme_register_nav_menu' );
  *
  * @since 1.0.0
  */
-function activation_hero_sidebar_init(){
+function activation_hero_sidebar_init() {
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Hero', 'activation' ),
@@ -139,21 +139,12 @@ add_action( 'primer_font_types', 'activation_update_font_types' );
 function activation_colors() {
 	return array(
 		array(
-			'name'    => 'header_textcolor',
-			'default' => '#fff',
-			'css'     => array(
-				'.side-masthead .site-description, .hero-widget, header .main-navigation-container .menu li a, .main-navigation-container .menu li.current-menu-item > a, .main-navigation-container .menu li.current-menu-item > a:hover, .side-masthead .site-title a, .side-masthead .site-title a:hover, .hero-widget h2.widget-title,.page-title-container .page-title' => array(
-					'color' => '%1$s',
-				),
-			),
-		),
-		array(
 			'name'    => 'background_color',
 			'default' => '#fff',
 		),
 		array(
 			'name'    => 'header_backgroundcolor',
-			'label'   => __( 'Header Background Color', 'primer' ),
+			'label'   => __( 'Menu Background Color', 'primer' ),
 			'default' => '#d24343',
 			'css'     => array(
 				'.side-masthead, header .main-navigation-container .menu li.menu-item-has-children:hover > ul, .main-navigation-container, .menu-main-menu-container, .main-navigation, .main-navigation .sub-menu' => array(
@@ -172,26 +163,6 @@ function activation_colors() {
 			),
 		),
 		array(
-			'name'    => 'main_text_color',
-			'label'   => __( 'Main Text Color', 'primer' ),
-			'default' => '#212121',
-			'css'     => array(
-				'.site-content, .site-content h1, .site-content h2, .site-content h3, .site-content h4, .site-content h5, .site-content h6, .site-content p, .site-content blockquote, legend, .entry-title a, .entry-title a:hover' => array(
-					'color' => '%1$s !important',
-				),
-			),
-		),
-		array(
-			'name'    => 'secondary_text_color',
-			'label'   => __( 'Secondary Text Color', 'primer' ),
-			'default' => '#999999',
-			'css'     => array(
-				'.side-masthead .social-menu a, .entry-meta li, .side-masthead .social-menu a:hover' => array(
-					'color' => '%1$s',
-				),
-			),
-		),
-		array(
 			'name'    => 'button_color',
 			'label'   => __( 'Button Color', 'primer' ),
 			'default' => '#3fba73',
@@ -202,32 +173,12 @@ function activation_colors() {
 			),
 		),
 		array(
-			'name'    => 'w_text_color',
-			'label'   => __( 'Widget Text Color', 'primer' ),
-			'default' => '#c5c3c6',
-			'css'     => array(
-				'.footer-widget-area, .footer-widget .widget-title, .site-footer, .footer-widget-area .footer-widget .widget, .footer-widget-area .footer-widget .widget-title' => array(
-					'color' => '%1$s',
-				),
-			),
-		),
-		array(
 			'name'    => 'w_background_color',
 			'label'   => __( 'Widget Background Color', 'primer' ),
 			'default' => '#303d4c',
 			'css'     => array(
 				'.site-footer' => array(
 					'background-color' => '%1$s',
-				),
-			),
-		),
-		array(
-			'name'    => 'footer_textcolor',
-			'label'   => __( 'Footer Text Color', 'primer' ),
-			'default' => '#fff',
-			'css'     => array(
-				'.site-info-wrapper a, .site-info .social-menu a' => array(
-					'color' => '%1$s',
 				),
 			),
 		),
@@ -257,16 +208,11 @@ function activation_color_schemes() {
 		'blue_green' => array(
 			'label'  => esc_html__( 'Blue and Green', 'activation' ),
 			'colors' => array(
-				'header_textcolor'         => '#ffffff',
 				'header_backgroundcolor'   => '#00b0f1',
 				'background_color'         => '#ffffff',
 				'link_color'               => '#00B0F1',
-				'main_text_color'          => '#202223',
-				'secondary_text_color'     => '#ffffff',
 				'button_color'			   => '#97d321',
-				'w_text_color'			   => '#c5c3c6',
 				'w_background_color'	   => '#353535',
-				'footer_textcolor'		   => '#ffffff',
 				'footer_backgroundcolor'   => '#212121',
 			),
 		),

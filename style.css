@@ -381,19 +381,24 @@ input[type="submit"]:not(.search-submit) {
   .hentry {
     padding: 0 15px 0 0; } }
 
-.single .article-wrapper {
-  margin-left: 120px; }
+@media only screen and (min-width: 40.063em) {
+  .single .article-wrapper {
+    margin-left: 120px; } }
 
 .single .entry-title {
   font-size: 3rem; }
 
-.single .author-image {
-  float: left;
-  width: 110px; }
-  .single .author-image img {
-    border: 3px solid #e3e3e3;
-    border-radius: 50%;
-    padding: 3px; }
+@media only screen and (min-width: 40.063em) {
+  .single .author-image {
+    float: left;
+    width: 110px; } }
+
+.single .author-image img {
+  border: 3px solid #e3e3e3;
+  border-radius: 50%;
+  display: block;
+  margin: 15px auto;
+  padding: 3px; }
 
 .single .entry-meta {
   color: #7d8183;

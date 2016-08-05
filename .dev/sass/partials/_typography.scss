@@ -3,6 +3,18 @@ body {
 	color: $color-text;
 }
 
+.entry-title a {
+	color: $color-text;
+
+	&:link,
+	&:visited,
+	&:hover,
+	&:active {
+		color: $color-text;
+	}
+
+}
+
 h1 {
 	font-size: 3.125rem;
 }
@@ -35,7 +47,7 @@ p {
 	line-height: 30px;
 }
 
-a, .entry-footer a {
+a {
 	color: $color-button;
 }
 

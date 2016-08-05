@@ -232,6 +232,11 @@ body {
   background: #ffffff;
   color: #202223; }
 
+.entry-title a {
+  color: #202223; }
+  .entry-title a:link, .entry-title a:visited, .entry-title a:hover, .entry-title a:active {
+    color: #202223; }
+
 h1 {
   font-size: 3.125rem; }
 
@@ -257,7 +262,7 @@ p {
   font-size: 1rem;
   line-height: 30px; }
 
-a, .entry-footer a {
+a {
   color: #3fba73; }
 
 button,

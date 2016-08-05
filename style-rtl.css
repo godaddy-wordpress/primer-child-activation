@@ -386,6 +386,7 @@ input[type="submit"]:not(.search-submit) {
     margin-right: 120px; } }
 
 .single .entry-title {
+  clear: none;
   font-size: 3rem; }
 
 @media only screen and (min-width: 40.063em) {

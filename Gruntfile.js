@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 				files: {
 					'style.css'        : '.dev/sass/style.scss',
 					'editor-style.css' : '.dev/sass/editor-style.scss',
-					'ie.css'          : '.dev/sass/ie.scss'
+					'ie.css'           : '.dev/sass/ie.scss'
 				}
 			}
 		},
@@ -42,7 +42,7 @@ module.exports = function(grunt) {
 
 		pot: {
 				options:{
-					text_domain: 'ascension', //Your text domain. Produces my-text-domain.pot
+					text_domain: 'activation', //Your text domain. Produces my-text-domain.pot
 					dest: 'languages/', //directory to place the pot file
 					keywords: [ //WordPress localisation functions
 						'__:1',

@@ -9,20 +9,30 @@
 .single {
 
 	.article-wrapper {
-		margin-left: 120px;
+
+		@media only screen and (min-width: 40.063em) {
+			margin-left: 120px;
+		}
+
 	}
 
 	.entry-title {
+		clear: none;
 		font-size: 3rem;
 	}
 
 	.author-image {
-		float: left;
-		width: 110px;
+
+		@media only screen and (min-width: 40.063em) {
+			float: left;
+			width: 110px;
+		}
 
 		img {
 			border: 3px solid $color-photo-border;
 			border-radius: 50%;
+			display: block;
+			margin: 15px auto;
 			padding: 3px;
 		}
 

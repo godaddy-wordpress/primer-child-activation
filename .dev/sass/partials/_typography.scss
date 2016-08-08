@@ -1,5 +1,18 @@
 body {
+	background: $color-white;
 	color: $color-text;
+}
+
+.entry-title a {
+	color: $color-text;
+
+	&:link,
+	&:visited,
+	&:hover,
+	&:active {
+		color: $color-text;
+	}
+
 }
 
 h1 {
@@ -35,15 +48,38 @@ p {
 }
 
 a {
-
+	color: $color-button;
 }
 
 button,
-button,
-fl-button {
+a.button,
+.button,
+a.fl-button,
+input[type="submit"]:not(.search-submit) {
+	background: $color-button;
+	border: none;
+
+	&:hover {
+		background: $color-button;
+	}
+
+}
+
+.hero-inner {
+
+	h1 {
+		color: $color-white;
+	}
 
 }
 
 input {
 
+}
+
+.single .entry-title a,
+.archive .entry-title a,
+.archive .entry-title a:hover,
+.single .entry-title a:hover {
+	color: $color-text;
 }

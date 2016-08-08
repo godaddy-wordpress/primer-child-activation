@@ -18,7 +18,7 @@
 
 				<div class="site-footer-inner">
 
-					<?php get_sidebar( 'sidebar-footer' ); ?>
+					<?php get_sidebar( 'footer' ); ?>
 
 				</div>
 

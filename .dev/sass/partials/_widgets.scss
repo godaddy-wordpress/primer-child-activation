@@ -10,6 +10,10 @@
 	.widget-title {
 		font-size: 1.125rem;
 		font-style: normal;
+
+		#content &{
+			color: $color-text;
+		}
 	}
 
 }

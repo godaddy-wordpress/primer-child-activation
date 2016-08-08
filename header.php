@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/template-files-section/partial-and-miscellaneous-template-files/#header-php
  *
- * @package Primer
+ * @package Activation
  */
 ?><!DOCTYPE html>
 
@@ -36,15 +36,7 @@
 
 		<?php do_action( 'primer_before_header' ) ?>
 
-		<?php if ( ! empty( primer_get_custom_header() ) ) : ?>
-
-			<header id="masthead" class="site-header" role="banner" style="background:url('<?php echo primer_get_custom_header( ); ?>') no-repeat top center; background-size: cover;">
-
-		<?php else : ?>
-
-			<header id="masthead" class="site-header row" role="banner">
-
-		<?php endif; ?>
+			<header id="masthead" class="site-header" role="banner" <?php if ( ! empty( primer_get_custom_header() ) ) : ?>style="background:url('<?php echo primer_get_custom_header( ); ?>') no-repeat top center; background-size: cover;"<?php endif; ?>>
 
 			<div class="row">
 
@@ -54,6 +46,13 @@
 
 		</header><!-- #masthead -->
 
+		<div class="menu-toggle" id="menu-toggle">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+
 		<?php do_action( 'primer_after_header' ) ?>
+
 
 		<div id="content" class="site-content">

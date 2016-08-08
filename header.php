@@ -36,7 +36,7 @@
 
 		<?php do_action( 'primer_before_header' ) ?>
 
-			<header id="masthead" class="site-header" role="banner" <?php if ( ! empty( primer_get_custom_header() ) ) : ?>style="background:url('<?php echo primer_get_custom_header( ); ?>') no-repeat top center; background-size: cover;"<?php endif; ?>>
+			<header id="masthead" class="site-header" role="banner" <?php if ( ! empty( activation_get_custom_header() ) ) : ?>style="background:url('<?php echo activation_get_custom_header( ); ?>') no-repeat top center; background-size: cover;"<?php endif; ?>>
 
 			<div class="row">
 

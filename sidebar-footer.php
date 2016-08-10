@@ -5,12 +5,12 @@
  * @package Activation
  */
 
-if ( is_active_sidebar( 'sidebar-footer' ) ) { ?>
+if ( is_active_sidebar( 'sidebar-footer' ) ) : ?>
 
 <div class="widget-area" role="complementary">
 
-	<?php dynamic_sidebar( 'sidebar-footer' ) ?>
+	<?php dynamic_sidebar( 'sidebar-footer' ); ?>
 
 </div>
 
-<?php }
+<?php endif;

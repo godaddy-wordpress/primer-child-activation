@@ -6,11 +6,17 @@
  */
 ?>
 
-<?php if ( ! empty( get_avatar( get_the_author_meta( 'user_email' ), '100' ) ) ) : ?>
+<?php
+
+	$avatar = get_avatar( get_the_author_meta( 'user_email' ), '100' );
+
+	if ( ! empty( $avatar ) ) :
+
+?>
 
 	<div class="author-image">
 
-		<?php echo get_avatar( get_the_author_meta( 'user_email' ), '100' ); ?>
+		<?php echo $avatar; ?>
 
 	</div><!-- .featured-image -->
 

@@ -73,9 +73,9 @@ function activation_register_sidebars( $sidebars ) {
 	 * Register Hero Widget.
 	 */
 	$sidebars[] = array(
-		'name'          => esc_attr__( 'Hero', 'velux' ),
+		'name'          => esc_attr__( 'Hero', 'activation' ),
 		'id'            => 'hero',
-		'description'   => esc_attr__( 'The Hero widget area.', 'velux' ),
+		'description'   => esc_attr__( 'The Hero widget area.', 'activation' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h6 class="widget-title">',

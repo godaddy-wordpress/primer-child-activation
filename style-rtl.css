@@ -1,10 +1,10 @@
 /*
 Theme Name: Activation
-Theme URI: http://liftux.com
-Author: Lift
-Author URI: http://liftux.com
+Theme URI: http://godaddy.com
+Author: GoDaddy
+Author URI: http://godaddy.com
 Description: This is a child theme for Primer.
-Version: 0.0.9
+Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: activation
@@ -38,6 +38,7 @@ Variables
   .hero-wrapper .textwidget .button,
   .hero-wrapper .textwidget button,
   .hero-wrapper .textwidget .fl-button {
+    -webkit-border-radius: 2px;
     border-radius: 2px;
     font-size: .9375rem;
     font-weight: 500;
@@ -55,6 +56,7 @@ Variables
       font-size: 1rem; } }
 
 .site-header {
+  -webkit-background-size: cover;
   background-size: cover; }
 
 .site-title-wrapper {
@@ -211,6 +213,7 @@ Variables
         bottom: 0; } }
   .search-form input[type="submit"] {
     background: transparent url(".dev/assets/img/search-icon.png") no-repeat center bottom;
+    -webkit-background-size: 13px 13px;
     background-size: 13px;
     display: inline-block;
     height: 21px;
@@ -401,6 +404,7 @@ input[type="submit"]:not(.search-submit) {
 
 .single .author-image img {
   border: 3px solid #e3e3e3;
+  -webkit-border-radius: 50%;
   border-radius: 50%;
   display: block;
   margin: 15px auto;
@@ -429,6 +433,7 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
   background: #ececec;
+  -webkit-border-radius: 5px;
   border-radius: 5px;
   color: #7d8183;
   margin-bottom: 5px; }

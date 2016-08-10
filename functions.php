@@ -48,7 +48,7 @@ add_action( 'wp_enqueue_scripts', 'activation_theme_enqueue_styles' );
  */
 function activation_register_nav_menu( $menu ) {
 
-	$menu[ 'footer' ] = __( 'Footer Menu', 'activation' );
+	$menu[ 'footer' ] = esc_attr__( 'Footer Menu', 'activation' );
 
 	return $menu;
 
@@ -110,7 +110,7 @@ function activation_update_font_types() {
 
 	return array(
 		'primary_font' => array(
-			'label'   => __( 'Primary Font', 'activation' ),
+			'label'   => esc_html__( 'Primary Font', 'activation' ),
 			'default' => 'Lato',
 			'css'     => array(
 				'body, p, .hero-wrapper .textwidget p, .site-description, .search-form input[type="search"], .widget li a, .site-info-text, h6, body p, .widget p, ' => array(
@@ -119,7 +119,7 @@ function activation_update_font_types() {
 			),
 		),
 		'secondary_font' => array(
-			'label'   => __( 'Secondary Font', 'activation' ),
+			'label'   => esc_html__( 'Secondary Font', 'activation' ),
 			'default' => 'Lato',
 			'css'     => array(
 				'h1, h2, h3, h4, h5, h6, label, legend, table th, .site-title, .entry-title, .widget-title, .main-navigation li a, button, a.button, input[type="button"], input[type="reset"], input[type="submit"], blockquote, .entry-meta, .entry-footer, .comment-list li .comment-meta .says, .comment-list li .comment-metadata, .comment-reply-link, #respond .logged-in-as, .fl-callout-text, .site-title, .hero-wrapper .textwidget h1, .hero-wrapper .textwidget .button, .main-navigation li a, .widget-title, .footer-nav ul li a, h1, h2, h3, h4, h5, .entry-title, .single .entry-meta, ' => array(
@@ -148,7 +148,7 @@ function activation_colors() {
 			),
 		),
 		'header_background_color' => array(
-			'label'   => __( 'Menu Background Color', 'activation' ),
+			'label'   => esc_html__( 'Menu Background Color', 'activation' ),
 			'default' => '#d24343',
 			'css'     => array(
 				'.side-masthead, header .main-navigation-container .menu li.menu-item-has-children:hover > ul, .main-navigation-container, .menu-main-menu-container, .main-navigation, .main-navigation .sub-menu' => array(
@@ -157,7 +157,7 @@ function activation_colors() {
 			),
 		),
 		'link_color' => array(
-			'label'   => __( 'Link Color', 'activation' ),
+			'label'   => esc_html__( 'Link Color', 'activation' ),
 			'default' => '#3fba73',
 			'css'     => array(
 				'a, a:visited, .entry-footer a, .sticky .entry-title a:before, .footer-widget-area .footer-widget .widget a' => array(
@@ -166,7 +166,7 @@ function activation_colors() {
 			),
 		),
 		'button_color' => array(
-			'label'   => __( 'Button Color', 'activation' ),
+			'label'   => esc_html__( 'Button Color', 'activation' ),
 			'default' => '#3fba73',
 			'css'     => array(
 				'.cta, button, a.button, a.button:visited, input[type="button"], input[type="reset"], input[type="submit"]:not(.search-submit), a.fl-button' => array(
@@ -175,7 +175,7 @@ function activation_colors() {
 			),
 		),
 		'w_background_color' => array(
-			'label'   => __( 'Widget Background Color', 'activation' ),
+			'label'   => esc_html__( 'Widget Background Color', 'activation' ),
 			'default' => '#303d4c',
 			'css'     => array(
 				'.site-footer' => array(
@@ -184,7 +184,7 @@ function activation_colors() {
 			),
 		),
 		'footer_background_color' => array(
-			'label'   => __( 'Footer Background Color', 'activation' ),
+			'label'   => esc_html__( 'Footer Background Color', 'activation' ),
 			'default' => '#2c3845',
 			'css'     => array(
 				'.site-info-wrapper, .footer-nav, .site-info-wrapper' => array(
@@ -234,11 +234,11 @@ add_action( 'primer_color_schemes', 'activation_color_schemes' );
  *
  * @return array
  */
-function activation_add_default_header_image( $array ) {
+function activation_set_default_header_image( $array ) {
 
-	$array['default-image'] = get_stylesheet_directory_uri() . '/.dev/assets/img/header.png';
+	$array['default-image'] = get_stylesheet_directory_uri() . '/assets/img/header.png';
 
 	return $array;
 
 }
-add_filter( 'primer_custom_header_args', 'activation_add_default_header_image', 20 );
+add_filter( 'primer_custom_header_args', 'activation_set_default_header_image', 20 );

@@ -7,15 +7,19 @@
  * @since 1.0.0
  */
 function activation_remove_titles() {
+
 	remove_action( 'primer_after_header', 'primer_add_page_builder_template_title', 100 );
 	remove_action( 'primer_after_header', 'primer_add_blog_title', 100 );
 	remove_action( 'primer_after_header', 'primer_add_archive_title', 100 );
 
-	if ( ! is_front_page() ) :
+	if ( ! is_front_page() ) {
+
 		add_action( 'primer_header', 'primer_add_page_builder_template_title' );
 		add_action( 'primer_header', 'primer_add_blog_title' );
 		add_action( 'primer_header', 'primer_add_archive_title' );
-	endif;
+
+	}
+
 }
 add_action( 'init', 'activation_remove_titles', 5 );
 
@@ -26,9 +30,11 @@ add_action( 'init', 'activation_remove_titles', 5 );
  * @since 1.0.0
  */
 function activation_theme_enqueue_styles() {
+
 	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 
 	wp_enqueue_script( 'primer-navigation' );
+
 }
 add_action( 'wp_enqueue_scripts', 'activation_theme_enqueue_styles' );
 
@@ -36,62 +42,50 @@ add_action( 'wp_enqueue_scripts', 'activation_theme_enqueue_styles' );
  * Register Footer Menu.
  *
  * @package activation
- * @since 1.0.0
+ * @since   1.0.0
+ *
+ * @param $menu
  */
-function activation_theme_register_nav_menu() {
-	 register_nav_menu( 'footer', __( 'Footer Menu', 'activation' ) );
+function activation_register_nav_menu( $menu ) {
+
+	$menu[ 'footer' ] = __( 'Footer Menu', 'activation' );
+
+	return $menu;
+
 }
-add_action( 'after_setup_theme', 'activation_theme_register_nav_menu' );
+add_filter( 'primer_nav_menus', 'activation_register_nav_menu' );
 
 /**
- * Register Hero Widget Sidebar.
+ * Register sidebar areas.
+ *
+ * @link    http://codex.wordpress.org/Function_Reference/register_sidebar
  *
  * @package activation
- * @since 1.0.0
+ * @since   1.0.0
+ *
+ * @param array $sidebars
+ *
+ * @return array
  */
-function activation_hero_sidebar_init() {
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Hero', 'activation' ),
-			'id'            => 'hero',
-			'description'   => esc_html__( 'The Hero widget area.', 'primer' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h6 class="widget-title">',
-			'after_title'   => '</h6>',
-		)
+function activation_register_sidebars( $sidebars ) {
+
+	/**
+	 * Register Hero Widget.
+	 */
+	$sidebars[] = array(
+		'name'          => esc_attr__( 'Hero', 'velux' ),
+		'id'            => 'hero',
+		'description'   => esc_attr__( 'The Hero widget area.', 'velux' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h6 class="widget-title">',
+		'after_title'   => '</h6>',
 	);
-}
-add_action( 'widgets_init', 'activation_hero_sidebar_init' );
 
+	return $sidebars;
 
-/**
- * Returns the featured image, custom header or false in this priority order.
- *
- * @package activation
- * @since 1.0.0
- *
- * @return false|string
- */
-function activation_get_custom_header() {
-	$post_id = get_queried_object_id();
-	$image_size = (int) get_theme_mod( 'full_width' ) === 1 ? 'hero-2x' : 'hero';
-	if ( has_post_thumbnail( $post_id ) ) {
-		$image = get_the_post_thumbnail_url( $post_id, $image_size );
-		if ( getimagesize( $image ) ) {
-			return $image;
-		}
-	}
-	$custom_header = get_custom_header();
-	if ( ! empty( $custom_header->attachment_id ) ) {
-		$image = wp_get_attachment_image_url( $custom_header->attachment_id, $image_size );
-		if ( getimagesize( $image ) ) {
-			return $image;
-		}
-	}
-	$header_image = get_header_image();
-	return $header_image;
 }
+add_filter( 'primer_sidebars', 'activation_register_sidebars' );
 
 /**
  * Display the footer nav before the site info.
@@ -113,19 +107,18 @@ add_action( 'primer_after_footer', 'activation_add_nav_footer', 10 );
  * @since 1.0.0
  */
 function activation_update_font_types() {
-	return	array(
-		array(
-			'name'    => 'primary_font',
+
+	return array(
+		'primary_font' => array(
 			'label'   => __( 'Primary Font', 'activation' ),
 			'default' => 'Lato',
 			'css'     => array(
-				'body, p, .hero-wrapper .textwidget p, .site-description, .search-form input[type="search”], .widget li a, .site-info-text, h6, body p, .widget p, ' => array(
+				'body, p, .hero-wrapper .textwidget p, .site-description, .search-form input[type="search"], .widget li a, .site-info-text, h6, body p, .widget p, ' => array(
 					'font-family' => '"%s", sans-serif',
 				),
 			),
 		),
-		array(
-			'name'    => 'secondary_font',
+		'secondary_font' => array(
 			'label'   => __( 'Secondary Font', 'activation' ),
 			'default' => 'Lato',
 			'css'     => array(
@@ -135,6 +128,7 @@ function activation_update_font_types() {
 			),
 		),
 	);
+
 }
 add_action( 'primer_font_types', 'activation_update_font_types' );
 
@@ -145,13 +139,15 @@ add_action( 'primer_font_types', 'activation_update_font_types' );
  * @since 1.0.0
  */
 function activation_colors() {
+
 	return array(
-		array(
-			'name'    => 'background_color',
+		'background_color' => array(
 			'default' => '#fff',
+			'body' => array(
+				'background' => '%1$s',
+			),
 		),
-		array(
-			'name'    => 'header_backgroundcolor',
+		'header_background_color' => array(
 			'label'   => __( 'Menu Background Color', 'activation' ),
 			'default' => '#d24343',
 			'css'     => array(
@@ -160,8 +156,7 @@ function activation_colors() {
 				),
 			),
 		),
-		array(
-			'name'    => 'link_color',
+		'link_color' => array(
 			'label'   => __( 'Link Color', 'activation' ),
 			'default' => '#3fba73',
 			'css'     => array(
@@ -170,8 +165,7 @@ function activation_colors() {
 				),
 			),
 		),
-		array(
-			'name'    => 'button_color',
+		'button_color' => array(
 			'label'   => __( 'Button Color', 'activation' ),
 			'default' => '#3fba73',
 			'css'     => array(
@@ -180,8 +174,7 @@ function activation_colors() {
 				),
 			),
 		),
-		array(
-			'name'    => 'w_background_color',
+		'w_background_color' => array(
 			'label'   => __( 'Widget Background Color', 'activation' ),
 			'default' => '#303d4c',
 			'css'     => array(
@@ -190,8 +183,7 @@ function activation_colors() {
 				),
 			),
 		),
-		array(
-			'name'    => 'footer_backgroundcolor',
+		'footer_background_color' => array(
 			'label'   => __( 'Footer Background Color', 'activation' ),
 			'default' => '#2c3845',
 			'css'     => array(
@@ -201,8 +193,9 @@ function activation_colors() {
 			),
 		),
 	);
+
 }
-add_action( 'primer_colors', 'activation_colors', 1 );
+add_action( 'primer_colors', 'activation_colors' );
 
 /**
  * Change Activation color schemes
@@ -213,19 +206,21 @@ add_action( 'primer_colors', 'activation_colors', 1 );
  * @return array
  */
 function activation_color_schemes() {
+
 	return array(
 		'blue_green' => array(
 			'label'  => esc_html__( 'Blue and Green', 'activation' ),
 			'colors' => array(
-				'header_backgroundcolor'   => '#00b0f1',
 				'background_color'         => '#ffffff',
+				'header_background_color'  => '#00b0f1',
 				'link_color'               => '#00B0F1',
 				'button_color'			   => '#97d321',
 				'w_background_color'	   => '#353535',
-				'footer_backgroundcolor'   => '#212121',
+				'footer_background_color'  => '#212121',
 			),
 		),
 	);
+
 }
 add_action( 'primer_color_schemes', 'activation_color_schemes' );
 
@@ -233,13 +228,17 @@ add_action( 'primer_color_schemes', 'activation_color_schemes' );
  * Add default header image.
  *
  * @package activation
- * @since 1.0.0
+ * @since   1.0.0
+ *
+ * @param $array
  *
  * @return array
  */
 function activation_add_default_header_image( $array ) {
+
 	$array['default-image'] = get_stylesheet_directory_uri() . '/.dev/assets/img/header.png';
 
 	return $array;
+
 }
 add_filter( 'primer_custom_header_args', 'activation_add_default_header_image', 20 );

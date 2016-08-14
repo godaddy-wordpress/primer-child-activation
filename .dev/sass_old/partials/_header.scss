@@ -8,7 +8,7 @@
 
 	.textwidget {
 
-		h1 {
+		.widget-title {
 			color: #fff;
 			font-size: 3rem;
 			font-weight: 100;
@@ -17,7 +17,7 @@
 		}
 
 		p {
-			color: $color-white;
+			color: #fff;
 			font-size: 1rem;
 			font-weight: 200;
 			line-height: 1.4rem;
@@ -34,9 +34,9 @@
 			padding: 17px 2rem;
 		}
 
-		@media only screen and (max-width: 568px) {
+		@media #{$medium-up} {
 
-			h1 {
+			.widget-title {
 				font-size: 2rem;
 				line-height: 2.5rem;
 			}
@@ -78,7 +78,7 @@
 	.site-title a,
 	.site-description,
 	.site-title a:hover {
-		color: $color-white;
+		color: #fff;
 	}
 
 }

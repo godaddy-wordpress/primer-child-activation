@@ -318,25 +318,25 @@ input[type="submit"]:not(.search-submit) {
   font-style: normal;
   text-transform: uppercase; }
 
-.footer-nav,
+.footer-menu,
 .site-info-wrapper {
   background: #2c3845; }
 
 .site-info-wrapper {
   padding: 0 0 20px; }
 
-.footer-nav {
+.footer-menu {
   margin: 0 auto;
   padding-top: 30px; }
-  .footer-nav ul {
+  .footer-menu ul {
     list-style: none;
     margin: 0;
     padding: 0;
     text-align: center; }
     @media only screen and (min-width: 568px) {
-      .footer-nav ul {
+      .footer-menu ul {
         text-align: right; } }
-    .footer-nav ul li {
+    .footer-menu ul li {
       display: inline-block;
       font-family: 'Roboto';
       font-size: .875rem;
@@ -345,9 +345,9 @@ input[type="submit"]:not(.search-submit) {
       text-align: center;
       text-transform: uppercase; }
       @media only screen and (min-width: 568px) {
-        .footer-nav ul li {
+        .footer-menu ul li {
           text-align: right; } }
-      .footer-nav ul li a {
+      .footer-menu ul li a {
         color: #ffffff; }
 
 .site-info-wrapper .site-info {

@@ -35,19 +35,6 @@ function activation_theme_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'activation_theme_enqueue_styles' );
 
 /**
- * Display the footer nav before the site info.
- *
- * @package activation
- * @since  1.0.0
- */
-function activation_add_nav_footer() {
-
-	get_template_part( 'templates/parts/footer-nav' );
-
-}
-add_action( 'primer_after_footer', 'activation_add_nav_footer', 10 );
-
-/**
  * Add selectors for font customizing.
  *
  * @package activation
@@ -69,7 +56,7 @@ function activation_update_font_types() {
 			'label'   => esc_html__( 'Secondary Font', 'activation' ),
 			'default' => 'Lato',
 			'css'     => array(
-				'h1, h2, h3, h4, h5, h6, label, legend, table th, .site-title, .entry-title, .widget-title, .main-navigation li a, button, a.button, input[type="button"], input[type="reset"], input[type="submit"], blockquote, .entry-meta, .entry-footer, .comment-list li .comment-meta .says, .comment-list li .comment-metadata, .comment-reply-link, #respond .logged-in-as, .fl-callout-text, .site-title, .hero-wrapper .textwidget h1, .hero-wrapper .textwidget .button, .main-navigation li a, .widget-title, .footer-nav ul li a, h1, h2, h3, h4, h5, .entry-title, .single .entry-meta, ' => array(
+				'h1, h2, h3, h4, h5, h6, label, legend, table th, .site-title, .entry-title, .widget-title, .main-navigation li a, button, a.button, input[type="button"], input[type="reset"], input[type="submit"], blockquote, .entry-meta, .entry-footer, .comment-list li .comment-meta .says, .comment-list li .comment-metadata, .comment-reply-link, #respond .logged-in-as, .fl-callout-text, .site-title, .hero-wrapper .textwidget h1, .hero-wrapper .textwidget .button, .main-navigation li a, .widget-title, .footer-menu ul li a, h1, h2, h3, h4, h5, .entry-title, .single .entry-meta, ' => array(
 					'font-family' => '"%s", sans-serif',
 				),
 			),
@@ -134,7 +121,7 @@ function activation_colors() {
 			'label'   => esc_html__( 'Footer Background Color', 'activation' ),
 			'default' => '#2c3845',
 			'css'     => array(
-				'.site-info-wrapper, .footer-nav, .site-info-wrapper' => array(
+				'.site-info-wrapper, .footer-menu, .site-info-wrapper' => array(
 					'background-color' => '%1$s',
 				),
 			),

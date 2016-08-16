@@ -1,27 +1,25 @@
 <?php
 
 /**
- * Move titles above menu templates.
+ * Move template elements around.
  *
  * @package activation
  * @since 1.0.0
  */
-function activation_remove_titles() {
+function activation_move_elements() {
 
-	remove_action( 'primer_after_header', 'primer_add_page_builder_template_title', 100 );
-	remove_action( 'primer_after_header', 'primer_add_blog_title', 100 );
-	remove_action( 'primer_after_header', 'primer_add_archive_title', 100 );
+	remove_action( 'primer_after_header', 'primer_add_page_title' );
+
+	add_action( 'primer_site_navigation', 'get_search_form', 11, 0 );
 
 	if ( ! is_front_page() ) {
 
-		add_action( 'primer_header', 'primer_add_page_builder_template_title' );
-		add_action( 'primer_header', 'primer_add_blog_title' );
-		add_action( 'primer_header', 'primer_add_archive_title' );
+		add_action( 'primer_header', 'primer_add_page_title' );
 
 	}
 
 }
-add_action( 'init', 'activation_remove_titles', 5 );
+add_action( 'template_redirect', 'activation_move_elements' );
 
 /**
  * Add child and parent theme files.
@@ -33,59 +31,8 @@ function activation_theme_enqueue_styles() {
 
 	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 
-	wp_enqueue_script( 'primer-navigation' );
-
 }
 add_action( 'wp_enqueue_scripts', 'activation_theme_enqueue_styles' );
-
-/**
- * Register Footer Menu.
- *
- * @package activation
- * @since   1.0.0
- *
- * @param $menu
- */
-function activation_register_nav_menu( $menu ) {
-
-	$menu[ 'footer' ] = esc_attr__( 'Footer Menu', 'activation' );
-
-	return $menu;
-
-}
-add_filter( 'primer_nav_menus', 'activation_register_nav_menu' );
-
-/**
- * Register sidebar areas.
- *
- * @link    http://codex.wordpress.org/Function_Reference/register_sidebar
- *
- * @package activation
- * @since   1.0.0
- *
- * @param array $sidebars
- *
- * @return array
- */
-function activation_register_sidebars( $sidebars ) {
-
-	/**
-	 * Register Hero Widget.
-	 */
-	$sidebars[] = array(
-		'name'          => esc_attr__( 'Hero', 'activation' ),
-		'id'            => 'hero',
-		'description'   => esc_attr__( 'The Hero widget area.', 'activation' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h6 class="widget-title">',
-		'after_title'   => '</h6>',
-	);
-
-	return $sidebars;
-
-}
-add_filter( 'primer_sidebars', 'activation_register_sidebars' );
 
 /**
  * Display the footer nav before the site info.

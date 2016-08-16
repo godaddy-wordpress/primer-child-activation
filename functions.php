@@ -223,22 +223,3 @@ function activation_color_schemes() {
 
 }
 add_action( 'primer_color_schemes', 'activation_color_schemes' );
-
-/**
- * Add default header image.
- *
- * @package activation
- * @since   1.0.0
- *
- * @param $array
- *
- * @return array
- */
-function activation_set_default_header_image( $array ) {
-
-	$array['default-image'] = get_stylesheet_directory_uri() . '/assets/img/header.png';
-
-	return $array;
-
-}
-add_filter( 'primer_custom_header_args', 'activation_set_default_header_image', 20 );

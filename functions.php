@@ -35,6 +35,24 @@ function activation_theme_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'activation_theme_enqueue_styles' );
 
 /**
+ * If there is a custom logo we don't want to print the site title text.
+ *
+ * @filter primer_print_site_title_text
+ * @since  1.0.0
+ *
+ * @param bool $bool
+ * @param bool $has_logo
+ *
+ * @return bool
+ */
+function activation_print_site_title( $bool, $has_logo ) {
+
+	return ! $has_logo;
+
+}
+add_filter( 'primer_print_site_title_text', 'activation_print_site_title', 10, 2 );
+
+/**
  * Add selectors for font customizing.
  *
  * @package activation

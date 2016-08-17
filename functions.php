@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Move template elements around.
+ * Move some elements around.
  *
- * @package activation
- * @since 1.0.0
+ * @action template_redirect
+ * @since  1.0.0
  */
 function activation_move_elements() {
 
@@ -22,29 +22,32 @@ function activation_move_elements() {
 add_action( 'template_redirect', 'activation_move_elements' );
 
 /**
- * Set hero image target element.
+ * Set the default hero image description.
  *
- * @filter primer_hero_image_selector
+ * @filter primer_default_hero_images
  * @since  1.0.0
  *
- * @return string
+ * @param  array $defaults
+ *
+ * @return array
  */
-function activation_hero_image_selector() {
+function activation_default_hero_images( $defaults ) {
 
-	return '.site-header';
+	$defaults['default']['description'] = esc_html__( 'Woman exercising at the gym', 'activation' );
+
+	return $defaults;
 
 }
-add_filter( 'primer_hero_image_selector', 'activation_hero_image_selector' );
-
+add_filter( 'primer_default_hero_images', 'activation_default_hero_images' );
 
 /**
- * If there is a custom logo we don't want to print the site title text.
+ * Hide site title when a custom logo is present.
  *
  * @filter primer_print_site_title_text
  * @since  1.0.0
  *
- * @param bool $bool
- * @param bool $has_logo
+ * @param  bool $bool
+ * @param  bool $has_logo
  *
  * @return bool
  */
@@ -56,44 +59,45 @@ function activation_print_site_title( $bool, $has_logo ) {
 add_filter( 'primer_print_site_title_text', 'activation_print_site_title', 10, 2 );
 
 /**
- * Add selectors for font customizing.
+ * Set font types.
  *
- * @package activation
- * @since 1.0.0
+ * @filter primer_font_types
+ * @since  1.0.0
+ *
+ * @param  array $font_types
+ *
+ * @return array
  */
-function activation_update_font_types() {
+function activation_font_types( $font_types ) {
 
-	return array(
-		'primary_font' => array(
-			'label'   => esc_html__( 'Primary Font', 'activation' ),
+	$overrides = array(
+		'header_font' => array(
 			'default' => 'Lato',
-			'css'     => array(
-				'body, p, .hero-wrapper .textwidget p, .site-description, .search-form input[type="search"], .widget li a, .site-info-text, h6, body p, .widget p, ' => array(
-					'font-family' => '"%s", sans-serif',
-				),
-			),
+		),
+		'primary_font' => array(
+			'default' => 'Lato',
 		),
 		'secondary_font' => array(
-			'label'   => esc_html__( 'Secondary Font', 'activation' ),
 			'default' => 'Lato',
-			'css'     => array(
-				'h1, h2, h3, h4, h5, h6, label, legend, table th, .site-title, .entry-title, .widget-title, .main-navigation li a, button, a.button, input[type="button"], input[type="reset"], input[type="submit"], blockquote, .entry-meta, .entry-footer, .comment-list li .comment-meta .says, .comment-list li .comment-metadata, .comment-reply-link, #respond .logged-in-as, .fl-callout-text, .site-title, .hero-wrapper .textwidget h1, .hero-wrapper .textwidget .button, .main-navigation li a, .widget-title, .footer-menu ul li a, h1, h2, h3, h4, h5, .entry-title, .single .entry-meta, ' => array(
-					'font-family' => '"%s", sans-serif',
-				),
-			),
 		),
 	);
 
+	return primer_array_replace_recursive( $font_types, $overrides );
+
 }
-add_action( 'primer_font_types', 'activation_update_font_types' );
+add_filter( 'primer_font_types', 'activation_font_types' );
 
 /**
- * Update colors
+ * Set colors.
  *
- * @package activation
- * @since 1.0.0
+ * @filter primer_colors
+ * @since  1.0.0
+ *
+ * @param  array $colors
+ *
+ * @return array
  */
-function activation_colors() {
+function activation_colors( $colors ) {
 
 	return array(
 		'background_color' => array(
@@ -155,31 +159,33 @@ function activation_colors() {
 	);
 
 }
-add_action( 'primer_colors', 'activation_colors' );
+add_filter( 'primer_colors', 'activation_colors' );
 
 /**
- * Change Activation color schemes
+ * Set color schemes.
  *
- * @package activation
- * @since 1.0.0
+ * @filter primer_color_schemes
+ * @since  1.0.0
+ *
+ * @param  array $color_schemes
  *
  * @return array
  */
-function activation_color_schemes() {
+function activation_color_schemes( $color_schemes ) {
 
 	return array(
 		'blue_green' => array(
 			'label'  => esc_html__( 'Blue and Green', 'activation' ),
 			'colors' => array(
-				'background_color'         => '#ffffff',
-				'header_background_color'  => '#00b0f1',
-				'link_color'               => '#00B0F1',
-				'button_color'			   => '#97d321',
-				'w_background_color'	   => '#353535',
-				'footer_background_color'  => '#212121',
+				'background_color'        => '#ffffff',
+				'header_background_color' => '#00b0f1',
+				'link_color'              => '#00b0f1',
+				'button_color'            => '#97d321',
+				'w_background_color'      => '#353535',
+				'footer_background_color' => '#212121',
 			),
 		),
 	);
 
 }
-add_action( 'primer_color_schemes', 'activation_color_schemes' );
+add_filter( 'primer_color_schemes', 'activation_color_schemes' );

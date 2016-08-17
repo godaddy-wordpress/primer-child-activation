@@ -21,7 +21,7 @@
 	.menu-main-menu-container {
 
 		@media #{$medium-up}{
-			@include span(12);
+			float: left;
 			margin-left: 25px;
 		}
 	}
@@ -154,8 +154,8 @@
 		}
 
 		input[type="submit"] {
-			background: transparent url('assets/img/search-icon.png') no-repeat center bottom;
-			background-size: 13px;
+			background: transparent url('assets/images/search-icon.svg') no-repeat center bottom;
+			background-size: 17px;
 			display: block;
 			height: 21px;
 			text-indent: -9999px;
@@ -169,7 +169,7 @@
 
 			@media #{$medium-up} {
 				right: 10px;
-				top: 7px;
+				top: 10px;
 			}
 
 		}

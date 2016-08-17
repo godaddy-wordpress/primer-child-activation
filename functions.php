@@ -22,17 +22,20 @@ function activation_move_elements() {
 add_action( 'template_redirect', 'activation_move_elements' );
 
 /**
- * Add child and parent theme files.
+ * Set hero image target element.
  *
- * @package activation
- * @since 1.0.0
+ * @filter primer_hero_image_selector
+ * @since  1.0.0
+ *
+ * @return string
  */
-function activation_theme_enqueue_styles() {
+function activation_hero_image_selector() {
 
-	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+	return '.site-header';
 
 }
-add_action( 'wp_enqueue_scripts', 'activation_theme_enqueue_styles' );
+add_filter( 'primer_hero_image_selector', 'activation_hero_image_selector' );
+
 
 /**
  * If there is a custom logo we don't want to print the site title text.

@@ -253,8 +253,8 @@ blockquote {
   font-style: italic;
   line-height: 1.4;
   margin: 1em 0;
-  padding-left: 1em;
-  border-left: 4px solid rgba(11, 57, 84, 0.1);
+  padding-right: 1em;
+  border-right: 4px solid rgba(11, 57, 84, 0.1);
   color: #686868; }
 
 address {
@@ -362,10 +362,10 @@ table {
 .hentry table th,
 .hentry table td {
   padding: 0.5em;
-  text-align: left;
+  text-align: right;
   border: 1px solid rgba(11, 57, 84, 0.1);
-  border-left: none;
-  border-right: none; }
+  border-right: none;
+  border-left: none; }
 
 .hentry table thead th {
   border-bottom-width: 2px;
@@ -520,8 +520,8 @@ object {
   max-width: 100%; }
   .wp-caption img[class*="wp-image-"] {
     display: block;
-    margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+    margin-left: auto; }
   .wp-caption .wp-caption-text {
     margin: 0.8075em 0; }
 
@@ -558,19 +558,19 @@ object {
 
 .alignleft {
   display: inline;
-  float: left;
-  margin-right: 1.5em; }
+  float: right;
+  margin-left: 1.5em; }
 
 .alignright {
   display: inline;
-  float: right;
-  margin-left: 1.5em; }
+  float: left;
+  margin-right: 1.5em; }
 
 .aligncenter {
   clear: both;
   display: block;
-  margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  margin-left: auto; }
 
 body {
   margin: 20px;

@@ -4,6 +4,14 @@ module.exports = function(grunt) {
 
 	var pkg = grunt.file.readJSON( 'package.json' );
 
+	var local_url = 'http://wp.dev';
+
+	if ( grunt.file.exists( '.dev/local-url' ) ) {
+
+		local_url = grunt.file.read( '.dev/local-url' ).trim();
+
+	}
+
 	grunt.initConfig({
 
 		pkg: pkg,
@@ -22,7 +30,7 @@ module.exports = function(grunt) {
 				cascade: false
 			},
 			dist: {
-				src: [ '*.css', '!ie.css' ]
+				src: [ '*.css' ]
 			}
 		},
 
@@ -36,7 +44,7 @@ module.exports = function(grunt) {
 					]
 				},
 				options: {
-					proxy: 'http://wp.dev', // enter your local WP URL here
+					proxy: local_url, // this is read from the file .dev/local-url
 					watchTask: true
 				}
 			}
@@ -51,6 +59,10 @@ module.exports = function(grunt) {
 					{
 						src: 'style.css',
 						dest: 'style-rtl.css'
+					},
+					{
+						src: 'editor-style.css',
+						dest: 'editor-style-rtl.css'
 					}
 				]
 			}
@@ -119,8 +131,7 @@ module.exports = function(grunt) {
 			dist: {
 				files: {
 					'style.css'        : '.dev/sass/style.scss',
-					'editor-style.css' : '.dev/sass/editor-style.scss',
-					'ie.css'           : '.dev/sass/ie.scss'
+					'editor-style.css' : '.dev/sass/editor-style.scss'
 				}
 			}
 		},

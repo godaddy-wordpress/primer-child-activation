@@ -124,8 +124,13 @@ function activation_colors() {
 			'label'   => esc_html__( 'Button Color', 'activation' ),
 			'default' => '#3fba73',
 			'css'     => array(
-				'.cta, button, a.button, a.button:visited, input[type="button"], input[type="reset"], input[type="submit"]:not(.search-submit), a.fl-button' => array(
+				'button, a.button, a.button:visited, input[type="button"], input[type="reset"], input[type="submit"]:not(.search-submit), a.fl-button' => array(
 					'background-color' => '%1$s',
+				),
+			),
+			'rgba_css'     => array(
+				'button:hover, a.button:hover, a.button:visited:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:not(.search-submit):hover, a.fl-button:hover' => array(
+					'background-color' => 'rgba(%1$s, 0.7)',
 				),
 			),
 		),

@@ -1,12 +1,26 @@
 .hero {
+	@include container($container-size);
 	color: white;
-	padding-top: 50px;
-	padding-bottom: 50px;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 	clear: both;
 
 	@media #{$medium-up} {
-		padding-top: 25px;
-		padding-bottom: 25px;
+		.home &{
+			padding-top: 2rem;
+			padding-bottom: 2rem;
+
+		}
+	}
+
+	.hero-inner{
+		@include span(12);
+		padding-left: 10px;
+		padding-right: 10px;
+
+		@media #{$medium-up}{
+			@include span(8);
+		}
 	}
 
 	.widget {
@@ -14,6 +28,27 @@
 		font-size: 1.2em;
 		font-weight: 300;
 		background: none;
+		color: white;
+		padding: 0;
+
+		.widget-title {
+			color: white;
+			font-size: 2rem;
+			line-height: 1;
+			text-align: left;
+		}
+
+		@media #{$medium-up} {
+			padding: 0 0 1em;
+
+			.widget-title {
+				color: white;
+				font-size: 3.5rem;
+				line-height: 1;
+				text-align: left;
+			}
+
+		}
 
 		&::last-child {
 			margin-bottom: 0;
@@ -40,5 +75,6 @@
 		display: inline;
 		width: auto;
 	}
+
 
 }

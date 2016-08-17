@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: activation 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-16 22:44-0500\n"
+"POT-Creation-Date: 2016-08-16 23:20-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,35 +18,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: functions.php:80
+#: functions.php:68
 msgid "Primary Font"
 msgstr ""
 
-#: functions.php:89
+#: functions.php:77
 msgid "Secondary Font"
 msgstr ""
 
-#: functions.php:118
+#: functions.php:106
 msgid "Menu Background Color"
 msgstr ""
 
-#: functions.php:127
+#: functions.php:115
 msgid "Link Color"
 msgstr ""
 
-#: functions.php:136
+#: functions.php:124
 msgid "Button Color"
 msgstr ""
 
-#: functions.php:145
+#: functions.php:138
 msgid "Widget Background Color"
 msgstr ""
 
-#: functions.php:154
+#: functions.php:147
 msgid "Footer Background Color"
 msgstr ""
 
-#: functions.php:179
+#: functions.php:172
 msgid "Blue and Green"
 msgstr ""
 

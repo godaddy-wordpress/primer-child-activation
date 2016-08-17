@@ -22,10 +22,7 @@
 
 		@media #{$medium-up}{
 			@include span(12);
-			margin-left: 30px;
-			margin-right: 0;
-			width: auto;
-			float: left;
+			margin-left: 25px;
 		}
 	}
 

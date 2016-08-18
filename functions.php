@@ -41,22 +41,23 @@ function activation_default_hero_images( $defaults ) {
 add_filter( 'primer_default_hero_images', 'activation_default_hero_images' );
 
 /**
- * Hide site title when a custom logo is present.
+ * Hide site title and description when a custom logo is present.
  *
- * @filter primer_print_site_title_text
+ * @filter primer_the_site_title
+ * @filter primer_the_site_description
  * @since  1.0.0
  *
- * @param  bool $bool
- * @param  bool $has_logo
+ * @param  string $html
  *
- * @return bool
+ * @return string|null
  */
-function activation_print_site_title( $bool, $has_logo ) {
+function activation_the_site_title( $html ) {
 
-	return ! $has_logo;
+	return primer_has_custom_logo() ? null : $html;
 
 }
-add_filter( 'primer_print_site_title_text', 'activation_print_site_title', 10, 2 );
+add_filter( 'primer_the_site_title',       'activation_the_site_title' );
+add_filter( 'primer_the_site_description', 'activation_the_site_title' );
 
 /**
  * Set font types.

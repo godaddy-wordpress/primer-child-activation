@@ -14,9 +14,50 @@
 	@include container($container-size);
 	display: none;
 
-  &.open {
-    display: block;
-  }
+	&.open {
+		display: block;
+		padding-top: 80px;
+
+		@media #{$medium-up}{
+			padding-top: 0;
+		}
+	}
+
+	.expand{
+		font-size: 1.8rem;
+		color: white;
+		position: absolute;
+		right: 0;
+		top: 0;
+		padding: 16px 0;
+		width: 50px;
+		line-height: 1;
+		text-align: center;
+		border-bottom: none;
+		border-left: 1px solid rgba(0,0,0,.1);
+		text-indent: 0;
+
+		&:hover{
+			background-color: rgba(0,0,0,.1);
+		}
+
+		&:before{
+			content: "+";
+		}
+
+		@media #{$medium-up}{
+			display: none;
+		}
+
+	}
+
+	.menu-item-has-children{
+		position: relative;
+
+		&.open > .expand:before{
+			content: "-";
+		}
+	}
 
 	@media #{$medium-up}{
 		display: block;
@@ -30,6 +71,14 @@
 		}
 	}
 
+	li li{
+		text-indent: 1rem;
+	}
+
+	li li li{
+		text-indent: 1.5rem;
+	}
+
 	ul {
 		list-style: none;
 		margin: 0;
@@ -37,15 +86,23 @@
 
 		a{
 			color: $color__text-menu;
+			border-bottom: 1px solid rgba(0,0,0,.1);
 		}
 
-		li li{
-			text-indent: 1rem;
+		@media #{$small-only}{
+
+			.open > .sub-menu{
+				display: block;
+			}
 		}
 
 		ul {
 			z-index: 99999;
 			background-color: $color__background-menu;
+
+			@media #{$small-only}{
+				display: none;
+			}
 
 			@media #{$medium-up}{
 				position: absolute;
@@ -86,8 +143,13 @@
 	a {
 		display: block;
 		text-decoration: none;
-		padding: 1.5em 1em;
+		padding: 1.6em 1em;
 		color: $color__text-menu;
+
+		@media #{$small-only}{
+			padding-top: 1.2em;
+			padding-bottom: 1.2em;
+		}
 
 		&:hover,
 		&:visited:hover {
@@ -194,12 +256,21 @@ body.no-max-width .main-navigation {
 }
 
 .menu-toggle {
-	display: block;
 	width: 4rem;
 	padding: 0.6rem;
 	cursor: pointer;
-	position: relative;
+	position: absolute;
 	z-index: 9999;
+	display: none;
+	top: 15px;
+	right: 0;
+	display: block;
+	padding: 0 9px 24px 0;
+	z-index: 99999;
+
+	.admin-bar &{
+		top: 48px;
+	}
 
 	@media #{$medium-up}{
 		display: none;
@@ -207,25 +278,35 @@ body.no-max-width .main-navigation {
 
 	div {
 		background-color: $color__text-menu;
-		height: 0.25rem;
-		margin: 0.43rem;
+		margin: 0.43rem .86rem 0.43rem 0;
 		transform: rotate(0deg);
 		transition: .15s ease-in-out;
 		transform-origin: left center;
+		height: 0.45rem;
 	}
 
-	&.open div {
-		&:nth-child(1) {
-			transform: rotate(45deg);
-		}
+	&.open {
+		top: 15px;
 
-		&:nth-child(2) {
-			width: 0%;
-			opacity: 0;
-		}
+		div {
+			&:nth-child(1) {
+				transform: rotate(45deg);
+			}
 
-		&:nth-child(3) {
-			transform: rotate(-45deg);
+			&:nth-child(2) {
+				width: 0%;
+				opacity: 0;
+			}
+
+			&:nth-child(3) {
+				transform: rotate(-45deg);
+			}
+		}
+	}
+
+	@media only screen and (max-width: 768px) {
+		.admin-bar &{
+			top: 68px;
 		}
 	}
 }
@@ -250,34 +331,5 @@ body.no-max-width .main-navigation {
 	}
 }
 
-.menu-toggle {
-	display: none;
-	top: 25px;
 
-	@media #{$small-only} {
-
-		display: block;
-		right: 5px;
-		padding: 0 9px 24px 0;
-		position: absolute;
-		top: 42px;
-		z-index: 99999;
-
-		.admin-bar &{
-			top: 48px;
-		}
-
-		div {
-			height: 0.45rem;
-			margin-left: 0;
-			margin-right: 0.86rem;
-		}
-	}
-
-	@media only screen and (max-width: 768px) {
-		.admin-bar &{
-			top: 68px;
-		}
-	}
-}
 

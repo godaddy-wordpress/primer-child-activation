@@ -31,12 +31,16 @@
 	@include span(12);
 	position: relative;
 	z-index: 1;
-	padding: 7% 1rem;
+	padding: 3% 1rem 7% 1rem;
+
+	@media #{$medium-up}{
+		padding-top: 7%;
+	}
 
 	.site-title {
 		text-transform: uppercase;
 		letter-spacing: 1px;
-		margin-bottom: 0.25rem;
+		margin-bottom: 00;
 		letter-spacing: -0.03em;
 		font-weight: 700;
 		font-size: 1.6em;

@@ -1,6 +1,10 @@
 .site-footer {
 	clear: both;
 	background-color: $color__background-footer;
+
+	.widget-title, h1, h2, h3, h4, h5, h6 {
+		color: $color__text-footer;
+	}
 }
 
 .footer-nav,
@@ -16,16 +20,13 @@
 		padding: 0 20px;
 
 		.social-menu {
-
 			a {
 				background: none;
 			}
-
 		}
-
 	}
 
-	.site-info-text{
+	.site-info-text {
 		float: left;
 	}
 
@@ -34,7 +35,6 @@
 		color: $color__text-footer;
 		font-size: .875rem;
 	}
-
 }
 
 .footer-widget-area {
@@ -125,19 +125,14 @@ body.no-max-width .footer-widget-area {
 		.site-info-text,
 		.social-menu {
 			@include span(12);
+
 			text-align: center;
 		}
 	}
 }
 
-.site-footer-inner{
-
-	h1,h2,h3,h4,h5,h6,&{
-		color: $color__text-footer;
-	}
-
+.site-footer-inner {
 	.footer-widget {
-
 		.widget {
 			background-color: transparent;
 			font-size: .875rem;
@@ -148,11 +143,6 @@ body.no-max-width .footer-widget-area {
 			p {
 				font-size: .875rem;
 			}
-
-			a {
-				color: $color__text-footer;
-			}
-
 		}
 
 		.widget-title {
@@ -161,9 +151,7 @@ body.no-max-width .footer-widget-area {
 			font-style: normal;
 			text-transform: uppercase;
 		}
-
 	}
-
 }
 
 body.no-max-width .site-info-wrapper .site-info {
@@ -197,6 +185,7 @@ body.no-max-width .site-info-wrapper .site-info {
 
 	a {
 		@extend .genericon;
+
 		@extend .genericon-link;
 
 		font-size: 0;
@@ -373,9 +362,6 @@ body.no-max-width .site-info-wrapper .site-info {
 			a {
 				color: $color__text-footer;
 			}
-
 		}
-
 	}
-
 }

@@ -1743,6 +1743,8 @@ body.no-max-width .page-title-container .page-header {
 .site-footer {
   clear: both;
   background-color: #2c3845; }
+  .site-footer .widget-title, .site-footer h1, .site-footer h2, .site-footer h3, .site-footer h4, .site-footer h5, .site-footer h6 {
+    color: #fff; }
 
 .footer-nav,
 .site-info-wrapper {
@@ -1861,9 +1863,6 @@ body.no-max-width .footer-widget-area {
       margin-left: 1.3888888889%;
       text-align: center; } }
 
-.site-footer-inner h1, .site-footer-inner h2, .site-footer-inner h3, .site-footer-inner h4, .site-footer-inner h5, .site-footer-inner h6, .site-footer-inner {
-  color: #fff; }
-
 .site-footer-inner .footer-widget .widget {
   background-color: transparent;
   font-size: .875rem; }
@@ -1872,8 +1871,6 @@ body.no-max-width .footer-widget-area {
   .site-footer-inner .footer-widget .widget a,
   .site-footer-inner .footer-widget .widget p {
     font-size: .875rem; }
-  .site-footer-inner .footer-widget .widget a {
-    color: #fff; }
 
 .site-footer-inner .footer-widget .widget-title {
   border-bottom: none;

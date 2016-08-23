@@ -60,6 +60,25 @@ add_filter( 'primer_the_site_title',       'activation_the_site_title' );
 add_filter( 'primer_the_site_description', 'activation_the_site_title' );
 
 /**
+ * Set fonts.
+ *
+ * @filter primer_fonts
+ * @since  1.0.0
+ *
+ * @param  array $fonts
+ *
+ * @return array
+ */
+function activation_fonts( $fonts ) {
+
+	$fonts[] = 'Lato';
+
+	return $fonts;
+
+}
+add_filter( 'primer_fonts', 'activation_fonts' );
+
+/**
  * Set font types.
  *
  * @filter primer_font_types
@@ -72,7 +91,13 @@ add_filter( 'primer_the_site_description', 'activation_the_site_title' );
 function activation_font_types( $font_types ) {
 
 	$overrides = array(
-		'header_font' => array(
+		'site_title_font' => array(
+			'default' => 'Lato',
+		),
+		'navigation_font' => array(
+			'default' => 'Lato',
+		),
+		'heading_font' => array(
 			'default' => 'Lato',
 		),
 		'primary_font' => array(
@@ -100,64 +125,69 @@ add_filter( 'primer_font_types', 'activation_font_types' );
  */
 function activation_colors( $colors ) {
 
-	return array(
-		'background_color' => array(
-			'default' => '#fff',
-			'body' => array(
-				'background' => '%1$s',
-			),
-		),
-		'header_background_color' => array(
-			'label'   => esc_html__( 'Menu Background Color', 'activation' ),
-			'default' => '#d24343',
-			'css'     => array(
-				'.side-masthead, header .main-navigation-container .menu li.menu-item-has-children:hover > ul, .main-navigation-container, .menu-main-menu-container, .main-navigation, .main-navigation .sub-menu' => array(
-					'background-color' => '%1$s',
-				),
-			),
-		),
-		'link_color' => array(
-			'label'   => esc_html__( 'Link Color', 'activation' ),
-			'default' => '#3fba73',
-			'css'     => array(
-				'a, a:visited, .entry-footer a, .sticky .entry-title a:before, .footer-widget-area .footer-widget .widget a' => array(
+	unset(
+		$colors['content_background_color'],
+		$colors['footer_widget_content_background_color']
+	);
+
+	$overrides = array(
+		/**
+		 * Text colors
+		 */
+		'menu_text_color' => array(
+			'css'      => array(
+				'.main-navigation .search-form input[type="search"]' => array(
 					'color' => '%1$s',
 				),
 			),
+			'rgba_css' => array(
+				'.main-navigation .search-form input[type="search"]' => array(
+					'border-color' => 'rgba(%1$s, 0.2)',
+				),
+			),
+		),
+		'footer_widget_heading_text_color' => array(
+			'default' => '#ffffff',
+		),
+		'footer_widget_text_color' => array(
+			'default' => '#ffffff',
+		),
+		'footer_menu_text_color' => array(
+			'default' => '#7c848c',
+		),
+		'footer_text_color' => array(
+			'default' => '#7c848c',
+		),
+		/**
+		 * Link / Button colors
+		 */
+		'link_color' => array(
+			'default'  => '#62bf7c',
 		),
 		'button_color' => array(
-			'label'   => esc_html__( 'Button Color', 'activation' ),
-			'default' => '#3fba73',
-			'css'     => array(
-				'button, a.button, a.button:visited, input[type="button"], input[type="reset"], input[type="submit"]:not(.search-submit), a.fl-button' => array(
-					'background-color' => '%1$s',
-				),
-			),
-			'rgba_css'     => array(
-				'button:hover, a.button:hover, a.button:visited:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:not(.search-submit):hover, a.fl-button:hover' => array(
-					'background-color' => 'rgba(%1$s, 0.7)',
-				),
-			),
+			'default'  => '#62bf7c',
 		),
-		'w_background_color' => array(
-			'label'   => esc_html__( 'Widget Background Color', 'activation' ),
+		/**
+		 * Background colors
+		 */
+		'background_color' => array(
+			'default' => '#ffffff',
+		),
+		'hero_background_color' => array(
+			'default' => '#b84247',
+		),
+		'menu_background_color' => array(
+			'default' => '#62bf7c',
+		),
+		'footer_widget_background_color' => array(
 			'default' => '#303d4c',
-			'css'     => array(
-				'.site-footer' => array(
-					'background-color' => '%1$s',
-				),
-			),
 		),
 		'footer_background_color' => array(
-			'label'   => esc_html__( 'Footer Background Color', 'activation' ),
 			'default' => '#2c3845',
-			'css'     => array(
-				'.site-info-wrapper, .footer-menu, .site-info-wrapper' => array(
-					'background-color' => '%1$s',
-				),
-			),
 		),
 	);
+
+	return primer_array_replace_recursive( $colors, $overrides );
 
 }
 add_filter( 'primer_colors', 'activation_colors' );
@@ -174,19 +204,71 @@ add_filter( 'primer_colors', 'activation_colors' );
  */
 function activation_color_schemes( $color_schemes ) {
 
-	return array(
-		'blue_green' => array(
-			'label'  => esc_html__( 'Blue and Green', 'activation' ),
+	$overrides = array(
+		'blush' => array(
 			'colors' => array(
-				'background_color'        => '#ffffff',
-				'header_background_color' => '#00b0f1',
-				'link_color'              => '#00b0f1',
-				'button_color'            => '#97d321',
-				'w_background_color'      => '#353535',
-				'footer_background_color' => '#212121',
+				'footer_widget_background_color' => '#303d4c',
+			),
+		),
+		'bronze' => array(
+			'colors' => array(
+				'footer_widget_background_color' => '#303d4c',
+			),
+		),
+		'canary' => array(
+			'colors' => array(
+				'footer_widget_background_color' => '#303d4c',
+			),
+		),
+		'cool' => array(
+			'colors' => array(
+				'footer_widget_background_color' => '#303d4c',
+			),
+		),
+		'dark' => array(
+			'colors' => array(
+				'link_color'                     => '#62bf7c',
+				'button_color'                   => '#62bf7c',
+				'background_color'               => '#2c3845',
+				'hero_background_color'          => '#2c3845',
+				'menu_background_color'          => '#303d4c',
+				'footer_widget_background_color' => '#303d4c',
+				'footer_background_color'        => '#2c3845',
+			),
+		),
+		'iguana' => array(
+			'colors' => array(
+				'footer_widget_background_color' => '#303d4c',
+			),
+		),
+		'muted' => array(
+			'colors' => array(
+				'footer_widget_background_color' => '#5a6175',
+			),
+		),
+		'plum' => array(
+			'colors' => array(
+				'footer_widget_background_color' => '#303d4c',
+			),
+		),
+		'rose' => array(
+			'colors' => array(
+				'footer_widget_background_color' => '#303d4c',
+			),
+		),
+		'tangerine' => array(
+			'colors' => array(
+				'footer_widget_background_color' => '#303d4c',
+			),
+		),
+		'turquoise' => array(
+			'colors' => array(
+				'footer_widget_background_color' => '#303d4c',
 			),
 		),
 	);
+
+	return primer_array_replace_recursive( $color_schemes, $overrides );
 
 }
 add_filter( 'primer_color_schemes', 'activation_color_schemes' );

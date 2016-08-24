@@ -7,11 +7,11 @@ Stable tag:        1.0.0
 License:           GPL-2.0
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-TBD
+Activation is a Primer child theme with a colorful, fitness-focused design.
 
 == Description ==
 
-TBD
+Activation is a Primer child theme with a colorful, fitness-focused design.
 
 **Languages Supported:**
 

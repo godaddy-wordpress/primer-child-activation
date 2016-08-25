@@ -22,25 +22,6 @@ function activation_move_elements() {
 add_action( 'template_redirect', 'activation_move_elements' );
 
 /**
- * Set the default hero image description.
- *
- * @filter primer_default_hero_images
- * @since  1.0.0
- *
- * @param  array $defaults
- *
- * @return array
- */
-function activation_default_hero_images( $defaults ) {
-
-	$defaults['default']['description'] = esc_html__( 'Woman exercising at the gym', 'activation' );
-
-	return $defaults;
-
-}
-add_filter( 'primer_default_hero_images', 'activation_default_hero_images' );
-
-/**
  * Hide site title and description when a custom logo is present.
  *
  * @filter primer_the_site_title

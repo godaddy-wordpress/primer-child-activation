@@ -1,16 +1,8 @@
 /* global module, require */
 
-module.exports = function(grunt) {
+module.exports = function( grunt ) {
 
 	var pkg = grunt.file.readJSON( 'package.json' );
-
-	var local_url = 'http://wp.dev';
-
-	if ( grunt.file.exists( '.dev/local-url' ) ) {
-
-		local_url = grunt.file.read( '.dev/local-url' ).trim();
-
-	}
 
 	grunt.initConfig({
 
@@ -34,22 +26,6 @@ module.exports = function(grunt) {
 			}
 		},
 
-		browserSync: {
-			dev: {
-				bsFiles: {
-					src: [
-						'*.css',
-						'**/*.php',
-						'*.js'
-					]
-				},
-				options: {
-					proxy: local_url, // this is read from the file .dev/local-url
-					watchTask: true
-				}
-			}
-		},
-
 		cssjanus: {
 			theme: {
 				options: {
@@ -68,96 +44,32 @@ module.exports = function(grunt) {
 			}
 		},
 
-		po2mo: {
-			files: {
-				src: 'languages/*.po',
-				expand: true
-			}
-		},
-
-		pot: {
-			files:{
-				expand: true,
-				src: [ '**/*.php', '!node_modules/**' ]
+		sass: {
+			options: {
+				precision: 5,
+				sourceMap: false
 			},
-			options:{
-				text_domain: pkg.name,
-				msgmerge: true,
-				dest: 'languages/',
-				encoding: 'UTF-8',
-				keywords: [
-					'__',
-					'_e',
-					'__ngettext:1,2',
-					'_n:1,2',
-					'__ngettext_noop:1,2',
-					'_n_noop:1,2',
-					'_c',
-					'_nc:4c,1,2',
-					'_x:1,2c',
-					'_nx:4c,1,2',
-					'_nx_noop:4c,1,2',
-					'_ex:1,2c',
-					'esc_attr__',
-					'esc_attr_e',
-					'esc_attr_x:1,2c',
-					'esc_html__',
-					'esc_html_e',
-					'esc_html_x:1,2c'
-				]
-			}
-		},
-
-		replace: {
-			pot: {
-				src: 'languages/*.po*',
-				overwrite: true,
-				replacements: [
+			dist: {
+				files: [
 					{
-						from: 'SOME DESCRIPTIVE TITLE.',
-						to: pkg.title
-					},
-					{
-						from: 'YEAR THE PACKAGE\'S COPYRIGHT HOLDER',
-						to: new Date().getFullYear()
-					},
-					{
-						from: 'FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.',
-						to: 'GoDaddy Operating Company, LLC.'
-					},
-					{
-						from: 'charset=CHARSET',
-						to: 'charset=UTF-8'
+						'style.css': '.dev/sass/style.scss',
+						'editor-style.css': '.dev/sass/editor-style.scss'
 					}
 				]
 			}
 		},
 
-		sass: {
-			dist: {
-				files: {
-					'style.css'        : '.dev/sass/style.scss',
-					'editor-style.css' : '.dev/sass/editor-style.scss'
-				}
-			}
-		},
-
 		watch: {
 			css: {
-				files: '.dev/**/*.scss',
+				files: '.dev/sass/**/*.scss',
 				tasks: [ 'sass','autoprefixer','cssjanus' ]
-			},
-			pot: {
-				files: [ '**/*.php' ],
-				tasks: [ 'pot' ]
 			}
 		}
+
 	});
 
-
-	require('matchdep').filterDev('grunt-*').forEach( grunt.loadNpmTasks );
+	require( 'matchdep' ).filterDev( 'grunt-*' ).forEach( grunt.loadNpmTasks );
 
 	grunt.registerTask( 'default', [ 'sass', 'autoprefixer', 'cssjanus' ] );
-	grunt.registerTask( 'update-pot', [ 'pot', 'replace:pot' ] );
 
 };

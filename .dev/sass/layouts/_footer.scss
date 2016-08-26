@@ -18,12 +18,6 @@
 	.site-info {
 		overflow: visible;
 		padding: 0 20px;
-
-		.social-menu {
-			a {
-				background: none;
-			}
-		}
 	}
 
 	.site-info-text {
@@ -166,6 +160,7 @@ body.no-max-width .site-info-wrapper .site-info {
 		margin: 0;
 		padding: 0;
 		font-size: 0;
+		text-align: right;
 
 		li {
 			display: inline-block;

@@ -143,10 +143,10 @@ function activation_colors( $colors ) {
 		 * Link / Button colors
 		 */
 		'link_color' => array(
-			'default'  => '#62bf7c',
+			'default'  => '#cc494f',
 		),
 		'button_color' => array(
-			'default'  => '#62bf7c',
+			'default'  => '#cc494f',
 		),
 		/**
 		 * Background colors
@@ -155,10 +155,10 @@ function activation_colors( $colors ) {
 			'default' => '#ffffff',
 		),
 		'hero_background_color' => array(
-			'default' => '#b84247',
+			'default' => '#2c3845',
 		),
 		'menu_background_color' => array(
-			'default' => '#62bf7c',
+			'default' => '#cc494f',
 		),
 		'footer_widget_background_color' => array(
 			'default' => '#303d4c',
@@ -185,24 +185,24 @@ add_filter( 'primer_colors', 'activation_colors' );
  */
 function activation_color_schemes( $color_schemes ) {
 
+	unset( $color_schemes['blush'] );
+
 	$overrides = array(
-		'blush' => array(
-			'colors' => array(
-				'footer_widget_background_color' => '#303d4c',
-			),
-		),
 		'bronze' => array(
 			'colors' => array(
+				'hero_background_color'          => '#2c3845',
 				'footer_widget_background_color' => '#303d4c',
 			),
 		),
 		'canary' => array(
 			'colors' => array(
+				'hero_background_color'          => '#2c3845',
 				'footer_widget_background_color' => '#303d4c',
 			),
 		),
 		'cool' => array(
 			'colors' => array(
+				'hero_background_color'          => '#2c3845',
 				'footer_widget_background_color' => '#303d4c',
 			),
 		),
@@ -219,31 +219,37 @@ function activation_color_schemes( $color_schemes ) {
 		),
 		'iguana' => array(
 			'colors' => array(
+				'hero_background_color'          => '#2c3845',
 				'footer_widget_background_color' => '#303d4c',
 			),
 		),
 		'muted' => array(
 			'colors' => array(
+				'hero_background_color'          => '#2c3845',
 				'footer_widget_background_color' => '#5a6175',
 			),
 		),
 		'plum' => array(
 			'colors' => array(
+				'hero_background_color'          => '#2c3845',
 				'footer_widget_background_color' => '#303d4c',
 			),
 		),
 		'rose' => array(
 			'colors' => array(
+				'hero_background_color'          => '#2c3845',
 				'footer_widget_background_color' => '#303d4c',
 			),
 		),
 		'tangerine' => array(
 			'colors' => array(
+				'hero_background_color'          => '#2c3845',
 				'footer_widget_background_color' => '#303d4c',
 			),
 		),
 		'turquoise' => array(
 			'colors' => array(
+				'hero_background_color'          => '#2c3845',
 				'footer_widget_background_color' => '#303d4c',
 			),
 		),

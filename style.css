@@ -1589,6 +1589,11 @@ body.page-template-page-builder-no-header .content-area {
   @media only screen and (min-width: 40.063em) {
     .site-title-wrapper {
       padding-top: 7%; } }
+  @media only screen and (max-width: 40.063em) {
+    .site-title-wrapper {
+      position: absolute;
+      width: auto;
+      z-index: 999999; } }
   .site-title-wrapper .site-title {
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -1641,6 +1646,11 @@ body.no-max-width .page-title-container .page-header {
 
 .hero {
   padding: 0 0 56px; }
+  @media only screen and (max-width: 40.063em) {
+    .hero {
+      position: relative;
+      top: 80px;
+      padding-bottom: 100px; } }
   .hero .widget {
     background: none;
     padding: 0; }

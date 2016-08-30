@@ -4,6 +4,7 @@
 	body.no-max-width &{
 		max-width: none;
 	}
+
 }
 
 .site-header {
@@ -35,6 +36,12 @@
 
 	@media #{$medium-up}{
 		padding-top: 7%;
+	}
+
+	@media #{$small-only} {
+		position: absolute;
+		width: auto;
+		z-index: 999999;
 	}
 
 	.site-title {
@@ -99,6 +106,12 @@ body.no-max-width .page-title-container .page-header {
 
 .hero {
 	padding: 0 0 56px;
+
+	@media #{$small-only} {
+		position: relative;
+		top: 80px;
+		padding-bottom: 100px;
+	}
 
 	.widget {
 		background: none;

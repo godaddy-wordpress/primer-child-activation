@@ -589,9 +589,9 @@ a {
     clear: both; }
   .main-navigation.open {
     display: block;
-    padding-top: 80px; }
+    padding-top: 90px; }
     body.admin-bar .main-navigation.open {
-      padding-top: 126px; }
+      padding-top: 136px; }
     @media only screen and (min-width: 40.063em) {
       .main-navigation.open {
         padding-top: 0; } }
@@ -764,7 +764,7 @@ body.no-max-width .main-navigation {
   position: absolute;
   z-index: 9999;
   display: none;
-  top: 15px;
+  top: 20px;
   right: 0;
   display: block;
   padding: 0 9px 24px 0;
@@ -787,7 +787,7 @@ body.no-max-width .main-navigation {
     transform-origin: left center;
     height: 0.45rem; }
   .menu-toggle.open {
-    top: 15px; }
+    top: 20px; }
     .menu-toggle.open div:nth-child(1) {
       -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);

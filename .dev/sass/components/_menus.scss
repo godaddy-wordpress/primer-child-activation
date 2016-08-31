@@ -16,10 +16,10 @@
 
 	&.open {
 		display: block;
-		padding-top: 80px;
+		padding-top: 90px;
 
 		body.admin-bar & {
-			padding-top: 126px;
+			padding-top: 136px;
 		}
 
 		@media #{$medium-up}{
@@ -266,7 +266,7 @@ body.no-max-width .main-navigation {
 	position: absolute;
 	z-index: 9999;
 	display: none;
-	top: 15px;
+	top: 20px;
 	right: 0;
 	display: block;
 	padding: 0 9px 24px 0;
@@ -290,7 +290,7 @@ body.no-max-width .main-navigation {
 	}
 
 	&.open {
-		top: 15px;
+		top: 20px;
 
 		div {
 			&:nth-child(1) {

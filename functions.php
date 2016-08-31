@@ -12,9 +12,9 @@ function activation_move_elements() {
 
 	add_action( 'primer_site_navigation', 'get_search_form', 11, 0 );
 
-	if ( ! is_front_page() ) {
+	if ( ! is_front_page() || ! is_active_sidebar( 'hero' ) ) {
 
-		add_action( 'primer_header', 'primer_add_page_title' );
+		add_action( 'primer_hero', 'primer_add_page_title' );
 
 	}
 

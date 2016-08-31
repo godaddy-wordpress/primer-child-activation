@@ -18,6 +18,10 @@
 		display: block;
 		padding-top: 80px;
 
+		body.admin-bar & {
+			padding-top: 126px;
+		}
+
 		@media #{$medium-up}{
 			padding-top: 0;
 		}

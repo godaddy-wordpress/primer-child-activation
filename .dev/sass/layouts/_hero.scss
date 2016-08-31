@@ -1,24 +1,18 @@
 .hero {
 	@include container($container-size);
+
 	color: white;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 	clear: both;
 
-	@media #{$medium-up} {
-		.home &{
-			padding-top: 2rem;
-			padding-bottom: 2rem;
-
-		}
-	}
-
-	.hero-inner{
+	.hero-inner {
 		@include span(12);
+
 		padding-left: 10px;
 		padding-right: 10px;
 
-		@media #{$medium-up}{
+		@media #{$medium-up} {
 			@include span(8);
 		}
 	}
@@ -47,14 +41,13 @@
 				line-height: 1;
 				text-align: left;
 			}
-
 		}
 
 		&::last-child {
 			margin-bottom: 0;
 		}
 
-		h1,h2,h3,h4,h5,h6,p,ul,ol,li{
+		h1, h2, h3, h4, h5, h6, p, ul, ol, li {
 			color: white;
 		}
 
@@ -77,10 +70,8 @@
 	}
 
 	@media #{$small-only} {
-		padding-bottom: 100px;
 		position: relative;
 		top: 80px;
 		padding-bottom: 100px;
 	}
-
 }

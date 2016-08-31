@@ -1,10 +1,9 @@
 .site-header-wrapper {
 	@include container($container-size);
 
-	body.no-max-width &{
+	body.no-max-width & {
 		max-width: none;
 	}
-
 }
 
 .site-header {
@@ -12,16 +11,17 @@
 	background-color: $color__background-header;
 	background-size: cover;
 
-	.row{
+	.row {
 		@include container($container-size);
 
 		.site-title-wrapper,
-		.hero{
+		.hero {
 			@include span(12);
 		}
 
-		@media #{$medium-up}{
-			.hero{
+		@media #{$medium-up} {
+
+			.hero {
 				@include span(7);
 			}
 		}
@@ -30,11 +30,12 @@
 
 .site-title-wrapper {
 	@include span(12);
+
 	position: relative;
 	z-index: 1;
 	padding: 3% 1rem 7% 1rem;
 
-	@media #{$medium-up}{
+	@media #{$medium-up} {
 		padding-top: 7%;
 	}
 
@@ -67,16 +68,6 @@
 	color: $color__text-tagline;
 }
 
-body.custom-header-image {
-	.site-title {
-		text-shadow: 1px 1px 30px rgba(0, 0, 0, 0.5);
-	}
-
-	.site-description {
-		text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.5);
-	}
-}
-
 .header-image img {
 	display: block;
 }
@@ -85,15 +76,10 @@ body.custom-header-image {
 	background-color: transparent;
 
 	.page-header {
-		@include container($container-size);
-		position: relative;
 		z-index: 100;
 		clear: both;
 
 		h1 {
-			@include span(12);
-			padding: 3% 1rem;
-			margin-bottom: 0;
 			font-weight: 300;
 			font-size: 3rem;
 		}
@@ -113,7 +99,6 @@ body.no-max-width .page-title-container .page-header {
 	}
 
 	.widget {
-
 		.widget-title {
 			color: #fff;
 			font-size: 2.5rem;
@@ -129,7 +114,7 @@ body.no-max-width .page-title-container .page-header {
 			margin: 0;
 		}
 
-		.button{
+		.button {
 			margin-top: 24px;
 			margin-bottom: 0.5em;
 		}
@@ -141,16 +126,14 @@ body.no-max-width .page-title-container .page-header {
 			}
 
 			p {
-				font-size: 1.2rem
+				font-size: 1.2rem;
 			}
 		}
-
 	}
-
 }
 
 .page-title-container .page-title,
-.page-title-container .archive-title{
+.page-title-container .archive-title {
 	color: white;
 	font-weight: 200;
 	margin-top: 1.5rem;

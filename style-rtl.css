@@ -590,6 +590,8 @@ a {
   .main-navigation.open {
     display: block;
     padding-top: 80px; }
+    body.admin-bar .main-navigation.open {
+      padding-top: 126px; }
     @media only screen and (min-width: 40.063em) {
       .main-navigation.open {
         padding-top: 0; } }
@@ -1609,35 +1611,15 @@ body.page-template-page-builder-no-header .content-area {
 .site-description {
   color: #ffffff; }
 
-body.custom-header-image .site-title {
-  text-shadow: -1px -1px 30px rgba(0, 0, 0, 0.5); }
-
-body.custom-header-image .site-description {
-  text-shadow: -1px -1px 15px rgba(0, 0, 0, 0.5); }
-
 .header-image img {
   display: block; }
 
 .page-title-container {
   background-color: transparent; }
   .page-title-container .page-header {
-    max-width: 1100px;
-    margin-right: auto;
-    margin-left: auto;
-    position: relative;
     z-index: 100;
     clear: both; }
-    .page-title-container .page-header:after {
-      content: " ";
-      display: block;
-      clear: both; }
     .page-title-container .page-header h1 {
-      width: 97.22222%;
-      float: right;
-      margin-right: 1.38889%;
-      margin-left: 1.38889%;
-      padding: 3% 1rem;
-      margin-bottom: 0;
       font-weight: 300;
       font-size: 3rem; }
 
@@ -1691,10 +1673,6 @@ body.no-max-width .page-title-container .page-header {
     content: " ";
     display: block;
     clear: both; }
-  @media only screen and (min-width: 40.063em) {
-    .home .hero {
-      padding-top: 2rem;
-      padding-bottom: 2rem; } }
   .hero .hero-inner {
     width: 97.22222%;
     float: right;
@@ -1743,7 +1721,6 @@ body.no-max-width .page-title-container .page-header {
     width: auto; }
   @media only screen and (max-width: 40.063em) {
     .hero {
-      padding-bottom: 100px;
       position: relative;
       top: 80px;
       padding-bottom: 100px; } }

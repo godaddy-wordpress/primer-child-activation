@@ -252,22 +252,22 @@ function activation_color_schemes( $color_schemes ) {
 		),
 		'muted' => array(
 			'colors' => array(
-					// Text
-					'heading_text_color'     => '#4f5875',
-					'primary_text_color'     => '#4f5875',
-					'secondary_text_color'   => '#888c99',
-					'footer_menu_text_color' => $color_schemes['muted']['base'],
-					'footer_text_color'      => '#4f5875',
-					// Links & Buttons
-					'link_color'   => $color_schemes['muted']['base'],
-					'button_color' => $color_schemes['muted']['base'],
-					// Backgrounds
-					'background_color'               => '#d5d6e0',
-					'hero_background_color'          => '#5a6175',
-					'menu_background_color'          => '#5a6175',
-					'footer_widget_background_color' => '#5a6175',
-					'footer_background_color'        => '#d5d6e0',
-				),
+				// Text
+				'heading_text_color'     => '#4f5875',
+				'primary_text_color'     => '#4f5875',
+				'secondary_text_color'   => '#888c99',
+				'footer_menu_text_color' => $color_schemes['muted']['base'],
+				'footer_text_color'      => '#4f5875',
+				// Links & Buttons
+				'link_color'   => $color_schemes['muted']['base'],
+				'button_color' => $color_schemes['muted']['base'],
+				// Backgrounds
+				'background_color'               => '#d5d6e0',
+				'hero_background_color'          => '#5a6175',
+				'menu_background_color'          => '#5a6175',
+				'footer_widget_background_color' => '#5a6175',
+				'footer_background_color'        => '#d5d6e0',
+			),
 		),
 		'plum' => array(
 			'colors' => array(

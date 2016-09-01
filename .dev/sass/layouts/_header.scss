@@ -10,6 +10,8 @@
 	position: relative;
 	background-color: $color__background-header;
 	background-size: cover;
+	background-position: center top;
+	background-repeat: no-repeat;
 
 	.row {
 		@include container($container-size);

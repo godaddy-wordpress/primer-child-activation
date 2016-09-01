@@ -115,8 +115,18 @@ function activation_colors( $colors ) {
 		/**
 		 * Text colors
 		 */
+		'header_textcolor' => array(
+			'default' => '#ffffff',
+		),
+		'tagline_text_color' => array(
+			'default' => '#ffffff',
+		),
+		'hero_text_color' => array(
+			'default' => '#ffffff',
+		),
 		'menu_text_color' => array(
-			'css'      => array(
+			'default' => '#ffffff',
+			'css'     => array(
 				'.main-navigation .search-form input[type="search"]' => array(
 					'color' => '%1$s',
 				),
@@ -126,6 +136,15 @@ function activation_colors( $colors ) {
 					'border-color' => 'rgba(%1$s, 0.2)',
 				),
 			),
+		),
+		'heading_text_color' => array(
+			'default' => '#353535',
+		),
+		'primary_text_color' => array(
+			'default' => '#252525',
+		),
+		'secondary_text_color' => array(
+			'default' => '#686868',
 		),
 		'footer_widget_heading_text_color' => array(
 			'default' => '#ffffff',
@@ -146,7 +165,10 @@ function activation_colors( $colors ) {
 			'default'  => '#cc494f',
 		),
 		'button_color' => array(
-			'default'  => '#cc494f',
+			'default'  => '#39bc72',
+		),
+		'button_text_color' => array(
+			'default'  => '#ffffff',
 		),
 		/**
 		 * Background colors
@@ -190,67 +212,89 @@ function activation_color_schemes( $color_schemes ) {
 	$overrides = array(
 		'bronze' => array(
 			'colors' => array(
-				'hero_background_color'          => '#2c3845',
-				'footer_widget_background_color' => '#303d4c',
+				'link_color'            => $color_schemes['bronze']['base'],
+				'button_color'          => $color_schemes['bronze']['base'],
+				'menu_background_color' => $color_schemes['bronze']['base'],
 			),
 		),
 		'canary' => array(
 			'colors' => array(
-				'hero_background_color'          => '#2c3845',
-				'footer_widget_background_color' => '#303d4c',
+				'link_color'            => $color_schemes['canary']['base'],
+				'button_color'          => $color_schemes['canary']['base'],
+				'menu_background_color' => $color_schemes['canary']['base'],
 			),
 		),
 		'cool' => array(
 			'colors' => array(
-				'hero_background_color'          => '#2c3845',
-				'footer_widget_background_color' => '#303d4c',
+				'link_color'            => $color_schemes['cool']['base'],
+				'button_color'          => $color_schemes['cool']['base'],
+				'menu_background_color' => $color_schemes['cool']['base'],
 			),
 		),
 		'dark' => array(
 			'colors' => array(
-				'link_color'                     => '#62bf7c',
-				'button_color'                   => '#62bf7c',
-				'background_color'               => '#2c3845',
-				'hero_background_color'          => '#2c3845',
-				'menu_background_color'          => '#303d4c',
-				'footer_widget_background_color' => '#303d4c',
-				'footer_background_color'        => '#2c3845',
+				// Text
+				'tagline_text_color'   => '#999999',
+				'heading_text_color'   => '#ffffff',
+				'primary_text_color'   => '#e5e5e5',
+				'secondary_text_color' => '#c1c1c1',
+				// Backgrounds
+				'background_color'      => '#2c3845',
+				'menu_background_color' => '#303d4c',
 			),
 		),
 		'iguana' => array(
 			'colors' => array(
-				'hero_background_color'          => '#2c3845',
-				'footer_widget_background_color' => '#303d4c',
+				'link_color'            => $color_schemes['iguana']['base'],
+				'button_color'          => $color_schemes['iguana']['base'],
+				'menu_background_color' => $color_schemes['iguana']['base'],
 			),
 		),
 		'muted' => array(
 			'colors' => array(
-				'hero_background_color'          => '#2c3845',
-				'footer_widget_background_color' => '#5a6175',
-			),
+					// Text
+					'heading_text_color'     => '#4f5875',
+					'primary_text_color'     => '#4f5875',
+					'secondary_text_color'   => '#888c99',
+					'footer_menu_text_color' => $color_schemes['muted']['base'],
+					'footer_text_color'      => '#4f5875',
+					// Links & Buttons
+					'link_color'   => $color_schemes['muted']['base'],
+					'button_color' => $color_schemes['muted']['base'],
+					// Backgrounds
+					'background_color'               => '#d5d6e0',
+					'hero_background_color'          => '#5a6175',
+					'menu_background_color'          => '#5a6175',
+					'footer_widget_background_color' => '#5a6175',
+					'footer_background_color'        => '#d5d6e0',
+				),
 		),
 		'plum' => array(
 			'colors' => array(
-				'hero_background_color'          => '#2c3845',
-				'footer_widget_background_color' => '#303d4c',
+				'link_color'            => $color_schemes['plum']['base'],
+				'button_color'          => $color_schemes['plum']['base'],
+				'menu_background_color' => $color_schemes['plum']['base'],
 			),
 		),
 		'rose' => array(
 			'colors' => array(
-				'hero_background_color'          => '#2c3845',
-				'footer_widget_background_color' => '#303d4c',
+				'link_color'            => $color_schemes['rose']['base'],
+				'button_color'          => $color_schemes['rose']['base'],
+				'menu_background_color' => $color_schemes['rose']['base'],
 			),
 		),
 		'tangerine' => array(
 			'colors' => array(
-				'hero_background_color'          => '#2c3845',
-				'footer_widget_background_color' => '#303d4c',
+				'link_color'            => $color_schemes['tangerine']['base'],
+				'button_color'          => $color_schemes['tangerine']['base'],
+				'menu_background_color' => $color_schemes['tangerine']['base'],
 			),
 		),
 		'turquoise' => array(
 			'colors' => array(
-				'hero_background_color'          => '#2c3845',
-				'footer_widget_background_color' => '#303d4c',
+				'link_color'            => $color_schemes['turquoise']['base'],
+				'button_color'          => $color_schemes['turquoise']['base'],
+				'menu_background_color' => $color_schemes['turquoise']['base'],
 			),
 		),
 	);

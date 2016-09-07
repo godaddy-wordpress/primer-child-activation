@@ -1,245 +1,314 @@
 <?php
 
 /**
- * Move titles above menu templates.
+ * Child theme version.
  *
- * @package activation
- * @since 1.0.0
- */
-function activation_remove_titles() {
-	remove_action( 'primer_after_header', 'primer_add_page_builder_template_title', 100 );
-	remove_action( 'primer_after_header', 'primer_add_blog_title', 100 );
-	remove_action( 'primer_after_header', 'primer_add_archive_title', 100 );
-
-	if ( ! is_front_page() ) :
-		add_action( 'primer_header', 'primer_add_page_builder_template_title' );
-		add_action( 'primer_header', 'primer_add_blog_title' );
-		add_action( 'primer_header', 'primer_add_archive_title' );
-	endif;
-}
-add_action( 'init', 'activation_remove_titles', 5 );
-
-/**
- * Add child and parent theme files.
- *
- * @package activation
- * @since 1.0.0
- */
-function activation_theme_enqueue_styles() {
-	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
-
-	wp_enqueue_script( 'primer-navigation' );
-}
-add_action( 'wp_enqueue_scripts', 'activation_theme_enqueue_styles' );
-
-/**
- * Register Footer Menu.
- *
- * @package activation
- * @since 1.0.0
- */
-function activation_theme_register_nav_menu() {
-	 register_nav_menu( 'footer', __( 'Footer Menu', 'activation' ) );
-}
-add_action( 'after_setup_theme', 'activation_theme_register_nav_menu' );
-
-/**
- * Register Hero Widget Sidebar.
- *
- * @package activation
- * @since 1.0.0
- */
-function activation_hero_sidebar_init() {
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Hero', 'activation' ),
-			'id'            => 'hero',
-			'description'   => esc_html__( 'The Hero widget area.', 'primer' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h6 class="widget-title">',
-			'after_title'   => '</h6>',
-		)
-	);
-}
-add_action( 'widgets_init', 'activation_hero_sidebar_init' );
-
-
-/**
- * Returns the featured image, custom header or false in this priority order.
- *
- * @package activation
  * @since 1.0.0
  *
- * @return false|string
+ * @var string
  */
-function activation_get_custom_header() {
-	$post_id = get_queried_object_id();
-	$image_size = (int) get_theme_mod( 'full_width' ) === 1 ? 'hero-2x' : 'hero';
-	if ( has_post_thumbnail( $post_id ) ) {
-		$image = get_the_post_thumbnail_url( $post_id, $image_size );
-		if ( getimagesize( $image ) ) {
-			return $image;
-		}
-	}
-	$custom_header = get_custom_header();
-	if ( ! empty( $custom_header->attachment_id ) ) {
-		$image = wp_get_attachment_image_url( $custom_header->attachment_id, $image_size );
-		if ( getimagesize( $image ) ) {
-			return $image;
-		}
-	}
-	$header_image = get_header_image();
-	return $header_image;
-}
+define( 'PRIMER_CHILD_VERSION', '0.9.0' );
 
 /**
- * Display the footer nav before the site info.
+ * Move some elements around.
  *
- * @package activation
+ * @action template_redirect
  * @since  1.0.0
  */
-function activation_add_nav_footer() {
+function activation_move_elements() {
 
-	get_template_part( 'templates/parts/footer-nav' );
+	remove_action( 'primer_after_header', 'primer_add_page_title' );
+
+	add_action( 'primer_site_navigation', 'get_search_form', 11, 0 );
+
+	if ( ! is_front_page() || ! is_active_sidebar( 'hero' ) ) {
+
+		add_action( 'primer_hero', 'primer_add_page_title' );
+
+	}
 
 }
-add_action( 'primer_after_footer', 'activation_add_nav_footer', 10 );
+add_action( 'template_redirect', 'activation_move_elements' );
 
 /**
- * Add selectors for font customizing.
+ * Hide site title and description when a custom logo is present.
  *
- * @package activation
- * @since 1.0.0
+ * @filter primer_the_site_title
+ * @filter primer_the_site_description
+ * @since  1.0.0
+ *
+ * @param  string $html
+ *
+ * @return string|null
  */
-function activation_update_font_types() {
-	return	array(
-		array(
-			'name'    => 'primary_font',
-			'label'   => __( 'Primary Font', 'activation' ),
+function activation_the_site_title( $html ) {
+
+	return primer_has_custom_logo() ? null : $html;
+
+}
+add_filter( 'primer_the_site_title',       'activation_the_site_title' );
+add_filter( 'primer_the_site_description', 'activation_the_site_title' );
+
+/**
+ * Set fonts.
+ *
+ * @filter primer_fonts
+ * @since  1.0.0
+ *
+ * @param  array $fonts
+ *
+ * @return array
+ */
+function activation_fonts( $fonts ) {
+
+	$fonts[] = 'Lato';
+
+	return $fonts;
+
+}
+add_filter( 'primer_fonts', 'activation_fonts' );
+
+/**
+ * Set font types.
+ *
+ * @filter primer_font_types
+ * @since  1.0.0
+ *
+ * @param  array $font_types
+ *
+ * @return array
+ */
+function activation_font_types( $font_types ) {
+
+	$overrides = array(
+		'site_title_font' => array(
 			'default' => 'Lato',
-			'css'     => array(
-				'body, p, .hero-wrapper .textwidget p, .site-description, .search-form input[type="search”], .widget li a, .site-info-text, h6, body p, .widget p, ' => array(
-					'font-family' => '"%s", sans-serif',
-				),
-			),
 		),
-		array(
-			'name'    => 'secondary_font',
-			'label'   => __( 'Secondary Font', 'activation' ),
+		'navigation_font' => array(
 			'default' => 'Lato',
-			'css'     => array(
-				'h1, h2, h3, h4, h5, h6, label, legend, table th, .site-title, .entry-title, .widget-title, .main-navigation li a, button, a.button, input[type="button"], input[type="reset"], input[type="submit"], blockquote, .entry-meta, .entry-footer, .comment-list li .comment-meta .says, .comment-list li .comment-metadata, .comment-reply-link, #respond .logged-in-as, .fl-callout-text, .site-title, .hero-wrapper .textwidget h1, .hero-wrapper .textwidget .button, .main-navigation li a, .widget-title, .footer-nav ul li a, h1, h2, h3, h4, h5, .entry-title, .single .entry-meta, ' => array(
-					'font-family' => '"%s", sans-serif',
-				),
-			),
+		),
+		'heading_font' => array(
+			'default' => 'Lato',
+		),
+		'primary_font' => array(
+			'default' => 'Lato',
+		),
+		'secondary_font' => array(
+			'default' => 'Lato',
 		),
 	);
+
+	return primer_array_replace_recursive( $font_types, $overrides );
+
 }
-add_action( 'primer_font_types', 'activation_update_font_types' );
+add_filter( 'primer_font_types', 'activation_font_types' );
 
 /**
- * Update colors
+ * Set colors.
  *
- * @package activation
- * @since 1.0.0
+ * @filter primer_colors
+ * @since  1.0.0
+ *
+ * @param  array $colors
+ *
+ * @return array
  */
-function activation_colors() {
-	return array(
-		array(
-			'name'    => 'background_color',
-			'default' => '#fff',
+function activation_colors( $colors ) {
+
+	unset(
+		$colors['content_background_color'],
+		$colors['footer_widget_content_background_color']
+	);
+
+	$overrides = array(
+		/**
+		 * Text colors
+		 */
+		'header_textcolor' => array(
+			'default' => '#ffffff',
 		),
-		array(
-			'name'    => 'header_backgroundcolor',
-			'label'   => __( 'Menu Background Color', 'activation' ),
-			'default' => '#d24343',
-			'css'     => array(
-				'.side-masthead, header .main-navigation-container .menu li.menu-item-has-children:hover > ul, .main-navigation-container, .menu-main-menu-container, .main-navigation, .main-navigation .sub-menu' => array(
-					'background-color' => '%1$s',
-				),
-			),
+		'tagline_text_color' => array(
+			'default' => '#ffffff',
 		),
-		array(
-			'name'    => 'link_color',
-			'label'   => __( 'Link Color', 'activation' ),
-			'default' => '#3fba73',
+		'hero_text_color' => array(
+			'default' => '#ffffff',
+		),
+		'menu_text_color' => array(
+			'default' => '#ffffff',
 			'css'     => array(
-				'a, a:visited, .entry-footer a, .sticky .entry-title a:before, .footer-widget-area .footer-widget .widget a' => array(
+				'.main-navigation .search-form input[type="search"]' => array(
 					'color' => '%1$s',
 				),
 			),
-		),
-		array(
-			'name'    => 'button_color',
-			'label'   => __( 'Button Color', 'activation' ),
-			'default' => '#3fba73',
-			'css'     => array(
-				'.cta, button, a.button, a.button:visited, input[type="button"], input[type="reset"], input[type="submit"]:not(.search-submit), a.fl-button' => array(
-					'background-color' => '%1$s',
+			'rgba_css' => array(
+				'.main-navigation .search-form input[type="search"]' => array(
+					'border-color' => 'rgba(%1$s, 0.2)',
 				),
 			),
 		),
-		array(
-			'name'    => 'w_background_color',
-			'label'   => __( 'Widget Background Color', 'activation' ),
-			'default' => '#303d4c',
-			'css'     => array(
-				'.site-footer' => array(
-					'background-color' => '%1$s',
-				),
-			),
+		'heading_text_color' => array(
+			'default' => '#353535',
 		),
-		array(
-			'name'    => 'footer_backgroundcolor',
-			'label'   => __( 'Footer Background Color', 'activation' ),
+		'primary_text_color' => array(
+			'default' => '#252525',
+		),
+		'secondary_text_color' => array(
+			'default' => '#686868',
+		),
+		'footer_widget_heading_text_color' => array(
+			'default' => '#ffffff',
+		),
+		'footer_widget_text_color' => array(
+			'default' => '#ffffff',
+		),
+		'footer_menu_text_color' => array(
+			'default' => '#7c848c',
+		),
+		'footer_text_color' => array(
+			'default' => '#7c848c',
+		),
+		/**
+		 * Link / Button colors
+		 */
+		'link_color' => array(
+			'default'  => '#cc494f',
+		),
+		'button_color' => array(
+			'default'  => '#39bc72',
+		),
+		'button_text_color' => array(
+			'default'  => '#ffffff',
+		),
+		/**
+		 * Background colors
+		 */
+		'background_color' => array(
+			'default' => '#ffffff',
+		),
+		'hero_background_color' => array(
 			'default' => '#2c3845',
-			'css'     => array(
-				'.site-info-wrapper, .footer-nav, .site-info-wrapper' => array(
-					'background-color' => '%1$s',
-				),
-			),
+		),
+		'menu_background_color' => array(
+			'default' => '#cc494f',
+		),
+		'footer_widget_background_color' => array(
+			'default' => '#303d4c',
+		),
+		'footer_background_color' => array(
+			'default' => '#2c3845',
 		),
 	);
+
+	return primer_array_replace_recursive( $colors, $overrides );
+
 }
-add_action( 'primer_colors', 'activation_colors', 1 );
+add_filter( 'primer_colors', 'activation_colors' );
 
 /**
- * Change Activation color schemes
+ * Set color schemes.
  *
- * @package activation
- * @since 1.0.0
+ * @filter primer_color_schemes
+ * @since  1.0.0
+ *
+ * @param  array $color_schemes
  *
  * @return array
  */
-function activation_color_schemes() {
-	return array(
-		'blue_green' => array(
-			'label'  => esc_html__( 'Blue and Green', 'activation' ),
+function activation_color_schemes( $color_schemes ) {
+
+	unset( $color_schemes['blush'] );
+
+	$overrides = array(
+		'bronze' => array(
 			'colors' => array(
-				'header_backgroundcolor'   => '#00b0f1',
-				'background_color'         => '#ffffff',
-				'link_color'               => '#00B0F1',
-				'button_color'			   => '#97d321',
-				'w_background_color'	   => '#353535',
-				'footer_backgroundcolor'   => '#212121',
+				'link_color'            => $color_schemes['bronze']['base'],
+				'button_color'          => $color_schemes['bronze']['base'],
+				'menu_background_color' => $color_schemes['bronze']['base'],
+			),
+		),
+		'canary' => array(
+			'colors' => array(
+				'link_color'            => $color_schemes['canary']['base'],
+				'button_color'          => $color_schemes['canary']['base'],
+				'menu_background_color' => $color_schemes['canary']['base'],
+			),
+		),
+		'cool' => array(
+			'colors' => array(
+				'link_color'            => $color_schemes['cool']['base'],
+				'button_color'          => $color_schemes['cool']['base'],
+				'menu_background_color' => $color_schemes['cool']['base'],
+			),
+		),
+		'dark' => array(
+			'colors' => array(
+				// Text
+				'tagline_text_color'   => '#999999',
+				'heading_text_color'   => '#ffffff',
+				'primary_text_color'   => '#e5e5e5',
+				'secondary_text_color' => '#c1c1c1',
+				// Backgrounds
+				'background_color'      => '#2c3845',
+				'menu_background_color' => '#303d4c',
+			),
+		),
+		'iguana' => array(
+			'colors' => array(
+				'link_color'            => $color_schemes['iguana']['base'],
+				'button_color'          => $color_schemes['iguana']['base'],
+				'menu_background_color' => $color_schemes['iguana']['base'],
+			),
+		),
+		'muted' => array(
+			'colors' => array(
+				// Text
+				'heading_text_color'     => '#4f5875',
+				'primary_text_color'     => '#4f5875',
+				'secondary_text_color'   => '#888c99',
+				'footer_menu_text_color' => $color_schemes['muted']['base'],
+				'footer_text_color'      => '#4f5875',
+				// Links & Buttons
+				'link_color'   => $color_schemes['muted']['base'],
+				'button_color' => $color_schemes['muted']['base'],
+				// Backgrounds
+				'background_color'               => '#d5d6e0',
+				'hero_background_color'          => '#5a6175',
+				'menu_background_color'          => '#5a6175',
+				'footer_widget_background_color' => '#5a6175',
+				'footer_background_color'        => '#d5d6e0',
+			),
+		),
+		'plum' => array(
+			'colors' => array(
+				'link_color'            => $color_schemes['plum']['base'],
+				'button_color'          => $color_schemes['plum']['base'],
+				'menu_background_color' => $color_schemes['plum']['base'],
+			),
+		),
+		'rose' => array(
+			'colors' => array(
+				'link_color'            => $color_schemes['rose']['base'],
+				'button_color'          => $color_schemes['rose']['base'],
+				'menu_background_color' => $color_schemes['rose']['base'],
+			),
+		),
+		'tangerine' => array(
+			'colors' => array(
+				'link_color'            => $color_schemes['tangerine']['base'],
+				'button_color'          => $color_schemes['tangerine']['base'],
+				'menu_background_color' => $color_schemes['tangerine']['base'],
+			),
+		),
+		'turquoise' => array(
+			'colors' => array(
+				'link_color'            => $color_schemes['turquoise']['base'],
+				'button_color'          => $color_schemes['turquoise']['base'],
+				'menu_background_color' => $color_schemes['turquoise']['base'],
 			),
 		),
 	);
-}
-add_action( 'primer_color_schemes', 'activation_color_schemes' );
 
-/**
- * Add default header image.
- *
- * @package activation
- * @since 1.0.0
- *
- * @return array
- */
-function activation_add_default_header_image( $array ) {
-	$array['default-image'] = get_stylesheet_directory_uri() . '/.dev/assets/img/header.png';
+	return primer_array_replace_recursive( $color_schemes, $overrides );
 
-	return $array;
 }
-add_filter( 'primer_custom_header_args', 'activation_add_default_header_image', 20 );
+add_filter( 'primer_color_schemes', 'activation_color_schemes' );

@@ -1,0 +1,77 @@
+.hero {
+	@include container($container-size);
+
+	color: white;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	clear: both;
+
+	.hero-inner {
+		@include span(12);
+
+		padding-left: 10px;
+		padding-right: 10px;
+
+		@media #{$medium-up} {
+			@include span(8);
+		}
+	}
+
+	.widget {
+		margin-bottom: 1em;
+		font-size: 1.2em;
+		font-weight: 300;
+		background: none;
+		color: white;
+		padding: 0;
+
+		.widget-title {
+			color: white;
+			font-size: 2rem;
+			line-height: 1;
+			text-align: left;
+		}
+
+		@media #{$medium-up} {
+			padding: 0 0 1em;
+
+			.widget-title {
+				color: white;
+				font-size: 3.5rem;
+				line-height: 1;
+				text-align: left;
+			}
+		}
+
+		&::last-child {
+			margin-bottom: 0;
+		}
+
+		h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+			color: white;
+		}
+
+		ul, ol {
+			padding-left: 0;
+
+			li {
+				list-style: none;
+			}
+		}
+
+		input, select, textarea {
+			color: $color__text-input;
+		}
+	}
+
+	label, input, select, textarea {
+		display: inline;
+		width: auto;
+	}
+
+	@media #{$small-only} {
+		position: relative;
+		top: 80px;
+		padding-bottom: 100px;
+	}
+}

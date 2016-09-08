@@ -19,8 +19,6 @@ function activation_move_elements() {
 
 	remove_action( 'primer_after_header', 'primer_add_page_title' );
 
-	add_action( 'primer_site_navigation', 'get_search_form', 11, 0 );
-
 	if ( ! is_front_page() || ! is_active_sidebar( 'hero' ) ) {
 
 		add_action( 'primer_hero', 'primer_add_page_title' );
@@ -135,16 +133,6 @@ function activation_colors( $colors ) {
 		),
 		'menu_text_color' => array(
 			'default' => '#ffffff',
-			'css'     => array(
-				'.main-navigation .search-form input[type="search"]' => array(
-					'color' => '%1$s',
-				),
-			),
-			'rgba_css' => array(
-				'.main-navigation .search-form input[type="search"]' => array(
-					'border-color' => 'rgba(%1$s, 0.2)',
-				),
-			),
 		),
 		'heading_text_color' => array(
 			'default' => '#353535',

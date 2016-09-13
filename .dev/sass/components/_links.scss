@@ -19,14 +19,22 @@ a {
 	}
 }
 
-.wp-pointer-buttons a.close,
-.wp-pointer-buttons a.close:visited {
-	color: #0073aa;
-	line-height: 1.6;
+.wp-pointer-content {
 
-	&:hover,
-	&:active,
-	&:focus {
-		color: #00a0d2;
+	h3,
+	p {
+		font-family: inherit;
+	}
+
+	a.close,
+	a.close:visited {
+		color: #0073aa;
+		line-height: 1.6;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: #00a0d2;
+		}
 	}
 }

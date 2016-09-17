@@ -48,7 +48,7 @@ Activation is a Primer child theme with a colorful, fitness-focused design.
 
 **Contributing:**
 
-You can fork and contribute to Activation by visiting [our public repo on GitHub](https://github.com/godaddy/wp-Activation-theme).
+You can fork and contribute to Activation by visiting [our public repo on GitHub](https://github.com/godaddy/wp-activation-theme).
 
 == Installation ==
 

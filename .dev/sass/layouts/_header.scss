@@ -42,7 +42,7 @@
 	}
 
 	@media #{$small-only} {
-		position: absolute;
+		position: relative;
 		width: auto;
 		max-width: 90%;
 		z-index: 8;

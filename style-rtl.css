@@ -1632,7 +1632,6 @@ body.page-template-page-builder-no-header .content-area {
     .site-title-wrapper {
       position: absolute;
       width: auto;
-      z-index: 999999;
       max-width: 90%;
       z-index: 8; } }
   .site-title-wrapper .site-title {

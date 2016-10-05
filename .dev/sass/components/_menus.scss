@@ -6,7 +6,7 @@
 		top: 0;
 		left: 0;
 		right: 0;
-		z-index: 9999;
+		z-index: 9;
 	}
 }
 
@@ -269,7 +269,7 @@ body.no-max-width .main-navigation {
 	top: 20px;
 	right: 0;
 	display: block;
-	padding: 0 9px 24px 0;
+	padding: 0 10px 24px 0;
 	z-index: 99999;
 
 	.admin-bar &{
@@ -334,6 +334,3 @@ body.no-max-width .main-navigation {
 		width: 50%;
 	}
 }
-
-
-

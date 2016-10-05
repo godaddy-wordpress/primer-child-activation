@@ -42,9 +42,10 @@
 	}
 
 	@media #{$small-only} {
-		position: absolute;
+		position: relative;
 		width: auto;
-		z-index: 999999;
+		max-width: 90%;
+		z-index: 8;
 	}
 
 	.site-title {

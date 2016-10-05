@@ -600,7 +600,7 @@ a {
       top: 0;
       right: 0;
       left: 0;
-      z-index: 9999; } }
+      z-index: 9; } }
 
 .main-navigation {
   max-width: 1100px;
@@ -791,7 +791,7 @@ body.no-max-width .main-navigation {
   top: 20px;
   left: 0;
   display: block;
-  padding: 0 0 24px 9px;
+  padding: 0 0 24px 10px;
   z-index: 99999; }
   .admin-bar .menu-toggle {
     top: 48px; }
@@ -1630,9 +1630,10 @@ body.page-template-page-builder-no-header .content-area {
       padding-top: 7%; } }
   @media only screen and (max-width: 40.063em) {
     .site-title-wrapper {
-      position: absolute;
+      position: relative;
       width: auto;
-      z-index: 999999; } }
+      max-width: 90%;
+      z-index: 8; } }
   .site-title-wrapper .site-title {
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -1759,7 +1760,6 @@ body.no-max-width .page-title-container .page-header {
   @media only screen and (max-width: 40.063em) {
     .hero {
       position: relative;
-      top: 80px;
       padding-bottom: 100px; } }
 
 /*--------------------------------------------------------------

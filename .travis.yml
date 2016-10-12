@@ -23,3 +23,4 @@ deploy:
     tags: true
     repo: godaddy/wp-activation-theme
   skip_cleanup: true
+  overwrite: true

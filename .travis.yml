@@ -8,10 +8,10 @@ before_script:
   - export RELEASE_FOLDER=activation
   - curl -s https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli-nightly.phar > /tmp/wp-cli.phar
   - php /tmp/wp-cli.phar package install runcommand/dist-archive
-  - cp -r ${TRAVIS_BUILD_DIR} /tmp/${RELEASE_FOLDER}
+  - cp -rv ${TRAVIS_BUILD_DIR} /tmp/${RELEASE_FOLDER}
 
 script:
-  - php /tmp/wp-cli.phar dist-archive /tmp/${RELEASE_FOLDER} ${TRAVIS_BUILD_DIR}/${RELEASE_FOLDER}.zip --format=zip
+  - php /tmp/wp-cli.phar dist-archive /tmp/${RELEASE_FOLDER} ${TRAVIS_BUILD_DIR}/${RELEASE_FOLDER}.zip --format=zip --debug
 
 deploy:
   provider: releases

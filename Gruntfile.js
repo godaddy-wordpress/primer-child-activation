@@ -70,10 +70,7 @@ module.exports = function( grunt ) {
 			version_php: {
 				src: [
 					'**/*.php',
-					'!vendor/**',
-					'!dev-lib/*',
-					'!node_modules/*',
-					'!*style*.css'
+					'.dev/**/*.scss'
 				],
 				overwrite: true,
 				replacements: [ {

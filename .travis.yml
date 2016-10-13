@@ -5,13 +5,13 @@ language:
   - node_js
 
 before_script:
-  - export RELEASE_FOLDER=activation
   - curl -s https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli-nightly.phar > /tmp/wp-cli.phar
+
+before_deploy:
+  - export RELEASE_FOLDER=activation
   - php /tmp/wp-cli.phar package install runcommand/dist-archive
   - cp -rv ${TRAVIS_BUILD_DIR} /tmp/${RELEASE_FOLDER}
   - mv /tmp/${RELEASE_FOLDER} ${TRAVIS_BUILD_DIR}
-
-script:
   - php /tmp/wp-cli.phar dist-archive ${RELEASE_FOLDER} ${TRAVIS_BUILD_DIR}/${RELEASE_FOLDER}.zip --format=zip --debug
 
 deploy:

@@ -23,5 +23,8 @@
     "load-grunt-tasks": "~3.5.0",
     "matchdep": "~1.0.1",
     "susy": "~2.2.12"
+  },
+  "scripts": {
+    "version": "grunt version && grunt"
   }
 }

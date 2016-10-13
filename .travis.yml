@@ -7,6 +7,9 @@ language:
 before_script:
   - curl -s https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli-nightly.phar > /tmp/wp-cli.phar
 
+script:
+  - echo "Deploy only"
+
 before_deploy:
   - export RELEASE_FOLDER=activation
   - php /tmp/wp-cli.phar package install runcommand/dist-archive

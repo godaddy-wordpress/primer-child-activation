@@ -85,7 +85,10 @@ module.exports = function( grunt ) {
 				}, {
 					from: /VERSION(\s*?)=(\s*?['"])[a-zA-Z0-9\.\-\+]+/mg,
 					to: 'VERSION$1=$2' + pkg.version
-				} ]
+				}, {
+					from: /'PRIMER_CHILD_VERSION', '[a-zA-Z0-9\.\-\+]+'/mg,
+					to: '\'PRIMER_CHILD_VERSION\', \'' + pkg.version + '\''
+				}]
 			},
 			version_readme: {
 				src: 'readme.*',

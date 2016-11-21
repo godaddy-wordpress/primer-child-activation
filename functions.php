@@ -17,11 +17,11 @@ define( 'PRIMER_CHILD_VERSION', '1.0.0' );
  */
 function activation_move_elements() {
 
-	remove_action( 'primer_after_header', 'primer_add_page_title' );
+	remove_action( 'primer_after_header', 'primer_add_page_title', 12 );
 
 	if ( ! is_front_page() || ! is_active_sidebar( 'hero' ) ) {
 
-		add_action( 'primer_hero', 'primer_add_page_title' );
+		add_action( 'primer_hero', 'primer_add_page_title', 12 );
 
 	}
 

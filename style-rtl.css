@@ -2352,6 +2352,8 @@ ul.site-header-cart.menu {
   .widget_shopping_cart ul.product_list_widget {
     position: relative !important;
     right: 0;
+    max-height: 250px;
+    overflow-y: auto;
     background: inherit; }
   .widget_shopping_cart p.buttons,
   .widget_shopping_cart .total,
@@ -2361,7 +2363,7 @@ ul.site-header-cart.menu {
   .widget_shopping_cart .total strong {
     text-index: 0; }
   .widget_shopping_cart p.buttons {
-    margin-bottom: 0; }
+    margin: 0; }
 
 .woocommerce-cart-menu-item .woocommerce.widget_shopping_cart .cart_list li.mini_cart_item {
   padding: 0;

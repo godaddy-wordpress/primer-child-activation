@@ -163,6 +163,11 @@ function activation_colors( $colors ) {
 		),
 		'button_color' => array(
 			'default'  => '#39bc72',
+			'css'     => array(
+				'.woocommerce-cart-menu-item .woocommerce.widget_shopping_cart p.buttons a' => array(
+					'background-color' => '%1$s',
+				),
+			),
 		),
 		'button_text_color' => array(
 			'default'  => '#ffffff',
@@ -172,6 +177,11 @@ function activation_colors( $colors ) {
 		 */
 		'background_color' => array(
 			'default' => '#ffffff',
+			'css'     => array(
+				'.woocommerce-cart-menu-item .sub-menu, .woocommerce-cart-menu-item ul.sub-menu' => array(
+					'background-color' => '%1$s',
+				),
+			),
 		),
 		'hero_background_color' => array(
 			'default' => '#2c3845',

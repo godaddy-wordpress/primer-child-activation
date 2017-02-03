@@ -159,18 +159,13 @@ function activation_colors( $colors ) {
 		 * Link / Button colors
 		 */
 		'link_color' => array(
-			'default'  => '#cc494f',
+			'default' => '#cc494f',
 		),
 		'button_color' => array(
-			'default'  => '#39bc72',
-			'css'     => array(
-				'.woocommerce-cart-menu-item .woocommerce.widget_shopping_cart p.buttons a' => array(
-					'background-color' => '%1$s',
-				),
-			),
+			'default' => '#39bc72',
 		),
 		'button_text_color' => array(
-			'default'  => '#ffffff',
+			'default' => '#ffffff',
 		),
 		/**
 		 * Background colors
@@ -178,7 +173,7 @@ function activation_colors( $colors ) {
 		'background_color' => array(
 			'default' => '#ffffff',
 			'css'     => array(
-				'.woocommerce-cart-menu-item .sub-menu, .woocommerce-cart-menu-item ul.sub-menu' => array(
+				'li.primer-wc-cart-menu .primer-wc-cart-sub-menu' => array(
 					'background-color' => '%1$s',
 				),
 			),

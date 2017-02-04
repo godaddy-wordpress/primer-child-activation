@@ -172,11 +172,6 @@ function activation_colors( $colors ) {
 		 */
 		'background_color' => array(
 			'default' => '#ffffff',
-			'css'     => array(
-				'li.primer-wc-cart-menu .primer-wc-cart-sub-menu' => array(
-					'background-color' => '%1$s',
-				),
-			),
 		),
 		'hero_background_color' => array(
 			'default' => '#2c3845',

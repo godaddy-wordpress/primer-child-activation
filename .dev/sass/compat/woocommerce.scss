@@ -45,6 +45,7 @@
 
 			p.buttons {
 				padding: .5em;
+				padding-top: 0;
 				margin: 0;
 			}
 
@@ -99,8 +100,8 @@
 				margin-bottom: 0;
 
 				.total {
-					margin: 0 0 10px 0;
-					padding-top: 10px;
+					margin: 0;
+					padding: 10px 0;
 					text-align: center;
 				}
 

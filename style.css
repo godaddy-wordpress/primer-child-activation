@@ -2322,6 +2322,9 @@ body.no-max-width .site-info-wrapper .site-info {
 /*--------------------------------------------------------------
 # Compatibility
 --------------------------------------------------------------*/
+nav:not(.main-navigation) .primer-wc-cart-menu {
+  display: none !important; }
+
 .primer-wc-cart-menu .primer-wc-cart-sub-menu {
   float: right;
   width: 100%;

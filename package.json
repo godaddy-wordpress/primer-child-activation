@@ -11,16 +11,16 @@
     "url": "https://github.com/godaddy/wp-activation-theme/issues"
   },
   "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-autoprefixer": "~3.0.4",
-    "grunt-contrib-watch": "~1.0.0",
-    "grunt-cssjanus": "~0.3.2",
-    "grunt-dev-update": "~2.0.0",
-    "grunt-sass": "^1.2.0",
+    "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-cssjanus": "^0.3.2",
+    "grunt-dev-update": "^2.0.0",
+    "grunt-sass": "^2.0.0",
     "grunt-text-replace": "^0.4.0",
-    "load-grunt-tasks": "~3.5.0",
-    "matchdep": "~1.0.1",
-    "susy": "~2.2.12"
+    "load-grunt-tasks": "^3.5.0",
+    "matchdep": "^1.0.1",
+    "susy": "^2.2.12"
   },
   "scripts": {
     "version": "grunt version && grunt && git add -A .",

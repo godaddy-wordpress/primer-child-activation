@@ -200,7 +200,7 @@ button,
 input,
 select,
 textarea {
-  color: #0b3954;
+  color: #252525;
   font-family: "Lato", "Helvetica Neue", sans-serif;
   font-weight: normal;
   font-size: 16px;
@@ -222,7 +222,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   line-height: 1.4;
   text-rendering: optimizeLegibility;
-  color: #0b3954; }
+  color: #252525; }
 
 h1 {
   font-size: 2.5em; }
@@ -255,7 +255,7 @@ blockquote {
   line-height: 1.4;
   margin: 1em 0;
   padding-left: 1em;
-  border-left: 4px solid rgba(11, 57, 84, 0.1);
+  border-left: 4px solid rgba(37, 37, 37, 0.1);
   color: #686868; }
 
 address {
@@ -271,7 +271,7 @@ pre {
   max-width: 100%;
   overflow: auto;
   padding: 1em;
-  border: 1px solid rgba(11, 57, 84, 0.1);
+  border: 1px solid rgba(37, 37, 37, 0.1);
   -webkit-border-radius: 2px;
   border-radius: 2px; }
 
@@ -283,7 +283,7 @@ code, kbd, tt, var {
 code {
   padding: 0.125rem 0.25rem;
   background-color: #eee;
-  border: 1px solid rgba(11, 57, 84, 0.1);
+  border: 1px solid rgba(37, 37, 37, 0.1);
   -webkit-border-radius: 2px;
   border-radius: 2px; }
 
@@ -293,7 +293,7 @@ pre code {
   background-color: none; }
 
 abbr, acronym {
-  border-bottom: 1px dotted rgba(11, 57, 84, 0.1);
+  border-bottom: 1px dotted rgba(37, 37, 37, 0.1);
   cursor: help; }
 
 mark, ins {
@@ -317,7 +317,7 @@ html {
   box-sizing: inherit; }
 
 body {
-  background: #f4f5f9; }
+  background: #ffffff; }
 
 blockquote, q {
   quotes: "" ""; }
@@ -325,7 +325,7 @@ blockquote, q {
     content: ""; }
 
 hr {
-  background-color: rgba(11, 57, 84, 0.1);
+  background-color: rgba(37, 37, 37, 0.1);
   border: 0;
   height: 1px;
   margin-bottom: 1.5em; }
@@ -364,7 +364,7 @@ table {
 .hentry table td {
   padding: 0.5em;
   text-align: left;
-  border: 1px solid rgba(11, 57, 84, 0.1);
+  border: 1px solid rgba(37, 37, 37, 0.1);
   border-left: none;
   border-right: none; }
 
@@ -377,7 +377,7 @@ table {
   border-bottom: none; }
 
 .hentry table tr:hover td {
-  background-color: rgba(11, 57, 84, 0.075); }
+  background-color: rgba(37, 37, 37, 0.075); }
 
 .widget table caption {
   padding: 0 0.5em 0.5em;
@@ -403,8 +403,8 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-  color: rgba(11, 57, 84, 0.5);
-  border: 1px solid rgba(11, 57, 84, 0.1);
+  color: rgba(37, 37, 37, 0.5);
+  border: 1px solid rgba(37, 37, 37, 0.1);
   -webkit-border-radius: 3px;
   border-radius: 3px;
   padding: 0.75rem;
@@ -425,7 +425,7 @@ textarea {
   input[type="datetime-local"]:focus,
   input[type="color"]:focus,
   textarea:focus {
-    color: #0b3954; }
+    color: #252525; }
 
 input[type="checkbox"],
 input[type="radio"] {
@@ -436,14 +436,14 @@ input[type="file"] {
   font-size: 0.85rem; }
 
 select {
-  border: 1px solid rgba(11, 57, 84, 0.1); }
+  border: 1px solid rgba(37, 37, 37, 0.1); }
 
 textarea {
   width: 100%; }
 
 fieldset {
   padding: 0.5em 1.5em;
-  border-color: rgba(11, 57, 84, 0.1); }
+  border-color: rgba(37, 37, 37, 0.1); }
 
 legend {
   padding: 0 1em;
@@ -461,7 +461,7 @@ input[type="reset"],
 input[type="submit"] {
   display: inline-block;
   border: none;
-  background-color: #ff6663;
+  background-color: #cc494f;
   color: #fff;
   line-height: 1;
   white-space: nowrap;
@@ -487,16 +487,16 @@ input[type="submit"] {
   input[type="submit"]:active,
   input[type="submit"]:focus {
     cursor: pointer;
-    background-color: rgba(255, 102, 99, 0.8);
+    background-color: rgba(204, 73, 79, 0.8);
     color: #fff; }
 
 a {
-  color: #ff6663;
+  color: #cc494f;
   text-decoration: none; }
   a:visited {
-    color: #ff6663; }
+    color: #cc494f; }
   a:hover, a:focus, a:active {
-    color: rgba(255, 102, 99, 0.8); }
+    color: rgba(204, 73, 79, 0.8); }
   a:hover, a:active, a:focus {
     outline: 0; }
 

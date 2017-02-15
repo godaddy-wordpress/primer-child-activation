@@ -1,0 +1,4 @@
+[submodule ".dev/lib"]
+	path = .dev/lib
+	url = https://github.com/godaddy/wp-primer-child-dev-lib.git
+	branch = master

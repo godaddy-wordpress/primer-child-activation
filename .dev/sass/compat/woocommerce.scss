@@ -1,8 +1,10 @@
-nav:not(.main-navigation) .primer-wc-cart-menu {
-	display: none !important;
-}
-
 .primer-wc-cart-menu {
+	display: none !important;
+
+	.main-navigation & {
+		display: list-item !important;
+	}
+
 	.primer-wc-cart-sub-menu {
 		float: right;
 		width: 100%;

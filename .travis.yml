@@ -43,6 +43,6 @@ before_script:
     phpcs --config-set installed_paths
     $HOME/.composer/vendor/wp-coding-standards/wpcs
 script:
-  - phpunit -c /tmp/wordpress-tests-lib/build.xml --bootstrap=/tmp/wordpress-tests-lib/includes/bootstrap.php
+  - phpunit -c /tmp/wordpress-tests-lib/build.xml --bootstrap=/tmp/wordpress-tests-lib/includes/bootstrap.php phpunit --group=customize
   - phpcs --standard=.dev/lib/phpcs.ruleset.xml $(find . -name '*.php')
   - phpunit -c .dev/lib/phpunit.xml.dist

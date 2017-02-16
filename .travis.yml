@@ -8,6 +8,7 @@ branches:
   only:
     - master
     - develop
+    - dev-lib-test
 php:
   - 5.3
   - 7.1

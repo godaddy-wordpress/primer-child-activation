@@ -8,7 +8,6 @@ branches:
   only:
     - master
     - develop
-    - dev-lib-test
 php:
   - 5.3
   - 7.1
@@ -32,8 +31,8 @@ before_script:
     $WP_VERSION
   - 'export PATH="$HOME/.composer/vendor/bin:$PATH"'
   - |
-    if [[ ${TRAVIS_PHP_VERSION:0:3} == "7.0" ]]; then
-      composer global require "phpunit/phpunit=6.0.*"
+    if [[ ${TRAVIS_PHP_VERSION:0:2} == "7." ]]; then
+      composer global require "phpunit/phpunit=5.7.*"
     else
       composer global require "phpunit/phpunit=4.8.*"
     fi
@@ -44,4 +43,4 @@ before_script:
     $HOME/.composer/vendor/wp-coding-standards/wpcs
 script:
   - phpcs --standard=.dev/lib/phpcs.ruleset.xml $(find . -name '*.php')
-  - phpunit
+  - phpunit -c .dev/lib/phpunit.xml.dist

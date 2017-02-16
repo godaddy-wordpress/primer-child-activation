@@ -2,8 +2,8 @@
 Contributors:      godaddy, jonathanbardo, fjarrett
 Tags:              custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, fixed-layout, flexible-header, fluid-layout, left-sidebar, light, one-column, responsive-layout, right-sidebar, rtl-language-support, sticky-post, threaded-comments, three-columns, translation-ready, two-columns
 Requires at least: 4.4
-Tested up to:      4.6
-Stable tag:        1.0.0
+Tested up to:      4.7
+Stable tag:        0.9.0
 License:           GPL-2.0
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,20 +75,12 @@ GNU General Public License for more details.
 
 Activation bundles the following third-party resources:
 
-Genericons icon font, Copyright 2013 Automattic, Inc.
-License: GPL-2.0 (or later)
-Source: https://genericons.com/
-
-== Frequently Asked Questions ==
-
-TODO
-
-== Developer Tools ==
-
-TODO
+Stock photography, Unsplash
+License: Creative Commons Zero
+Source: https://unsplash.com/
 
 == Changelog ==
 
-= 1.0.0 - June, 2016 =
+= 0.9.0 - June, 2016 =
 
 * Initial release.

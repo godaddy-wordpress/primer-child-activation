@@ -8,7 +8,6 @@ branches:
   only:
     - master
     - develop
-    - dev-lib-test
 php:
   - 5.3
   - 7.1
@@ -43,5 +42,6 @@ before_script:
     phpcs --config-set installed_paths
     $HOME/.composer/vendor/wp-coding-standards/wpcs
 script:
+  - phpunit -c /tmp/wordpress-tests-lib/build.xml
   - phpcs --standard=.dev/lib/phpcs.ruleset.xml $(find . -name '*.php')
   - phpunit -c .dev/lib/phpunit.xml.dist

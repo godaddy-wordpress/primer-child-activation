@@ -1641,10 +1641,6 @@ body.page-template-page-builder-no-header .content-area {
     letter-spacing: -0.03em;
     font-weight: 700;
     font-size: 1.6em; }
-    .site-title-wrapper .site-title a {
-      color: #ffffff; }
-      .site-title-wrapper .site-title a:hover, .site-title-wrapper .site-title a:visited:hover {
-        color: rgba(255, 255, 255, 0.8); }
 
 .site-description {
   color: #ffffff; }

@@ -1,9 +1,9 @@
 === Activation ===
-Contributors:      godaddy, jonathanbardo, fjarrett
+Contributors:      godaddy, jonathanbardo, fjarrett, eherman24
 Tags:              custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, fixed-layout, flexible-header, fluid-layout, left-sidebar, light, one-column, responsive-layout, right-sidebar, rtl-language-support, sticky-post, threaded-comments, three-columns, translation-ready, two-columns
 Requires at least: 4.4
 Tested up to:      4.7
-Stable tag:        0.9.0
+Stable tag:        0.9.1
 License:           GPL-2.0
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -60,7 +60,7 @@ You can fork and contribute to Activation by visiting [our public repo on GitHub
 
 == Copyright ==
 
-Activation WordPress theme, Copyright 2016 GoDaddy Operating Company, LLC.
+Activation WordPress theme, Copyright 2017 GoDaddy Operating Company, LLC.
 Activation is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
@@ -81,6 +81,6 @@ Source: https://unsplash.com/
 
 == Changelog ==
 
-= 0.9.0 - June, 2016 =
+= 1.0.0 =
 
 * Initial release.

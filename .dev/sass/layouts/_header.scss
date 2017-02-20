@@ -55,15 +55,6 @@
 		letter-spacing: -0.03em;
 		font-weight: 700;
 		font-size: 1.6em;
-
-		a {
-			color: $header-textcolor;
-
-			&:hover,
-			&:visited:hover {
-				color: rgba($header-textcolor, 0.8);
-			}
-		}
 	}
 }
 

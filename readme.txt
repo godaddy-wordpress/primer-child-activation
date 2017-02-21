@@ -73,6 +73,12 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
+Activation is a child theme of Primer:
+
+Primer, Copyright 2017 GoDaddy Operating Company, LLC.
+License: GPL-2.0
+Source: https://github.com/godaddy/wp-primer-theme
+
 Activation bundles the following third-party resources:
 
 Stock photography, Unsplash

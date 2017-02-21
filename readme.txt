@@ -77,7 +77,7 @@ Activation bundles the following third-party resources:
 
 Stock photography, Unsplash
 License: Creative Commons Zero
-Source: https://unsplash.com/
+Source: https://unsplash.com/photos/9HI8UJMSdZA
 
 == Changelog ==
 

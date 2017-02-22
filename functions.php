@@ -7,7 +7,7 @@
  *
  * @var string
  */
-define( 'PRIMER_CHILD_VERSION', '0.9.1' );
+define( 'PRIMER_CHILD_VERSION', '1.1.0' );
 
 /**
  * Move some elements around.
@@ -17,11 +17,11 @@ define( 'PRIMER_CHILD_VERSION', '0.9.1' );
  */
 function activation_move_elements() {
 
-	remove_action( 'primer_after_header', 'primer_add_page_title' );
+	remove_action( 'primer_after_header', 'primer_add_page_title', 12 );
 
 	if ( ! is_front_page() || ! is_active_sidebar( 'hero' ) ) {
 
-		add_action( 'primer_hero', 'primer_add_page_title' );
+		add_action( 'primer_hero', 'primer_add_page_title', 12 );
 
 	}
 
@@ -159,13 +159,13 @@ function activation_colors( $colors ) {
 		 * Link / Button colors
 		 */
 		'link_color' => array(
-			'default'  => '#cc494f',
+			'default' => '#cc494f',
 		),
 		'button_color' => array(
-			'default'  => '#39bc72',
+			'default' => '#39bc72',
 		),
 		'button_text_color' => array(
-			'default'  => '#ffffff',
+			'default' => '#ffffff',
 		),
 		/**
 		 * Background colors

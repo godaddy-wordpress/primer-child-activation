@@ -23,8 +23,12 @@ module.exports = function( grunt ) {
 				],
 				cascade: false
 			},
-			editor: [ 'editor-style.css' ],
-			main: [ 'style.css' ]
+			editor: {
+				src: [ 'editor-style.css' ]
+			},
+			main: {
+				src: [ 'style.css' ]
+			}
 		},
 
 		clean: {
@@ -120,6 +124,16 @@ module.exports = function( grunt ) {
 		},
 
 		replace: {
+			charset: {
+				overwrite: true,
+				replacements: [
+					{
+						from: /^@charset "UTF-8";\n/,
+						to: ''
+					}
+				],
+				src: [ 'style*.css' ]
+			},
 			php: {
 				overwrite: true,
 				replacements: [

@@ -89,7 +89,8 @@ Source: https://unsplash.com/photos/9HI8UJMSdZA
 
 = 1.1.0 =
 
-* Initial release.
+* New: Full compatibility with the WooCommerce plugin (Requires Primer 1.5.0) @props [evanherman](https://github.com/EvanHerman), [fjarrett](https://github.com/fjarrett)
+* Fix: Site Title Text color control not working in the Customizer @props [evanherman](https://github.com/EvanHerman)
 
 = 1.0.0 =
 

@@ -35,7 +35,7 @@ add_action( 'template_redirect', 'activation_move_elements' );
  * @filter primer_the_site_description
  * @since  1.0.0
  *
- * @param  string $html
+ * @param  string $html Markup for the site title and tagline.
  *
  * @return string|null
  */
@@ -53,7 +53,7 @@ add_filter( 'primer_the_site_description', 'activation_the_site_title' );
  * @filter primer_fonts
  * @since  1.0.0
  *
- * @param  array $fonts
+ * @param  array $fonts The array of available fonts in Primer.
  *
  * @return array
  */
@@ -72,7 +72,7 @@ add_filter( 'primer_fonts', 'activation_fonts' );
  * @filter primer_font_types
  * @since  1.0.0
  *
- * @param  array $font_types
+ * @param  array $font_types The array of available font types in Primer.
  *
  * @return array
  */
@@ -107,7 +107,7 @@ add_filter( 'primer_font_types', 'activation_font_types' );
  * @filter primer_colors
  * @since  1.0.0
  *
- * @param  array $colors
+ * @param  array $colors The array of available colors in Primer color schemes.
  *
  * @return array
  */
@@ -120,7 +120,7 @@ function activation_colors( $colors ) {
 
 	$overrides = array(
 		/**
-		 * Text colors
+		 * Text colors.
 		 */
 		'header_textcolor' => array(
 			'default' => '#ffffff',
@@ -156,7 +156,7 @@ function activation_colors( $colors ) {
 			'default' => '#7c848c',
 		),
 		/**
-		 * Link / Button colors
+		 * Link / Button colors.
 		 */
 		'link_color' => array(
 			'default' => '#cc494f',
@@ -168,7 +168,7 @@ function activation_colors( $colors ) {
 			'default' => '#ffffff',
 		),
 		/**
-		 * Background colors
+		 * Background colors.
 		 */
 		'background_color' => array(
 			'default' => '#ffffff',
@@ -198,7 +198,7 @@ add_filter( 'primer_colors', 'activation_colors' );
  * @filter primer_color_schemes
  * @since  1.0.0
  *
- * @param  array $color_schemes
+ * @param  array $color_schemes The array of available colors schemes in Primer.
  *
  * @return array
  */
@@ -230,12 +230,12 @@ function activation_color_schemes( $color_schemes ) {
 		),
 		'dark' => array(
 			'colors' => array(
-				// Text
+				// Text.
 				'tagline_text_color'   => '#999999',
 				'heading_text_color'   => '#ffffff',
 				'primary_text_color'   => '#e5e5e5',
 				'secondary_text_color' => '#c1c1c1',
-				// Backgrounds
+				// Backgrounds.
 				'background_color'      => '#2c3845',
 				'menu_background_color' => '#303d4c',
 			),
@@ -249,16 +249,16 @@ function activation_color_schemes( $color_schemes ) {
 		),
 		'muted' => array(
 			'colors' => array(
-				// Text
+				// Text.
 				'heading_text_color'     => '#4f5875',
 				'primary_text_color'     => '#4f5875',
 				'secondary_text_color'   => '#888c99',
 				'footer_menu_text_color' => $color_schemes['muted']['base'],
 				'footer_text_color'      => '#4f5875',
-				// Links & Buttons
+				// Links & Buttons.
 				'link_color'   => $color_schemes['muted']['base'],
 				'button_color' => $color_schemes['muted']['base'],
-				// Backgrounds
+				// Backgrounds.
 				'background_color'               => '#d5d6e0',
 				'hero_background_color'          => '#5a6175',
 				'menu_background_color'          => '#5a6175',

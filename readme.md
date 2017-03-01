@@ -89,10 +89,15 @@ Source: https://unsplash.com/photos/9HI8UJMSdZA
 
 ## Changelog ##
 
+### 1.1.1 ###
+
+* Tweak: Added styles for the improved posts pagination (requires Primer 1.6.0). @props [evanherman](https://github.com/EvanHerman)
+* Fix: Text overlap on WooCommerce Add to Cart buttons in certain languages. @props [evanherman](https://github.com/EvanHerman)
+
 ### 1.1.0 ###
 
-* New: Full compatibility with the WooCommerce plugin (Requires Primer 1.5.0) @props [evanherman](https://github.com/EvanHerman), [fjarrett](https://github.com/fjarrett)
-* Fix: Site Title Text color control not working in the Customizer @props [evanherman](https://github.com/EvanHerman)
+* New: Full compatibility with the WooCommerce plugin (requires Primer 1.5.0). @props [evanherman](https://github.com/EvanHerman), [fjarrett](https://github.com/fjarrett)
+* Fix: Site Title Text color control not working in the Customizer. @props [evanherman](https://github.com/EvanHerman)
 
 ### 1.0.0 ###
 

@@ -259,6 +259,6 @@ module.exports = function( grunt ) {
 	grunt.registerTask( 'build',   [ 'default', 'version', 'clean:build', 'copy:build' ] );
 	grunt.registerTask( 'check',   [ 'devUpdate' ] );
 	grunt.registerTask( 'readme',  [ 'wp_readme_to_markdown' ] );
-	grunt.registerTask( 'version', [ 'replace', 'readme' ] );
+	grunt.registerTask( 'version', [ 'replace', 'readme', 'build' ] );
 
 };

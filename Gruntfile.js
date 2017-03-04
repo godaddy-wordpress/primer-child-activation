@@ -256,7 +256,7 @@ module.exports = function( grunt ) {
 	require( 'matchdep' ).filterDev( 'grunt-*' ).forEach( grunt.loadNpmTasks );
 
 	grunt.registerTask( 'default', [ 'sass', 'replace:charset', 'autoprefixer', 'cssjanus', 'cssmin', 'jshint', 'uglify', 'imagemin' ] );
-	grunt.registerTask( 'build',   [ 'default', 'version', 'clean:build', 'copy:build' ] );
+	grunt.registerTask( 'build',   [ 'default', 'clean:build', 'copy:build' ] );
 	grunt.registerTask( 'check',   [ 'devUpdate' ] );
 	grunt.registerTask( 'readme',  [ 'wp_readme_to_markdown' ] );
 	grunt.registerTask( 'version', [ 'replace', 'readme', 'build' ] );

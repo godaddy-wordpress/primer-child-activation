@@ -1676,7 +1676,7 @@ body.page-template-page-builder-no-header .content-area {
       position: relative;
       width: auto;
       max-width: 80%;
-      z-index: 8; } }
+      z-index: 10; } }
   .site-title-wrapper .site-title {
     text-transform: uppercase;
     letter-spacing: 1px;

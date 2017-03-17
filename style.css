@@ -2537,7 +2537,7 @@ body.woocommerce-cart .primer-wc-cart-sub-menu {
 .woocommerce table.cart img,
 .woocommerce-page table.cart img {
   width: 100%;
-  max-width: 100px;
+  max-width: 75px;
   margin-bottom: 0; }
 
 .woocommerce table.cart td.actions .input-text,

@@ -2493,6 +2493,9 @@ body.no-max-width .site-info-wrapper .site-info {
 .woocommerce-page #reviews #comments ol.commentlist li .comment-text {
   margin: 0 0 0 80px; }
 
+.woocommerce-page table.variations tr:hover td {
+  background-color: transparent; }
+
 .woocommerce-page form.woocommerce-cart-form table.cart td.actions #coupon_code {
   width: 55%;
   margin-right: 0; }

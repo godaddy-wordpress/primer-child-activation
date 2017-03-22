@@ -13,19 +13,38 @@
 	background-position: center top;
 	background-repeat: no-repeat;
 
+	&.video-header {
+		height: 100vh;
+
+		.hero {
+			position: absolute;
+			top: 35%;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: 0 auto;
+		}
+
+		#wp-custom-header-video-button {
+			position: absolute;
+			top: 0.5em;
+			right: 1em;
+			opacity: 0.5;
+			z-index: 11;
+		}
+
+		iframe#wp-custom-header-video {
+			height: 100%;
+		}
+	}
+
 	#wp-custom-header {
 		position: absolute;
 		height: 100%;
-		overflow: hidden;
-		z-index: 0;
 
 		img {
 			display: none;
 		}
-	}
-
-	iframe#wp-custom-header-video {
-		height: 100%;
 	}
 
 	.row {
@@ -42,6 +61,12 @@
 				@include span(7);
 			}
 		}
+	}
+}
+
+body.admin-bar {
+	.video-header {
+		height: calc( 100vh - 32px );
 	}
 }
 

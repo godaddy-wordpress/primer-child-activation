@@ -13,6 +13,21 @@
 	background-position: center top;
 	background-repeat: no-repeat;
 
+	#wp-custom-header {
+		position: absolute;
+		height: 100%;
+		overflow: hidden;
+		z-index: 0;
+
+		img {
+			display: none;
+		}
+	}
+
+	iframe#wp-custom-header-video {
+		height: 100%;
+	}
+
 	.row {
 		@include container($container-size);
 
@@ -85,6 +100,7 @@ body.no-max-width .page-title-container .page-header {
 }
 
 .hero {
+	position: relative;
 	padding: 0 0 56px;
 
 	.widget {

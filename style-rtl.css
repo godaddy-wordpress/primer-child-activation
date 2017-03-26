@@ -1622,17 +1622,24 @@ body.page-template-page-builder-no-header .content-area {
 # Header
 --------------------------------------------------------------*/
 .site-header.video-header {
+  overflow: hidden;
   height: 100%;
   background-color: #000;
   color: #000; }
   .site-header.video-header #wp-custom-header-video-button {
     position: absolute;
-    top: 0.5em;
+    top: 18vh;
     left: 1em;
-    opacity: 0.5; }
+    opacity: 0.5;
+    padding: 10px 1rem; }
   .site-header.video-header #wp-custom-header {
     position: absolute;
-    height: 100%; }
+    height: 100vh;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto; }
   .site-header.video-header iframe#wp-custom-header-video {
     height: 100%; }
 

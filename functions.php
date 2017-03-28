@@ -163,6 +163,11 @@ function activation_colors( $colors ) {
 		),
 		'button_color' => array(
 			'default' => '#39bc72',
+			'css'     => array(
+				'.woocommerce button.button.alt.disabled, .woocommerce button.button.alt.disabled:hover' => array(
+					'background-color' => '%1$s',
+				),
+			),
 		),
 		'button_text_color' => array(
 			'default' => '#ffffff',

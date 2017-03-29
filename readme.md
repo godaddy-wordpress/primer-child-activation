@@ -89,6 +89,12 @@ Source: https://unsplash.com/photos/9HI8UJMSdZA
 
 ## Changelog ##
 
+### 1.2.0 ###
+
+* New: Added styles for video headers. @props [evanherman](https://github.com/EvanHerman)
+* Fix: Additional WooCommerce style tweaks. @props [evanherman](https://github.com/EvanHerman)
+* Fix: Adjust site title/tagline visibility when mobile nav is open. @props [fjarrett](https://github.com/fjarrett)
+
 ### 1.1.1 ###
 
 * Tweak: Added styles for the improved posts pagination (requires Primer 1.6.0). @props [evanherman](https://github.com/EvanHerman)

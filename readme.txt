@@ -87,7 +87,7 @@ Source: https://unsplash.com/photos/9HI8UJMSdZA
 
 == Changelog ==
 
-= 1.2.0 =
+= 1.1.2 =
 
 * New: Added styles for video headers. @props [evanherman](https://github.com/EvanHerman)
 * Fix: Additional WooCommerce style tweaks. @props [evanherman](https://github.com/EvanHerman)

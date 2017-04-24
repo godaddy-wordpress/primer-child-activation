@@ -35,7 +35,7 @@ module.exports = function( grunt ) {
 			options: {
 				force: true
 			},
-			build: [ 'build/*' ]
+			build: [ 'build/' ]
 		},
 
 		copy: {
@@ -52,44 +52,24 @@ module.exports = function( grunt ) {
 					'templates/**'
 				],
 				dest: 'build/'
-			}
+			},
 		},
 
 		cssjanus: {
-			options: {
-				swapLtrRtlInUrl: false
-			},
-			assets: {
-				expand: true,
-				cwd: 'assets/css/',
-				src: [ '**/*.css', '!**/*rtl.css', '!**/*min.css' ],
-				dest: 'assets/css/',
-				ext: '-rtl.css'
-			},
-			editor: {
-				files: {
-					'editor-style-rtl.css': 'editor-style.css'
-				}
-			},
-			main: {
-				files: {
-					'style-rtl.css': 'style.css'
-				}
-			}
-		},
-
-		cssmin: {
-			options: {
-				processImport: false,
-				roundingPrecision: 5,
-				shorthandCompacting: false
-			},
-			assets: {
-				expand: true,
-				cwd: 'assets/css/',
-				src: [ '**/*.css', '!**/*.min.css' ],
-				dest: 'assets/css/',
-				ext: '.min.css'
+			theme: {
+				options: {
+					swapLtrRtlInUrl: false
+				},
+				files: [
+					{
+						src: 'style.css',
+						dest: 'style-rtl.css'
+					},
+					{
+						src: 'editor-style.css',
+						dest: 'editor-style-rtl.css'
+					}
+				]
 			}
 		},
 
@@ -119,7 +99,6 @@ module.exports = function( grunt ) {
 		},
 
 		jshint: {
-			assets: [ 'assets/js/**/*.js', '!assets/js/**/*.min.js' ],
 			gruntfile: [ 'Gruntfile.js' ]
 		},
 
@@ -138,12 +117,24 @@ module.exports = function( grunt ) {
 				overwrite: true,
 				replacements: [
 					{
-						from: /@since(\s+)NEXT/g,
-						to: '@since$1<%= pkg.version %>'
+						from: /Version:(\s*?)[a-zA-Z0-9\.\-\+]+$/m,
+						to: 'Version:$1' + pkg.version
 					},
 					{
-						from: /'PRIMER_CHILD_VERSION',(\s*)'[\w.+-]+'/,
-						to: "'PRIMER_CHILD_VERSION',$1'<%= pkg.version %>'"
+						from: /@since(.*?)NEXT/mg,
+						to: '@since$1' + pkg.version
+					},
+					{
+						from: /@NEXT/g,
+						to: '<%= pkg.version %>'
+					},
+					{
+						from: /VERSION(\s*?)=(\s*?['"])[a-zA-Z0-9\.\-\+]+/mg,
+						to: 'VERSION$1=$2' + pkg.version
+					},
+					{
+						from: /'PRIMER_CHILD_VERSION', '[a-zA-Z0-9\.\-\+]+'/mg,
+						to: '\'PRIMER_CHILD_VERSION\', \'' + pkg.version + '\''
 					}
 				],
 				src: [ '*.php', 'inc/**/*.php', 'templates/**/*.php' ]
@@ -175,12 +166,6 @@ module.exports = function( grunt ) {
 				precision: 5,
 				sourceMap: false
 			},
-			assets: {
-				expand: true,
-				cwd: '.dev/sass/assets/',
-				src: [ '**/*.scss' ],
-				dest: 'assets/css/'
-			},
 			editor: {
 				files: {
 					'editor-style.css': '.dev/sass/editor-style.scss'
@@ -193,31 +178,14 @@ module.exports = function( grunt ) {
 			}
 		},
 
-		uglify: {
-			options: {
-				ASCIIOnly: true
-			},
-			assets: {
-				expand: true,
-				cwd: 'assets/js/',
-				src: [ '**/*.js', '!**/*.min.js' ],
-				dest: 'assets/js/',
-				ext: '.min.js'
-			}
-		},
-
 		watch: {
 			images: {
 				files: 'assets/images/**/*.{gif,jpeg,jpg,png,svg}',
 				tasks: [ 'imagemin' ]
 			},
-			js: {
-				files: 'assets/js/**/*.js',
-				tasks: [ 'jshint', 'uglify' ]
-			},
 			sass: {
 				files: '.dev/sass/**/*.scss',
-				tasks: [ 'sass', 'autoprefixer', 'cssjanus', 'cssmin' ]
+				tasks: [ 'sass', 'autoprefixer', 'cssjanus' ]
 			}
 		},
 
@@ -255,8 +223,8 @@ module.exports = function( grunt ) {
 
 	require( 'matchdep' ).filterDev( 'grunt-*' ).forEach( grunt.loadNpmTasks );
 
-	grunt.registerTask( 'default', [ 'sass', 'replace:charset', 'autoprefixer', 'cssjanus', 'cssmin', 'jshint', 'uglify', 'imagemin' ] );
-	grunt.registerTask( 'build',   [ 'default', 'clean:build', 'copy:build' ] );
+	grunt.registerTask( 'default', [ 'sass', 'replace:charset', 'autoprefixer', 'cssjanus', 'jshint', 'imagemin' ] );
+	grunt.registerTask( 'build',   [ 'default', 'clean', 'copy' ] );
 	grunt.registerTask( 'check',   [ 'devUpdate' ] );
 	grunt.registerTask( 'readme',  [ 'wp_readme_to_markdown' ] );
 	grunt.registerTask( 'version', [ 'replace', 'readme', 'build' ] );

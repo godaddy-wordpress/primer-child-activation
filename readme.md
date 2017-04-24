@@ -89,6 +89,14 @@ Source: https://unsplash.com/photos/9HI8UJMSdZA
 
 ## Changelog ##
 
+### 1.2.0 ###
+
+* New: Added styles for video headers.
+* Fix: Additional WooCommerce style tweaks.
+* Fix: Adjust site title/tagline visibility when mobile nav is open.
+
+Props [@evanherman](https://github.com/EvanHerman), [@fjarrett](https://github.com/fjarrett)
+
 ### 1.1.2 ###
 
 * Tweak: Improved theme screenshot

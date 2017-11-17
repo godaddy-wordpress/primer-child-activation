@@ -1,6 +1,6 @@
 # Activation #
 **Contributors:** [godaddy](https://profiles.wordpress.org/godaddy), [jonathanbardo](https://profiles.wordpress.org/jonathanbardo), [fjarrett](https://profiles.wordpress.org/fjarrett), [eherman24](https://profiles.wordpress.org/eherman24)  
-**Tags:**              [custom-background](https://wordpress.org/themes/tags/custom-background/), [custom-colors](https://wordpress.org/themes/tags/custom-colors/), [custom-header](https://wordpress.org/themes/tags/custom-header/), [custom-menu](https://wordpress.org/themes/tags/custom-menu/), [editor-style](https://wordpress.org/themes/tags/editor-style/), [featured-images](https://wordpress.org/themes/tags/featured-images/), [fixed-layout](https://wordpress.org/themes/tags/fixed-layout/), [flexible-header](https://wordpress.org/themes/tags/flexible-header/), [fluid-layout](https://wordpress.org/themes/tags/fluid-layout/), [left-sidebar](https://wordpress.org/themes/tags/left-sidebar/), [light](https://wordpress.org/themes/tags/light/), [one-column](https://wordpress.org/themes/tags/one-column/), [responsive-layout](https://wordpress.org/themes/tags/responsive-layout/), [right-sidebar](https://wordpress.org/themes/tags/right-sidebar/), [rtl-language-support](https://wordpress.org/themes/tags/rtl-language-support/), [sticky-post](https://wordpress.org/themes/tags/sticky-post/), [threaded-comments](https://wordpress.org/themes/tags/threaded-comments/), [three-columns](https://wordpress.org/themes/tags/three-columns/), [translation-ready](https://wordpress.org/themes/tags/translation-ready/), [two-columns](https://wordpress.org/themes/tags/two-columns/)  
+**Tags:**              [custom-background](https://wordpress.org/themes/tags/custom-background/), [custom-colors](https://wordpress.org/themes/tags/custom-colors/), [custom-header](https://wordpress.org/themes/tags/custom-header/), [custom-menu](https://wordpress.org/themes/tags/custom-menu/), [editor-style](https://wordpress.org/themes/tags/editor-style/), [featured-images](https://wordpress.org/themes/tags/featured-images/), [flexible-header](https://wordpress.org/themes/tags/flexible-header/), [left-sidebar](https://wordpress.org/themes/tags/left-sidebar/), [one-column](https://wordpress.org/themes/tags/one-column/), [right-sidebar](https://wordpress.org/themes/tags/right-sidebar/), [rtl-language-support](https://wordpress.org/themes/tags/rtl-language-support/), [sticky-post](https://wordpress.org/themes/tags/sticky-post/), [threaded-comments](https://wordpress.org/themes/tags/threaded-comments/), [three-columns](https://wordpress.org/themes/tags/three-columns/), [translation-ready](https://wordpress.org/themes/tags/translation-ready/), [two-columns](https://wordpress.org/themes/tags/two-columns/)  
 **Requires at least:** 4.4  
 **Tested up to:**      4.7  
 **Stable tag:**        1.1.2  
@@ -14,39 +14,6 @@ Activation is a GoDaddy Primer child theme with a colorful, fitness-focused desi
 ## Description ##
 
 Activation is a GoDaddy Primer child theme with a colorful, fitness-focused design.
-
-**Languages Supported:**
-
-* English
-* Dansk
-* Deutsch
-* Ελληνικά
-* Español
-* Español de México
-* Suomi
-* Français
-* हिन्दी
-* Bahasa Indonesia
-* Italiano
-* 日本語
-* 한국어
-* मराठी
-* Bahasa Melayu
-* Norsk bokmål
-* Nederlands
-* Polski
-* Português do Brasil
-* Português
-* Русский
-* Svenska
-* ไทย
-* Tagalog
-* Türkçe
-* Українська
-* Tiếng Việt
-* 简体中文
-* 香港中文版
-* 繁體中文
 
 **Contributing:**
 
@@ -88,6 +55,14 @@ License: Creative Commons Zero
 Source: https://unsplash.com/photos/9HI8UJMSdZA
 
 ## Changelog ##
+
+### 1.2.0 ###
+
+* New: Added styles for video headers.
+* Fix: Additional WooCommerce style tweaks.
+* Fix: Adjust site title/tagline visibility when mobile nav is open.
+
+Props [@evanherman](https://github.com/EvanHerman), [@fjarrett](https://github.com/fjarrett)
 
 ### 1.1.2 ###
 

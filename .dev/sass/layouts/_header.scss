@@ -1,3 +1,5 @@
+@import "video-header";
+
 .site-header-wrapper {
 	@include container($container-size);
 
@@ -12,6 +14,12 @@
 	background-size: cover;
 	background-position: center top;
 	background-repeat: no-repeat;
+
+	#wp-custom-header {
+		img {
+			display: none;
+		}
+	}
 
 	.row {
 		@include container($container-size);
@@ -45,7 +53,7 @@
 		position: relative;
 		width: auto;
 		max-width: 80%;
-		z-index: 8;
+		z-index: 10;
 	}
 
 	.site-title {
@@ -85,6 +93,7 @@ body.no-max-width .page-title-container .page-header {
 }
 
 .hero {
+	position: relative;
 	padding: 0 0 56px;
 
 	.widget {

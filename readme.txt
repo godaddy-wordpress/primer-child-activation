@@ -1,6 +1,6 @@
 === Activation ===
 Contributors:      godaddy, jonathanbardo, fjarrett, eherman24
-Tags:              custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, fixed-layout, flexible-header, fluid-layout, left-sidebar, light, one-column, responsive-layout, right-sidebar, rtl-language-support, sticky-post, threaded-comments, three-columns, translation-ready, two-columns
+Tags:              custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, left-sidebar, one-column, right-sidebar, rtl-language-support, sticky-post, threaded-comments, three-columns, translation-ready, two-columns
 Requires at least: 4.4
 Tested up to:      4.7
 Stable tag:        1.1.2
@@ -12,39 +12,6 @@ Activation is a GoDaddy Primer child theme with a colorful, fitness-focused desi
 == Description ==
 
 Activation is a GoDaddy Primer child theme with a colorful, fitness-focused design.
-
-**Languages Supported:**
-
-* English
-* Dansk
-* Deutsch
-* Ελληνικά
-* Español
-* Español de México
-* Suomi
-* Français
-* हिन्दी
-* Bahasa Indonesia
-* Italiano
-* 日本語
-* 한국어
-* मराठी
-* Bahasa Melayu
-* Norsk bokmål
-* Nederlands
-* Polski
-* Português do Brasil
-* Português
-* Русский
-* Svenska
-* ไทย
-* Tagalog
-* Türkçe
-* Українська
-* Tiếng Việt
-* 简体中文
-* 香港中文版
-* 繁體中文
 
 **Contributing:**
 
@@ -86,6 +53,14 @@ License: Creative Commons Zero
 Source: https://unsplash.com/photos/9HI8UJMSdZA
 
 == Changelog ==
+
+= 1.2.0 =
+
+* New: Added styles for video headers.
+* Fix: Additional WooCommerce style tweaks.
+* Fix: Adjust site title/tagline visibility when mobile nav is open.
+
+Props [@evanherman](https://github.com/EvanHerman), [@fjarrett](https://github.com/fjarrett)
 
 = 1.1.2 =
 

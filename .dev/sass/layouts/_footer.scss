@@ -98,6 +98,13 @@ body.no-max-width .footer-widget-area {
 		@include container($container-size);
 	}
 
+	.privacy-policy-link {
+		@include span(6);
+
+		font-size: 90%;
+		line-height: 38px;
+	}
+
 	.site-info-text {
 		@include span(12);
 
@@ -120,6 +127,7 @@ body.no-max-width .footer-widget-area {
 	@media #{$small-only} {
 
 		.footer-nav,
+		.privacy-policy-link,
 		.site-info-text,
 		.social-menu {
 			@include span(12);

@@ -2597,22 +2597,22 @@ body.woocommerce-cart .primer-wc-cart-sub-menu {
 .wp-block-cover-image {
   margin-bottom: 1.5rem; }
 
-.alignfull {
+[class^="wp-block-"].alignfull {
   width: 100.6vw;
   position: relative;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw; }
-  .alignfull img {
+  [class^="wp-block-"].alignfull img {
     width: 100%; }
 
-.alignwide {
+[class^="wp-block-"].alignwide {
   margin: 0;
   width: -webkit-calc( 100% + 15px);
   width: calc( 100% + 15px); }
   @media only screen and (max-width: 40.063em) {
-    .alignwide {
+    [class^="wp-block-"].alignwide {
       margin-left: 0;
       width: 100%; } }
 
